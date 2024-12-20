@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/molsyspvtltd/molsys-web.git/precache-manifest.09814b7354d25e794d46b8d508fedee2.js"
+  "/molsyspvtltd/molsys-web.git/precache-manifest.e8577ac6fe7e1fc277d7b3a5af1b78e2.js"
 );
 
 self.addEventListener('message', (event) => {
