@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5222bf83e7672b9c9a6d02a0b50150d7",
+    "revision": "0454f305c830311aeb374a772cd92ce6",
     "url": "/molsyspvtltd/molsys-web.git/index.html"
   },
   {
