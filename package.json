@@ -2,7 +2,7 @@
   "name": "molsys-ui",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://molsyspvtltd.github.io/molsys-web",
+  "homepage": "https://molsys.in",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
