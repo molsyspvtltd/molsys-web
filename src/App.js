@@ -1,4 +1,4 @@
-import {CssBaseline, makeStyles, React, Route, Router, Switch, UINavBar,} from "./component"
+import {CssBaseline, makeStyles, React, UINavBar,} from "./component"
 import './App.css';
 import {useSelector} from "react-redux";
 import {useEffect} from "react";
@@ -12,7 +12,6 @@ import Home  from "./Pages/Home";
 import Pms from './Pages/Pms';
 import G_cell from './Pages/G_Cell';
 import WellnessAssessment from "./Pages/WellnessAssessment";
-import {Redirect} from "react-router-dom";
 import Footer from './component/Footer';
 import Documents from "./Pages/Documents";
 import Market from './Pages/Market';
@@ -41,6 +40,7 @@ import DataAnalysisform from './forms/DataAnalysisform';
 import notification from './shared/notification/notificationpopup';
 import Careers from "./Pages/Careers";
 import Privacypolicy from "./Pages/Privacypolicy";
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 
 

@@ -51,12 +51,12 @@ import { persistor, store } from './config/store';
 //   </Provider>,
 //   document.getElementById('root')
 // );
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';  // Import HashRouter
 
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
-      <Router>
+      <Router>  {/* Use HashRouter here */}
         <App />
       </Router>
     </PersistGate>
