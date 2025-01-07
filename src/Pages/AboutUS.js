@@ -1,9 +1,9 @@
 import React from "react";
-import About from "../assets/aboutbg (2).jpg";
 import Teambg from '../assets/teambgmain.jpg'
 import Vision from '../assets/visionbg.jpg';
 import mission from '../assets/mission.jpg';
-import mountian from '../assets/mountain.jpg'
+import mission1 from '../assets/mission1.jpg';
+import vision1 from '../assets/vision1.jpg';
 import CoreValues from '../assets/CoreValues.jpg'
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -13,17 +13,11 @@ import MailIcon from '@material-ui/icons/Mail';
 import '../style/About.css';
 
 import GauravBanerje from '../assets/gaurab.jpeg'
-import Anupam from '../assets/Anupam.jpg'
 import Nishanth from '../assets/Nishant.jpg'
-import Karthik from '../assets/karthik.jpg'
-import nabeel from '../assets/nabeel.jpg'
 import melbin from '../assets/melbin.jpg'
-import yuktha from '../assets/yukta.jpg'
 import madhurima from '../assets/madhurima.jpg'
 import keshav from '../assets/keshava.jpg'
-import Anush from '../assets/DrDas.jpg'
-import Tejswani from '../assets/DrTara.jpg'
-import Amitha from '../assets/DrAmrita.jpg'
+import shreya from '../assets/shreyashri.png'
 import AnimatedStatsSection from '../helpers/AnimatedStatsSection'
 // import GoogleIcon from '@material-ui/icons/Google';
 
@@ -128,13 +122,13 @@ function AboutUs() {
         </div>
       </div>
       <div className="col-md-6 p-3">
-        <img src={mountian} alt="about" className="rounded d-none d-md-block" style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: 'auto' }} />
+        <img src={vision1} alt="about" className="rounded d-none d-md-block" style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: 'auto' }} />
       </div>
     </div>
 
     <div className="row">
       <div className="col-md-6 p-3">
-        <img src={About} alt="about" className="rounded d-none d-md-block" style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: 'auto' }} />
+        <img src={mission1} alt="about" className="rounded d-none d-md-block" style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: 'auto' }} />
       </div>
       <div className="col-md-6">
         <div>
@@ -195,7 +189,7 @@ function AboutUs() {
 					</div>
 					<div class="team-content">
 						<h3 class="title">Gaurab Banerjee</h3>
-						<span class="post">CEO & Co-Founder<br></br>B.Tech, (M.Sc.) Software Development</span>
+						<span class="post">CEO & Co-Founder<br></br>B.Tech Biotechnology</span>
 					</div>
 				</div>
 			</div>	
@@ -203,16 +197,16 @@ function AboutUs() {
 			<div class="col-md-3 col-sm-6 col-xs-12 mt-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
 				<div class="our-team">
 					<div class="team_img">
-					<img src={Anupam} alt="team-image" style={{height: 300}}/>
+					<img src={Nishanth} alt="team-image" style={{height: 300}}/>
 						<ul class="social">
                             <li><a href="#"><i ><TwitterIcon/></i></a></li>
-							<li><a href="mailto:anupam.das@molsys.in"><i ><MailIcon/></i></a></li>
-							<li><a href="https://www.linkedin.com/in/anupam-j-das-754564159/"><i ><LinkedInIcon/></i></a></li>
+							<li><a href="mailto:nishant.sharma@molsys.in"><i ><MailIcon/></i></a></li>
+							<li><a href="https://www.linkedin.com/in/nishant-sharma-672194b6/"><i ><LinkedInIcon/></i></a></li>
 						</ul>
 					</div>
 					<div class="team-content">
-						<h3 class="title">Anupam J Das</h3>
-						<span class="post">Co-Founder<br></br>(PhD) M.S. , M.Sc.</span>
+						<h3 class="title">Nishant Sharma</h3>
+						<span class="post">General Manager<br></br>M.Sc. Biotechnology</span>
 					</div>
 				</div>
 			</div>
@@ -220,70 +214,38 @@ function AboutUs() {
 	 		 <div class="col-md-3 col-sm-6 col-xs-12 mt-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
 			  <div class="our-team">
 					<div class="team_img">
-						<img src={Nishanth} alt="team-image" style={{height: 300}}/>
-						<ul class="social">
-                            <li><a href="#"><i ><TwitterIcon/></i></a></li>
-							<li><a href="mailto:nishant.sharma@molsys.in"><i ><MailIcon/></i></a></li>
-							<li><a href="https://www.linkedin.com/in/nishant-sharma-672194b6/"><i ><LinkedInIcon/></i></a></li>
-						</ul>
-					</div>
-					<div class="team-content ">
-						<h3 class="title">Nishant Sharma</h3>
-						<span class="post">General Manager<br></br>M.Sc. Biotechnology</span>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12 mt-5 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
-			<div class="our-team">
-					<div class="team_img">
 						<img src={madhurima} alt="team-image" style={{height: 300}}/>
 						<ul class="social">
-							<li><a href="#"><i ><TwitterIcon/></i></a></li>
+                            <li><a href="#"><i ><TwitterIcon/></i></a></li>
 							<li><a href="mailto:madhurima.mukherjee@molsys.in"><i ><MailIcon/></i></a></li>
 							<li><a href="https://www.linkedin.com/in/madhurima-mukherjee-4256b6127/"><i ><LinkedInIcon/></i></a></li>
 						</ul>
 					</div>
-					<div class="team-content">
+					<div class="team-content ">
 						<h3 class="title">Madhurima Mukherjee</h3>
-						<span class="">VP- Strategy and Product Development<br></br>M.Sc. (Human Physiology), Advanced General Management- IMT Ghaziabad</span>
+						<span class="post">VP- Strategy and Product Development<br></br>M.Sc. (Human Physiology), Advanced General Management- IMT Ghaziabad</span>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12 mt-5 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
-				<div class="our-team">
+			<div class="col-md-1 col-sm-6 col-xs-12 "></div>
+			<div class="col-md-3 col-sm-6 col-xs-12 mt-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
+			<div class="our-team">
 					<div class="team_img">
-					<img src={Karthik} alt="team-image" style={{height: 300}}/>
+						<img src={melbin} alt="team-image" style={{height: 300}}/>
 						<ul class="social">
-                            <li><a href="#"><i ><TwitterIcon/></i></a></li>
-							<li><a href="mailto:karthik.narayan@molsys.in"><i ><MailIcon/></i></a></li>
-							<li><a href="https://www.linkedin.com/in/dr-karthik-narayan-66051b33/"><i ><LinkedInIcon/></i></a></li>
+						<li><a href="https://twitter.com/melbin23george"><i ><TwitterIcon/></i></a></li>
+							<li><a href="mailto:melbin.molsys@gmail.com"><i ><MailIcon/></i></a></li>
+							<li><a href="https://www.linkedin.com/in/melbin-george/"><i ><LinkedInIcon/></i></a></li>
 						</ul>
 					</div>
 					<div class="team-content">
-						<h3 class="title">Dr. Karthik Narayan</h3>
-						<span class="post">Business Development Lead<br></br>Ph.D Biotechnology</span>
+						<h3 class="title">Melbin George</h3>
+						<span class="">Full Stack Developer<br></br>B.E Computer Science</span>
 					</div>
 				</div>
 			</div>
-			{/* <div class="col-md-3 col-sm-6 col-xs-12">
-			</div> */}
-			<div class="col-md-3 col-sm-6 col-xs-12 mt-5 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
-				<div class="our-team">
-					<div class="team_img">
-					<img src={nabeel} alt="team-image" style={{height: 300}}/>
-						<ul class="social">
-                            <li><a href="https://twitter.com/AjNabeel77655"><i ><TwitterIcon/></i></a></li>
-							<li><a href="mailto:nabeel.molsys@gmail.com"><i ><MailIcon/></i></a></li>
-							<li><a href="https://www.linkedin.com/in/nabeel-aj-b153a2246/"><i ><LinkedInIcon/></i></a></li>
-						</ul>
-					</div>
-					<div class="team-content">
-						<h3 class="title">Nabeel Abdul Jabbar</h3>
-						<span class="post">Full Stack Developer<br></br>B.E Computer Science</span>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12 mt-5 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" data-wow-offset="0">
+			<div class="col-md-1 col-sm-6 col-xs-12 "></div>
+			<div class="col-md-3 col-sm-6 col-xs-12 mt-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
 				<div class="our-team">
 					<div class="team_img">
 					<img src={melbin} alt="team-image" style={{height: 300}}/>
@@ -294,15 +256,18 @@ function AboutUs() {
 						</ul>
 					</div>
 					<div class="team-content">
-						<h3 class="title">Melbin George</h3>
-						<span class="post">Full Stack Developer<br></br>B.E Computer Science</span>
+						<h3 class="title">Anuraj O P</h3>
+						<span class="post">Data Analyst<br></br>B.Sc. Biotechnology, M.Sc. Informatics</span>
 					</div>
 				</div>
-			</div>	
-			<div class="col-md-3 col-sm-6 col-xs-12 mt-5 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" data-wow-offset="0">
+			</div>
+			{/* <div class="col-md-3 col-sm-6 col-xs-12">
+			</div> */}
+			<div class="col-md-1 col-sm-6 col-xs-12 "></div>
+			<div class="col-md-3 col-sm-6 col-xs-12 mt-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" data-wow-offset="0">
 			<div class="our-team">
 					<div class="team_img">
-					<img src="https://images.unsplash.com/photo-1619252584172-a83a949b6efd?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="team-image"/>
+					<img src={shreya} alt="team-image"/>
 						<ul class="social">
                             <li><a href="#"><i ><TwitterIcon/></i></a></li>
 							<li><a href="mailto:solutions@molsys.in"><i ><MailIcon/></i></a></li>
@@ -315,22 +280,7 @@ function AboutUs() {
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12 mt-5 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" data-wow-offset="0">
-			<div class="our-team">
-					<div class="team_img">
-					<img src={yuktha} alt="team-image" style={{height: 300}}/>
-						<ul class="social">
-                            <li><a href="https://twitter.com/YuktaTomar4"><i ><TwitterIcon/></i></a></li>
-							<li><a href="mailto:yukta.molsys@gmail.com"><i ><MailIcon/></i></a></li>
-							<li><a href="https://www.linkedin.com/in/yukta-tomar-baa741169/"><i ><LinkedInIcon/></i></a></li>
-						</ul>
-					</div>
-					<div class="team-content">
-						<h3 class="title">Yukta Tomar</h3>
-						<span class="post">Data Analyst (Intern)<br></br>B.Sc. BioInfomatics, M.Sc. Medical Genetics </span>
-					</div>
-				</div>
-			</div>
+			
 			
 		</div>
 	</div>			
