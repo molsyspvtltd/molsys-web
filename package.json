@@ -10,7 +10,7 @@
     "@mui/styled-engine-sc": "^5.14.12",
     "@reduxjs/toolkit": "^1.4.0",
     "axios": "^0.19.2",
-    "bootstrap": "^5.3.2",
+    "bootstrap": "^5.3.3",
     "chart.js": "^2.9.3",
     "chartjs-plugin-datalabels": "^0.7.0",
     "D": "^1.0.0",
