@@ -258,7 +258,7 @@ function AboutUs() {
 					</div>
 					<div class="team-content">
 						<h3 class="title">Anuraj O P</h3>
-						<span class="post">Data Analyst<br></br>B.Sc. Biotechnology, M.Sc. Informatics</span>
+						<span class="post">Data Analyst<br></br>B.Sc. Biotechnology, M.Sc. Bioinformatics</span>
 					</div>
 				</div>
 			</div>
