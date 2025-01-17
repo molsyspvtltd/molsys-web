@@ -100,7 +100,7 @@ function Footer() {
               />
               <button
                 type="submit"
-                className="btn btn-success shadow btn-outline-secondary"
+                className="btn btn-    shadow btn-outline-secondary"
               >
                 Submit
               </button>
