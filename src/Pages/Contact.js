@@ -26,12 +26,12 @@ function Contact() {
       </div>
     </div>
    
-    <div className="col-12 col-md-3 mb-3">
+    {/* <div className="col-12 col-md-3 mb-3">
       <div className="p-3 btn shadow">
         <h5>&#10148; Admissions</h5>
         <a href="mailto:admissions@molsys.in" className="link-dark link-offset-2 link-underline link-underline-opacity-0">admissions@molsys.in</a>
       </div>
-    </div>
+    </div> */}
 
     <div className="col-12 col-md-3 mb-3">
       <div className="p-3 btn shadow">
@@ -46,7 +46,7 @@ function Contact() {
           
           <div class="col-md-6 ">
               
-              <div class="row mt-3">
+              {/* <div class="row mt-3">
                   <div class="col m-5 p-2" >
                       <a href="https://maps.google.com/?q=Your+Address+Here" target="_blank" class="btn btn shadow">
                           <div class="card-body">
@@ -56,15 +56,15 @@ function Contact() {
                           </div>
                       </a>
                   </div>
-              </div>
+              </div> */}
               
               <div class="row">
                   <div class="col m-5 p-2">
-                      <a href="https://maps.google.com/?q=Another+Address+Here" target="_blank" class="btn btn shadow">
+                      <a href="https://maps.app.goo.gl/2c4N3YT3DeqehxN28" target="_blank" class="btn btn shadow">
                           <div class="card-body">
                           <h5 >Mangaluru</h5>
                               <h6>Molsys Private Limited - R&D Unit </h6>
-                              <p class="card-text"><small> Yenepoya Technology Incubator ,University Road, Deralakatte, Ullal, Karnataka 575022 <br/>Tel: +91 8884229559</small></p>
+                              <p class="card-text"><small> Yenepoya Technology Incubator ,University Road, Deralakatte, Ullal, Karnataka 575022 <br/>Tel: 08069328714</small></p>
                           </div>
                       </a>
                   </div>

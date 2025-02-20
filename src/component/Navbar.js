@@ -79,6 +79,11 @@ function Navbar() {
               G-Cell
             </Link>
           </li>
+          <li className="nav-item mx-2">
+            <a className="nav-link" href="https://dnalyst.in" target="_blank" rel="noopener noreferrer">
+              Dnalyst
+            </a>
+         </li>
         </ul>
       );
     };
