@@ -13,6 +13,8 @@ import MailIcon from '@material-ui/icons/Mail';
 import '../style/About.css';
 
 import GauravBanerje from '../assets/gaurab.jpeg'
+import GaurabBanerjee from "../assets/gaurabsir1.png"
+import Anuraj from "../assets/anuraj1.png"
 import Nishanth from '../assets/Nishant.jpg'
 import None from '../assets/karthik.jpg'
 import melbin from '../assets/melbin.jpg'
@@ -177,11 +179,11 @@ function AboutUs() {
 			{/* <p>Empowering India and the world with personalized medicine.</p> */}
 		</div>				
 		<div class="row text-center mt-5">
-    {/* <div class="col-md-1 col-sm-6 col-xs-12"></div> */}
-			<div class="col-md-4 col-sm-6 col-xs-12 mt-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+    <div class="col-md-1 col-sm-6 col-xs-12"></div>
+			<div class="col-md-3 col-sm-6 col-xs-12 mt-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
 				<div class="our-team">
 					<div class="team_img">
-						<img src={GauravBanerje} alt="team-image" style={{height: 300}}/>
+						<img src={GaurabBanerjee} alt="team-image" style={{height: 300}}/>
 						<ul class="social">
 							<li><a href="https://twitter.com/insanuation"><i ><TwitterIcon/></i></a></li>
 							<li><a href="mailto:gaurab.banerjee@molsys.in"><i ><MailIcon/></i></a></li>
@@ -249,7 +251,7 @@ function AboutUs() {
 			<div class="col-md-3 col-sm-6 col-xs-12 mt-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
 				<div class="our-team">
 					<div class="team_img">
-					<img src={None} alt="team-image" style={{height: 300}}/>
+					<img src={Anuraj} alt="team-image" style={{height: 300}}/>
 						<ul class="social">
                             <li><a href="https://twitter.com/melbin23george"><i ><TwitterIcon/></i></a></li>
 							<li><a href="mailto:melbin.molsys@gmail.com"><i ><MailIcon/></i></a></li>
