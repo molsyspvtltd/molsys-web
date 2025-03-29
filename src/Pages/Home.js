@@ -15,7 +15,9 @@ import Img4 from "../assets/manage_history_FILL0_wght400_GRAD0_opsz24.png";
 import Img5 from "../assets/reserach.png";
 import Img6 from "../assets/analisys.png";
 import ImageContainer from '../component/ImageContainer';
-import logo from '../assets/logo.png' ;
+import logo from '../assets/logo.png';
+import wadhwani from '../assets/wadhwani_logo.png';
+import yti from '../assets/yenTI_nobg.png';
 
 
 
@@ -277,20 +279,58 @@ class Home extends React.Component{
             
              
             {/* section4 - Trusted Clients */}
-
-            
             <section className='section2 me-5 ms-5 mt-5 pt-3'>
             <div className="container-fluid mt-5 mb-5 text-center">
             <h2>TRUSTED CLIENTELLE</h2>
             <div className='underline mx-auto'></div>
             <div class="container mt-5">
             <ImageContainer />
-            
             </div>
             </div>
             </section>
+            <section className='section3 px-5 mt-5 pt-3'> 
+  <div className="container-fluid mt-5 mb-5 text-center">
+    <h2>ACCELERATORS & MENTORS</h2>
+    <div className='underline mx-auto'></div>
+    <div className="container  d-flex justify-content-center gap-4">
+      <div 
+        className="image-container text-center" 
+        style={{
+          display: "flex", 
+          justifyContent: "center", 
+          alignItems: "center", 
+          width: "200px", 
+          height: "200px", 
+          overflow: "hidden"
+        }}
+      >
+        <img 
+          src={wadhwani} 
+          alt="Description 1" 
+          style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "10px" }} 
+        />
+      </div>
+      <div 
+        className="image-container text-center" 
+        style={{
+          display: "flex", 
+          justifyContent: "center", 
+          alignItems: "center", 
+          width: "200px", 
+          height: "200px", 
+          overflow: "hidden"
+        }}
+      >
+        <img 
+          src={yti} 
+          alt="Description 2" 
+          style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "10px" }} 
+        />
+      </div>
+    </div>
+  </div>
+</section>           
 
-        
 
       </div>
     )
