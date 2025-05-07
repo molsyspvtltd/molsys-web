@@ -76,7 +76,7 @@
     "css-mediaquery": "^0.1.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
-    "gh-pages": "^6.2.0",
+    "gh-pages": "^6.3.0",
     "history": "latest",
     "react-test-renderer": "^16.13.1",
     "redux-devtools-extension": "^2.13.8",
