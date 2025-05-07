@@ -1,4 +1,4 @@
-import React, {Component, useState, useEffect } from 'react';
+import React, {Component, useState, useEffect, useNavigate } from 'react';
 import '../style/Home.css'
 import * as Icon from 'react-bootstrap-icons';
 
@@ -330,7 +330,6 @@ class Home extends React.Component{
     </div>
   </div>
 </section>           
-
 
       </div>
     )

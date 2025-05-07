@@ -191,9 +191,10 @@ import DataGenerationform from './forms/DataGenerationform';
 import DataAnalysisform from './forms/DataAnalysisform';
 import notification from './shared/notification/notificationpopup';
 import Careers from "./Pages/Careers";
+import WorkshopRegistration from "./Pages/WorkshopRegistrationPage";
 import Privacypolicy from "./Pages/Privacypolicy";
-import { Route, Switch, Redirect } from 'react-router-dom';
-import { HashRouter } from 'react-router-dom';  // Import HashRouter
+import { Route, Switch, Redirect , HashRouter , useLocation} from 'react-router-dom';
+import FloatingButton from './component/FloatingButton'; // Import FloatingButton
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -216,6 +217,7 @@ function App() {
   const { user, token, isLoggedIn, roles } = useSelector(state => state.auth);
 
   const auth = { user, token, isLoggedIn, roles }
+  const location = useLocation();
 
   let homePage = '/home';
 
@@ -233,11 +235,12 @@ function App() {
       <UINavBar />
       {/* {isLoggedIn && <Drawer />} */}
       <ConfirmMessageComponent />
+      {location.pathname === "/home" && <FloatingButton />}
       
       {/* Using HashRouter for routing */}
       <HashRouter>
         <Switch>
-          <Route exact path="/" render={() => <Redirect to={homePage} />} />
+          <Route exact path="/" render={() => <Redirect to="/home" />} />
           <Route path="/home" component={Home} />
           <Route path="/aboutUs" component={AboutUS} />
           <Route path="/contactUs" component={ContactUs} />
@@ -271,6 +274,7 @@ function App() {
           <Route path="/DataGenerationform" component={DataGenerationform} />
           <Route path="/DataAnalysisform" component={DataAnalysisform} />
           <Route path="/notification" component={notification} />
+          <Route path="/WorkshopRegistration" component={WorkshopRegistration} />
         </Switch>
       </HashRouter>
 

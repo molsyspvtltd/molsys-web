@@ -80,6 +80,11 @@ function Navbar() {
             </Link>
           </li>
           <li className="nav-item mx-2">
+            <Link className="nav-link" to="/WorkshopRegistration">
+              Workshops
+            </Link>
+          </li>
+          <li className="nav-item mx-2">
             <a className="nav-link" href="https://dnalyst.in" target="_blank" rel="noopener noreferrer">
               Dnalyst
             </a>
