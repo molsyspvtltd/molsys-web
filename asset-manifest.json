@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.c742386e.chunk.css",
-    "main.js": "/static/js/main.8b0f7abe.chunk.js",
-    "main.js.map": "/static/js/main.8b0f7abe.chunk.js.map",
+    "main.css": "/static/css/main.9fbe636b.chunk.css",
+    "main.js": "/static/js/main.77be6ae4.chunk.js",
+    "main.js.map": "/static/js/main.77be6ae4.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ef8e12ad.js",
     "runtime-main.js.map": "/static/js/runtime-main.ef8e12ad.js.map",
     "static/css/2.2de20895.chunk.css": "/static/css/2.2de20895.chunk.css",
@@ -13,14 +13,14 @@
     "static/js/4.8cc19b9d.chunk.js": "/static/js/4.8cc19b9d.chunk.js",
     "static/js/4.8cc19b9d.chunk.js.map": "/static/js/4.8cc19b9d.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.e19081d34822d62cf7b11ddb73dade3a.js": "/precache-manifest.e19081d34822d62cf7b11ddb73dade3a.js",
+    "precache-manifest.abc7fd19c25fb6e8923c2c0afdeee34b.js": "/precache-manifest.abc7fd19c25fb6e8923c2c0afdeee34b.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.2de20895.chunk.css.map": "/static/css/2.2de20895.chunk.css.map",
-    "static/css/main.c742386e.chunk.css.map": "/static/css/main.c742386e.chunk.css.map",
+    "static/css/main.9fbe636b.chunk.css.map": "/static/css/main.9fbe636b.chunk.css.map",
     "static/js/2.13b33fdf.chunk.js.LICENSE.txt": "/static/js/2.13b33fdf.chunk.js.LICENSE.txt",
     "static/js/3.0d770ab6.chunk.js.LICENSE.txt": "/static/js/3.0d770ab6.chunk.js.LICENSE.txt",
     "static/js/4.8cc19b9d.chunk.js.LICENSE.txt": "/static/js/4.8cc19b9d.chunk.js.LICENSE.txt",
-    "static/js/main.8b0f7abe.chunk.js.LICENSE.txt": "/static/js/main.8b0f7abe.chunk.js.LICENSE.txt",
+    "static/js/main.77be6ae4.chunk.js.LICENSE.txt": "/static/js/main.77be6ae4.chunk.js.LICENSE.txt",
     "static/media/BioCloud.png": "/static/media/BioCloud.b0725c67.png",
     "static/media/CoreValues.jpg": "/static/media/CoreValues.b3001e7f.jpg",
     "static/media/Flyer_BTS_Front_edited.jpg": "/static/media/Flyer_BTS_Front_edited.0d9faf18.jpg",
@@ -78,7 +78,7 @@
     "static/js/runtime-main.ef8e12ad.js",
     "static/css/2.2de20895.chunk.css",
     "static/js/2.13b33fdf.chunk.js",
-    "static/css/main.c742386e.chunk.css",
-    "static/js/main.8b0f7abe.chunk.js"
+    "static/css/main.9fbe636b.chunk.css",
+    "static/js/main.77be6ae4.chunk.js"
   ]
 }
