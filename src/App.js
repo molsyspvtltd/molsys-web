@@ -195,6 +195,7 @@ import WorkshopRegistration from "./Pages/WorkshopRegistrationPage";
 import Privacypolicy from "./Pages/Privacypolicy";
 import { Route, Switch, Redirect , HashRouter , useLocation} from 'react-router-dom';
 import FloatingButton from './component/FloatingButton'; // Import FloatingButton
+import Analysisform from './Pages/Analysisform';
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -275,6 +276,7 @@ function App() {
           <Route path="/DataAnalysisform" component={DataAnalysisform} />
           <Route path="/notification" component={notification} />
           <Route path="/WorkshopRegistration" component={WorkshopRegistration} />
+          <Route path="/Analysisform" component={Analysisform} />
         </Switch>
       </HashRouter>
 
