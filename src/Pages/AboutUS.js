@@ -303,7 +303,7 @@ function AboutUs() {
                         </ul>
                     </div>
                     <div class="team-content" style={{
-    display: 'flex',
+    display: 'flex', 
     flexDirection: 'column',
     alignItems: 'center',
     textAlign: 'center'
