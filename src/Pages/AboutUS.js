@@ -288,32 +288,36 @@ function AboutUs() {
 		</div>
 	</div>			
   <div class="container mt-5 pt-5">				
-      <div class="section-title text-center mt-4">
-			<h1>SCIENTIFIC ADVISORY</h1>
-
-      <div class="row text-center mt-5 pt-5">
-				
-			<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
-				<div class="our-team">
-					<div class="team_img">
-					<img src={keshav} alt="team-image" style={{height: 300}}/>
-						<ul class="social">
-                            <li><a href="#"><i ><TwitterIcon/></i></a></li>
-							<li><a href="mailto:soltions@molsys.in"><i ><MailIcon/></i></a></li>
-							<li><a href="https://www.linkedin.com/in/t-s-keshava-prasad-b445b514/"><i ><LinkedInIcon/></i></a></li>
-						</ul>
-					</div>
-					<div class="team-content">
-						<h3 class="title">Dr. Keshava Prasad</h3>
-						<span class="post">Omics Expert<br></br>Deputy Director, Yenepoya Research Centre, Yenepoya University, INDIA</span>
-					</div>
-				</div>
-			</div>	
-				
-		</div>
-      
-      </div>
-      </div>
+        <div class="section-title text-center">
+            <h1>SCIENTIFIC ADVISORY</h1>
+        </div>
+        <div class="row justify-content-center mt-5 pt-3"> {/* Added justify-content-center */}
+            <div class="col-md-6 col-lg-4 col-sm-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
+                <div class="our-team">
+                    <div class="team_img">
+                        <img src={keshav} alt="team-image" style={{height: 300}}/>
+                        <ul class="social">
+                            <li><a href="#"><i><TwitterIcon/></i></a></li>
+                            <li><a href="mailto:soltions@molsys.in"><i><MailIcon/></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/t-s-keshava-prasad-b445b514/"><i><LinkedInIcon/></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="team-content" style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    textAlign: 'center'
+}}>
+    <h3 class="title" style={{width: '100%'}}>Dr. Keshava Prasad</h3>
+    <span class="post" style={{
+        width: '100%',
+        padding: '0 15px'
+    }}>Omics Expert<br></br>Deputy Director, Yenepoya Research Centre, Yenepoya University, INDIA</span>
+</div>
+                </div>
+            </div>	
+        </div>
+        </div>
 </section>
 
 
