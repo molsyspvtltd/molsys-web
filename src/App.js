@@ -139,7 +139,7 @@
 
 //         </Switch>
 //         <Footer />
-        
+
 //         <AppNotificationComponent/>
 
 
@@ -193,9 +193,12 @@ import notification from './shared/notification/notificationpopup';
 import Careers from "./Pages/Careers";
 import WorkshopRegistration from "./Pages/WorkshopRegistrationPage";
 import Privacypolicy from "./Pages/Privacypolicy";
-import { Route, Switch, Redirect , HashRouter , useLocation} from 'react-router-dom';
+import { Route, Switch, Redirect, HashRouter, useHistory, useLocation } from 'react-router-dom';
 import FloatingButton from './component/FloatingButton'; // Import FloatingButton
 import Analysisform from './Pages/Analysisform';
+import CancerTestDashboard from './component/CancerTestDashboard';
+import CancerTestForm from './component/CancerTestForm';
+
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -218,6 +221,7 @@ function App() {
   const { user, token, isLoggedIn, roles } = useSelector(state => state.auth);
 
   const auth = { user, token, isLoggedIn, roles }
+  const history = useHistory();
   const location = useLocation();
 
   let homePage = '/home';
@@ -237,7 +241,7 @@ function App() {
       {/* {isLoggedIn && <Drawer />} */}
       <ConfirmMessageComponent />
       {location.pathname === "/home" && <FloatingButton />}
-      
+
       {/* Using HashRouter for routing */}
       <HashRouter>
         <Switch>
@@ -277,9 +281,10 @@ function App() {
           <Route path="/notification" component={notification} />
           <Route path="/WorkshopRegistration" component={WorkshopRegistration} />
           <Route path="/Analysisform" component={Analysisform} />
+          <Route path="/cancer" component={CancerTestDashboard} />
+          <Route path="/request-test" component={CancerTestForm} />
         </Switch>
       </HashRouter>
-
       <Footer />
       <AppNotificationComponent />
     </React.Fragment>
