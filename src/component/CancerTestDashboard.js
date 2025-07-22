@@ -34,7 +34,7 @@ const testData = [
         "Clinical Utility": "Identifies HRD+ patients (including those with non-BRCA HRD) who benefit from PARP inhibitors; recognized by ASCO guidelines.",
         "Use Case Scenario": "determine Homologous Recombination Deficiency (HRD) status for PARP inhibitor eligibility",
         "Target Cancer Type(s)": "Ovarian Cancer",
-        "Cost": "5.1 L"
+        "Cost": "5.5 L"
     },
     {
         "Test Name": "MyRisk Germline Test",
@@ -64,7 +64,7 @@ const testData = [
         "Clinical Utility": "Predicts prostate cancer aggressiveness\nIdentifies candidates for active surveillance\nGuides decisions on single-modal vs. multi-modal therapy\nInforms ADT discussions",
         "Use Case Scenario": "Determining appropriateness of active surveillance (aggressiveness); guiding intensity of primary treatment (surgery/radiation); assessing benefit of ADT.",
         "Target Cancer Type(s)": "Prostate Cancer",
-        "Cost": "4.1 L"
+        "Cost": "5.5 L"
     }
 ];
 
