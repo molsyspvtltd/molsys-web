@@ -64,7 +64,7 @@ const testData = [
         "Clinical Utility": "Predicts prostate cancer aggressiveness\nIdentifies candidates for active surveillance\nGuides decisions on single-modal vs. multi-modal therapy\nInforms ADT discussions",
         "Use Case Scenario": "Determining appropriateness of active surveillance (aggressiveness); guiding intensity of primary treatment (surgery/radiation); assessing benefit of ADT.",
         "Target Cancer Type(s)": "Prostate Cancer",
-        "Cost": "5.5 L"
+        "Cost": "4.5 L"
     }
 ];
 
