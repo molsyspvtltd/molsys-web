@@ -10,9 +10,15 @@ import Machineimagesssss from "../assets/BioCloud.png";
 import Flyres from '../assets/Flyer_BTS_Front_edited.jpg';
 import { Link } from 'react-router-dom';
 
+// const paragraphStyle = {
+//   textAlign: 'justify',
+// };
+
 const paragraphStyle = {
-  textAlign: 'justify',
-};
+    color: '#666',
+    lineHeight: '1.6',
+    fontSize: '0.9rem'
+  };
 
 const dataList = [
         {
@@ -793,90 +799,215 @@ function Market() {
         return categoryData;
       });
       console.log(subcategoryData);
-    return (
-    <section className="team_member pt-4 fade-in">
-      {/* Marketplace */}
+//     return (
+//     <section className="team_member pt-4 fade-in">
+//       {/* Marketplace */}
 
-      <div class="box bg-light">
-        <div class="container-fluid">
-          <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner shadow p-3 mb-5 bg-white rounded mt-5">
-            <div class="carousel-item active border border-white" data-bs-interval="3000">
-            <img
+//       <div class="box bg-light">
+//         <div class="container-fluid">
+//           <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+//             <div class="carousel-inner shadow p-3 mb-5 bg-white rounded mt-5">
+//             <div class="carousel-item active border border-white" data-bs-interval="3000">
+//             <img
+//                   src="https://static.wixstatic.com/media/2a386e_8ccbfe258a25486a9b2c962dad9f751a~mv2.png/v1/fill/w_1279,h_478,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/2a386e_8ccbfe258a25486a9b2c962dad9f751a~mv2.png"
+//                   class="w-100 h-80"
+//                   alt="..."
+//                 />
+//               </div>
+//               <div class="carousel-item border border-white" data-bs-interval="3000">
+//                 <img
+//                   src="https://static.wixstatic.com/media/2a386e_a506121d81164ee0ae85562f8082c9d9~mv2.png/v1/fill/w_1279,h_478,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/2a386e_a506121d81164ee0ae85562f8082c9d9~mv2.png"
+//                   class="w-100 h-80"
+//                   alt="..."
+//                 />
+//               </div>
+//               <div class="carousel-item border border-white" data-bs-interval="3000">
+//                 <img
+//                   src="https://static.wixstatic.com/media/2a386e_f5835bea47164a3885cc0dd2486943ee~mv2.png/v1/fill/w_1279,h_478,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/2a386e_f5835bea47164a3885cc0dd2486943ee~mv2.png"
+//                   class="w-100 h-80"
+//                   alt="..."
+//                 />
+//               </div>
+//               <div class="carousel-item border border-white" data-bs-interval="3000">
+//                 <img src={Flyres} class="w-100 h-80" alt="..."/>
+//               </div>
+//             </div>
+//             <button
+//               class="carousel-control-prev"
+//               type="button"
+//               data-bs-target="#carouselExampleFade"
+//               data-bs-slide="prev"
+//             >
+//               <span
+//                 class="carousel-control-prev-icon"
+//                 aria-hidden="true"
+//               ></span>
+//               <span class="visually-hidden">Previous</span>
+//             </button>
+//             <button
+//               class="carousel-control-next"
+//               type="button"
+//               data-bs-target="#carouselExampleFade"
+//               data-bs-slide="next"
+//             >
+//               <span
+//                 class="carousel-control-next-icon"
+//                 aria-hidden="true"
+//               ></span>
+//               <span class="visually-hidden">Next</span>
+//             </button>
+//           </div>
+//         </div>
+
+//         <div class="container">
+//           <div class="rows">
+//             <div class="col-lg-5">
+//               <div class="section-title">
+//                 <h2>What We Provide</h2>
+//                 <p class="mx-3">
+//                   Complete Solutions for Next-Generation Technologies !
+//                 </p>
+//               </div>
+//             </div>
+//           </div>
+//           <div class="row">
+//             <div class="col-sm-6 col-lg-4">
+//               <div class="feature-box-1">
+//                 <a href="/OligosForm" target="_blank" class="btn">
+//                   <div class="icon">
+//                     <Icon.Activity
+//                       style={{ height: "80px", width: "80px", color: "gold" }}
+//                     />
+//                     {/* <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs mx-3" style={{height: '100px',width: '100px'}} alt="" /> */}
+//                   </div>
+//                   <div class="feature-content mt-4">
+//                     <h5>OLIGOS SYNTHESIS SERVICES</h5>
+//                     <p style={paragraphStyle}>
+//                       Welcome to our premier Custom Oligo Synthesis Service,
+//                       your one-stop destination for tailor-made DNA and RNA
+//                       sequences. Our cutting-edge technology and expert
+//                       scientists ensure precise results.
+//                     </p>
+//                   </div>
+//                 </a>
+//               </div>
+//             </div>
+           
+//             {categoryNames.map((category, categoryIndex) => (
+//   <div key={categoryIndex}>
+//     <div className="section-title text-center">
+//       <h1 className="display-4 mt-5">{category}</h1>
+//     </div>
+//     <div className="row ">
+//     {subcategoryData[categoryIndex].subcategories.map((subdata, subIndex) => (
+//       <div className={`col-sm-6 col-lg-4  mb-5 feature-box-${categoryIndex + 1}`} key={subIndex}>
+//         <div>
+//         <a href={getSubcategoryHref(subdata.subcategoryName)} onClick={()=>{
+//               const data = subdata.products;
+//               console.log(data);
+//               const productString = JSON.stringify(data);
+//               localStorage.setItem('product',  productString); 
+//               // sessionStorage.setItem('product', productString);
+//             }} target="_blank" className="btn">
+//               <div className="icon">
+//               {getIconForCategory(categoryIndex)}
+//               </div>
+//               <div className="feature-content mt-4">
+//                 <h5>{subdata.subcategoryName}</h5>
+//                 <p class="mt-3" style={paragraphStyle}>{subdata.description}</p>
+//               </div>
+//             </a>
+//         </div>
+//       </div>
+//     ))}
+//     </div>
+//   </div>
+// ))}
+
+//             {/* card end here */}
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+
+return (
+    <section className="team_member pt-4 fade-in">
+      {/* Marketplace Carousel */}
+      <div className="box bg-light">
+        <div className="container-fluid px-0">
+          <div id="marketplaceCarousel" className="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div className="carousel-inner shadow p-3 mb-5 bg-white rounded mt-5">
+              <div className="carousel-item active border border-white" data-bs-interval="3000">
+                <img
                   src="https://static.wixstatic.com/media/2a386e_8ccbfe258a25486a9b2c962dad9f751a~mv2.png/v1/fill/w_1279,h_478,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/2a386e_8ccbfe258a25486a9b2c962dad9f751a~mv2.png"
-                  class="w-100 h-80"
-                  alt="..."
+                  className="d-block w-100 carousel-img"
+                  alt="Marketplace Banner 1"
                 />
               </div>
-              <div class="carousel-item border border-white" data-bs-interval="3000">
+              <div className="carousel-item border border-white" data-bs-interval="3000">
                 <img
                   src="https://static.wixstatic.com/media/2a386e_a506121d81164ee0ae85562f8082c9d9~mv2.png/v1/fill/w_1279,h_478,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/2a386e_a506121d81164ee0ae85562f8082c9d9~mv2.png"
-                  class="w-100 h-80"
-                  alt="..."
+                  className="d-block w-100 carousel-img"
+                  alt="Marketplace Banner 2"
                 />
               </div>
-              <div class="carousel-item border border-white" data-bs-interval="3000">
+              <div className="carousel-item border border-white" data-bs-interval="3000">
                 <img
                   src="https://static.wixstatic.com/media/2a386e_f5835bea47164a3885cc0dd2486943ee~mv2.png/v1/fill/w_1279,h_478,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/2a386e_f5835bea47164a3885cc0dd2486943ee~mv2.png"
-                  class="w-100 h-80"
-                  alt="..."
+                  className="d-block w-100 carousel-img"
+                  alt="Marketplace Banner 3"
                 />
               </div>
-              <div class="carousel-item border border-white" data-bs-interval="3000">
-                <img src={Flyres} class="w-100 h-80" alt="..."/>
+              <div className="carousel-item border border-white" data-bs-interval="3000">
+                <img src={Flyres} className="d-block w-100 carousel-img" alt="Marketplace Banner 4"/>
               </div>
             </div>
             <button
-              class="carousel-control-prev"
+              className="carousel-control-prev"
               type="button"
-              data-bs-target="#carouselExampleFade"
+              data-bs-target="#marketplaceCarousel"
               data-bs-slide="prev"
             >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Previous</span>
+              <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span className="visually-hidden">Previous</span>
             </button>
             <button
-              class="carousel-control-next"
+              className="carousel-control-next"
               type="button"
-              data-bs-target="#carouselExampleFade"
+              data-bs-target="#marketplaceCarousel"
               data-bs-slide="next"
             >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Next</span>
+              <span className="carousel-control-next-icon" aria-hidden="true"></span>
+              <span className="visually-hidden">Next</span>
             </button>
           </div>
         </div>
 
-        <div class="container">
-          <div class="rows">
-            <div class="col-lg-5">
-              <div class="section-title">
-                <h2>What We Provide</h2>
-                <p class="mx-3">
-                  Complete Solutions for Next-Generation Technologies !
+        {/* Marketplace Content */}
+        <div className="container py-4">
+          <div className="row">
+            <div className="col-12">
+              <div className="section-title text-center mb-5">
+                <h2 className="display-5 fw-bold">What We Provide</h2>
+                <p className="lead mx-5 mt-3">
+                  Complete Solutions for Next-Generation Technologies!
                 </p>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-sm-6 col-lg-4">
-              <div class="feature-box-1">
-                <a href="/OligosForm" target="_blank" class="btn">
-                  <div class="icon">
-                    <Icon.Activity
-                      style={{ height: "80px", width: "80px", color: "gold" }}
-                    />
-                    {/* <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs mx-3" style={{height: '100px',width: '100px'}} alt="" /> */}
+          
+          <div className="row g-4">
+            {/* Oligos Synthesis Services Card */}
+            <div className="col-sm-6 col-lg-4">
+              <div className="feature-card h-100 d-flex flex-column">
+                <a href="/OligosForm" className="card-link h-100 d-flex flex-column text-decoration-none">
+                  <div className="icon-wrapper text-center my-3">
+                    <Icon.Activity className="icon-feature" />
                   </div>
-                  <div class="feature-content mt-4">
-                    <h5>OLIGOS SYNTHESIS SERVICES</h5>
-                    <p style={paragraphStyle}>
+                  <div className="card-body flex-grow-1 d-flex flex-column">
+                    <h5 className="card-title text-center mb-3">OLIGOS SYNTHESIS SERVICES</h5>
+                    <p className="card-text flex-grow-1">
                       Welcome to our premier Custom Oligo Synthesis Service,
                       your one-stop destination for tailor-made DNA and RNA
                       sequences. Our cutting-edge technology and expert
@@ -886,44 +1017,42 @@ function Market() {
                 </a>
               </div>
             </div>
-           
+            
+            {/* Dynamic Category Cards */}
             {categoryNames.map((category, categoryIndex) => (
-  <div key={categoryIndex}>
-    <div className="section-title text-center">
-      <h1 className="display-4 mt-5">{category}</h1>
-    </div>
-    <div className="row ">
-    {subcategoryData[categoryIndex].subcategories.map((subdata, subIndex) => (
-      <div className={`col-sm-6 col-lg-4  mb-5 feature-box-${categoryIndex + 1}`} key={subIndex}>
-        <div>
-        <a href={getSubcategoryHref(subdata.subcategoryName)} onClick={()=>{
-              const data = subdata.products;
-              console.log(data);
-              const productString = JSON.stringify(data);
-              localStorage.setItem('product',  productString); 
-              // sessionStorage.setItem('product', productString);
-            }} target="_blank" className="btn">
-              <div className="icon">
-              {getIconForCategory(categoryIndex)}
-              </div>
-              <div className="feature-content mt-4">
-                <h5>{subdata.subcategoryName}</h5>
-                <p class="mt-3" style={paragraphStyle}>{subdata.description}</p>
-              </div>
-            </a>
-        </div>
-      </div>
-    ))}
-    </div>
-  </div>
-))}
-
-            {/* card end here */}
+              <React.Fragment key={categoryIndex}>
+                <div className="col-12 mt-5">
+                  <h3 className="section-heading text-center mb-4">{category}</h3>
+                </div>
+                
+                {subcategoryData[categoryIndex]?.subcategories?.map((subdata, subIndex) => (
+                  <div className="col-sm-6 col-lg-4" key={subIndex}>
+                    <div className={`feature-card h-100 d-flex flex-column`}>
+                      <a 
+                        href={getSubcategoryHref(subdata.subcategoryName)}
+                        className="card-link h-100 d-flex flex-column text-decoration-none"
+                      >
+                        <div className="icon-wrapper text-center my-3">
+                          {getIconForCategory(categoryIndex)}
+                        </div>
+                        <div className="card-body flex-grow-1 d-flex flex-column">
+                          <h5 className="card-title text-center mb-3">{subdata.subcategoryName}</h5>
+                          <p className="card-text flex-grow-1">
+                            {subdata.description}
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </React.Fragment>
+            ))}
           </div>
         </div>
       </div>
     </section>
   );
+
 }
 
 export default Market;
