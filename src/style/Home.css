@@ -1,27 +1,174 @@
+.publications-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 3rem;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
 
-/* Hover - Publication */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.publications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
 .publication-item {
-    transition: background-color 0.1s ease, font-weight 0.1s ease; 
-  }
-  
-  .publication-item:hover {
-    background-color: #eafff6; 
-    font-weight: bold; 
-  }
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1s ease-in-out forwards;
-  }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: white;
+  border-left: 3px solid transparent;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.publication-item:hover {
+  transform: translateY(-2px);
+  border-left: 3px solid #3498db;
+  /* Changed to blue accent */
+}
+
+.publication-link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #34495e;
+  outline: none;
+}
+
+.publication-link:focus {
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.5);
+}
+
+.publication-link:hover {
+  color: #3498db;
+  /* Change text color on hover */
+}
+.publication-link:hover .publication-title {
+  text-decoration: underline;
+  /* Add underline on hover */
+}
 
 
+.publication-title {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.publication-meta {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .publications-container {
+    padding: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .publication-item {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .publications-section {
+    padding: 3rem 0;
+  }
+
+  .publication-title {
+    font-size: 1rem;
+  }
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+}
+
+.trusted-clients-section {
+  text-align: center;
+}
+
+.trusted-clients-section .container {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Accelerators & Mentors Section */
+.accelerators-mentors-section {
+  padding: 3rem 1.5rem;
+  margin-top: 3rem;
+}
+
+.mentors-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.mentor-image-container {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.mentor-image-container:hover {
+  transform: translateY(-5px);
+}
+
+.mentor-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .accelerators-mentors-section {
+    padding: 2rem 1rem;
+  }
+
+  .mentor-image-container {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  .mentors-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .mentor-image-container {
+    width: 180px;
+    height: 180px;
+  }
+}

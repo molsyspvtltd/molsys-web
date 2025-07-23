@@ -14,6 +14,7 @@ const CancerTestForm = () => {
         phone: '',
         location: '',
         selectedTest: '',
+        referredBy: '',
         agreeToContact: false
     });
 
@@ -49,6 +50,8 @@ const CancerTestForm = () => {
         if (!formData.phone || !/^\d{10}$/.test(formData.phone)) newErrors.phone = 'Please enter a valid 10-digit phone number';
         if (!formData.location.trim()) newErrors.location = 'Location is required';
         if (!formData.selectedTest) newErrors.selectedTest = 'Please select a test';
+        if (!formData.referredBy.trim()) newErrors.referredBy = 'This field is required';
+
         if (!formData.agreeToContact) newErrors.agreeToContact = 'You must agree to be contacted';
 
         setErrors(newErrors);
@@ -73,6 +76,7 @@ const CancerTestForm = () => {
                 gender: formData.gender,
                 location: formData.location,
                 selected_test: formData.selectedTest,
+                referred_by: formData.referredBy,
                 message: `New genetic test consultation request for ${formData.selectedTest}`
             };
 
@@ -97,6 +101,7 @@ const CancerTestForm = () => {
                         phone: '',
                         location: '',
                         selectedTest: '',
+                        referredBy: '',
                         agreeToContact: false
                     });
                 })
@@ -260,6 +265,21 @@ const CancerTestForm = () => {
                         </select>
                         {errors.selectedTest && <span className="error-message">{errors.selectedTest}</span>}
                     </div>
+
+                    <div className="form-group">
+                        <label htmlFor="referredBy">Referred By Doctor*</label>
+                        <input
+                            type="text"
+                            id="referredBy"
+                            name="referredBy"
+                            value={formData.referredBy}
+                            onChange={handleChange}
+                            className={errors.referredBy ? 'error' : ''}
+                            placeholder="Enter doctor's name or clinic"
+                        />
+                        {errors.referredBy && <span className="error-message">{errors.referredBy}</span>}
+                    </div>
+                    
                 </div>
 
                 <div className="form-group checkbox-group">
