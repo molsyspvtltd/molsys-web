@@ -190,78 +190,67 @@ class Home extends React.Component {
 
 
         {/* Section3 - Categories */}
-        <section className='section2'>
-          <div className="container-fluid mt-5 mb-5 pt-4 text-center">
-            <h2>CATEGORIES</h2>
-            <div className='underline mx-auto'></div>
-
-            {/* Responsive layout for mobile view */}
-            <div className="d-md-none"> {/* This class hides the content on medium and larger screens */}
-              <div className="row mt-4">
-                <div className="col">
-                  <Link to="/market">
-                    <button type="button" className="btn btn-dark shadow mt-2">DATA GENERATION SERVICES</button>
-                  </Link>
-                </div>
-              </div>
-              <div className="row mt-3">
-                <div className="col">
-                  <Link to="/market">
-                    <button type="button" className="btn btn-dark shadow mt-2">GENOME DATA ANALYTICS</button>
-                  </Link>
-                </div>
-              </div>
-              <div className="row mt-3">
-                <div className="col">
-                  <Link to="/market">
-                    <button type="button" className="btn btn-dark shadow mt-2">CONTRACT R&D</button>
-                  </Link>
-                </div>
-              </div>
-              <div className="row mt-3">
-                <div className="col">
-                  <Link to="/g-cell">
-                    <button type="button" className="btn btn-dark shadow mt-2">EDUCATION AND EMPOWERMENT</button>
-                  </Link>
-                </div>
-              </div>
+        <section className='categories-section'>
+          <div className="container-fluid categories-container">
+            <div className="text-center">
+              <h2 className="categories-title">CATEGORIES</h2>
+              <div className="title-underline"></div>
             </div>
 
+            <div className="categories-grid">
+              {/* Data Generation Services */}
+              <div className="category-card">
+                <div className="category-content">
+                  <h3 className="category-title">DATA GENERATION SERVICES</h3>
+                  <p className="category-description">Molsys Private Limited (Molsys Scientific) offers services for High-Throughput technologies including genomics, transcriptomics, epigenomics, genotyping and metagenomics with large scale primary and secondary analysis.</p>
+                  <Link to="/market" className="category-link">
+                    <button type="button" className="category-btn">Read More</button>
+                  </Link>
+                </div>
+                <div className="category-image">
+                  <img src={Sequencingservice} alt="Data Generation Services" className="img-fluid" />
+                </div>
+              </div>
 
-            {/* Original layout for larger screens */}
-            <div className="d-none d-md-block"> {/* This class hides the content on small screens */}
-              <div className="row row-cols-2 mt-5 me-5 ms-5">
-                <div className="col  p-5 ">
-                  <h3>DATA GENERATION SERVICES</h3>
-                  <p>Molsys Private Limited (Molsys Scientific) offers services for High-Throughput technologies including genomics, transcriptomics, epigenomics, genotyping and metagenomics with large scale primary and secondary analysis.</p>
-                  <Link to="/market">
-                    <button type="button" class="btn btn-dark shadow mt-4 ">Read More..</button></Link>
+              {/* Genome Data Analytics */}
+              <div className="category-card reverse">
+                <div className="category-content">
+                  <h3 className="category-title">GENOME DATA ANALYTICS</h3>
+                  <p className="category-description">Dedicated to assisting clinicians and scientists to unlock the mysteries hidden in the genome.</p>
+                  <Link to="/market" className="category-link">
+                    <button type="button" className="category-btn">Read More</button>
+                  </Link>
                 </div>
-                <div className="col  p-5"><img className="rounded shadow" src={Sequencingservice} height={250} width={500} /></div>
-                <div className="col  p-5"><img className="rounded shadow" src={Genomdata} height={250} width={500} /></div>
-                <div className="col  p-5">
-                  <h3>GENOME DATA ANALYTICS</h3>
-                  <p>Dedicated to assisting clinicians and scientists to unlock the mysteries  hidden in the genome</p>
-                  <Link to="/market">
-                    <button type="button" class="btn btn-dark shadow mt-4 ">Read More..</button></Link>
+                <div className="category-image">
+                  <img src={Genomdata} alt="Genome Data Analytics" className="img-fluid" />
                 </div>
-                <div className="col  p-5">
-                  <h3>CONTRACT R&D</h3>
-                  <p>Our Research Scientists are involved in cutting edge research to develop novel, highly specific and efficacious anti-cancer molecules.</p>
-                  <Link to="/market">
-                    <button type="button" className="btn btn-dark shadow mt-4 ">Read More..</button></Link>
+              </div>
+
+              {/* Contract R&D */}
+              <div className="category-card">
+                <div className="category-content">
+                  <h3 className="category-title">CONTRACT R&D</h3>
+                  <p className="category-description">Our Research Scientists are involved in cutting edge research to develop novel, highly specific and efficacious anti-cancer molecules.</p>
+                  <Link to="/market" className="category-link">
+                    <button type="button" className="category-btn">Read More</button>
+                  </Link>
                 </div>
-                <div className="col  p-5">
-                  <img className="rounded shadow" src={ResearAndDevelop} height={250} width={500} />
+                <div className="category-image">
+                  <img src={ResearAndDevelop} alt="Contract R&D" className="img-fluid" />
                 </div>
-                <div className="col  p-5">
-                  <img className="rounded shadow" src={EducationDevelopment} height={250} width={500} />
+              </div>
+
+              {/* Education and Empowerment */}
+              <div className="category-card reverse">
+                <div className="category-content">
+                  <h3 className="category-title">EDUCATION AND EMPOWERMENT</h3>
+                  <p className="category-description">The most critical information is obtained from the DNA sequence and thus generating unprecedented amounts of data with regards to genetic information.</p>
+                  <Link to="/g-cell" className="category-link">
+                    <button type="button" className="category-btn">Read More</button>
+                  </Link>
                 </div>
-                <div className="col  p-5">
-                  <h3>EDUCATION AND EMPOWERMENT</h3>
-                  <p>The most critical information is obtained from the DNA sequence and thus generating unprecedented amounts of data with regards to genetic information.</p>
-                  <Link to="/g-cell">
-                    <button type="button" className="btn btn-dark shadow mt-4 ">Read More..</button></Link>
+                <div className="category-image">
+                  <img src={EducationDevelopment} alt="Education and Empowerment" className="img-fluid" />
                 </div>
               </div>
             </div>
@@ -270,7 +259,7 @@ class Home extends React.Component {
 
         {/* section 3 publications */}
 
-         <section className="publications-section">
+        <section className="publications-section">
           <div className="container">
             <div className="publications-container">
               <h2 className="section-title">PUBLICATIONS</h2>
