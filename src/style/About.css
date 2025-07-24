@@ -395,11 +395,11 @@ margin-top:60px;
 .team-info h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: white;
+  color: black;
 }
 
 .team-info .position {
-  color: #e0e0e0;
+  color: #3e4545;
   font-size: 0.9rem;
   line-height: 1.6;
 }
