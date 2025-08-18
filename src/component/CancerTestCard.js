@@ -17,13 +17,13 @@ const CancerTestCard = ({ test, isExpanded, onToggleExpand }) => {
   };
 
   return (
-    <div 
+    <div
       className={`test-card ${isExpanded ? 'expanded' : ''}`}
       tabIndex="0"
       onClick={handleCardClick}
       onKeyDown={handleKeyDown}
     >
-      <button 
+      <button
         className={`expand-btn ${isExpanded ? 'expanded' : ''}`}
         aria-label={isExpanded ? 'Collapse test details' : 'Expand test details'}
         onClick={(e) => {
@@ -33,7 +33,7 @@ const CancerTestCard = ({ test, isExpanded, onToggleExpand }) => {
       >
         {isExpanded ? '−' : '+'}
       </button>
-      
+
       <div className="test-card-header">
         <h3 className="test-name">{test['Test Name']}</h3>
         <div className="test-meta">
@@ -41,19 +41,28 @@ const CancerTestCard = ({ test, isExpanded, onToggleExpand }) => {
           <span className="test-cost">₹{test.Cost}</span>
         </div>
       </div>
-      
+
       <div className="test-card-body">
         <div className="test-summary">
           <h4>Clinical Utility</h4>
           <p>{test['Clinical Utility']}</p>
         </div>
-        
+
+        <div className="test-meta-additional">
+          {test['Turnaround Time'] && (
+            <div className="meta-item">
+              <span className="meta-label">Turnaround:</span>
+              <span className="meta-value">{test['Turnaround Time']}</span>
+            </div>
+          )}
+        </div>
+
         <div className="cancer-types">
           {cancerTypes.map((type, index) => (
             <span key={index} className="cancer-type">{type}</span>
           ))}
         </div>
-        
+
         <div className={`test-details ${isExpanded ? 'expanded' : ''}`}>
           <div className="detail-section">
             <h5>Best Fit Oncologist</h5>
@@ -64,12 +73,12 @@ const CancerTestCard = ({ test, isExpanded, onToggleExpand }) => {
               </React.Fragment>
             ))}</p>
           </div>
-          
+
           <div className="detail-section">
             <h5>Genetic Information Analyzed</h5>
             <p>{test['Genetic Information Analyzed']}</p>
           </div>
-          
+
           <div className="detail-section">
             <h5>Use Case Scenario</h5>
             <p>{test['Use Case Scenario'].split('\n').map((line, i) => (

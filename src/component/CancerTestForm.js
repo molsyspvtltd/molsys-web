@@ -25,7 +25,29 @@ const CancerTestForm = () => {
         { name: "myChoice CDx", type: "Tumor Diagnostic (HRD)" },
         { name: "MyRisk Germline Test", type: "Germline Multi-Gene Panel" },
         { name: "MyRisk Hereditary Cancer Risk Test", type: "Germline Multi-Gene Panel" },
-        { name: "Prolaris", type: "Tumor Prognostic" }
+        { name: "Prolaris", type: "Tumor Prognostic" },
+        { name: "Positive Select Flex (Solid biopsy)", type: "NGS Panel" },
+        { name: "Positive Select Flex (Liquid biopsy)", type: "NGS Panel" },
+        { name: "Positive Select Lite (Solid/Liquid biopsy)", type: "NGS Panel" },
+        { name: "Positive Select Plus (Solid biopsy)", type: "Comprehensive NGS Panel" },
+        { name: "Positive Select Single Gene (Solid biopsy)", type: "Single Gene Analysis" },
+        { name: "TMB", type: "NGS" },
+        { name: "MSI", type: "NGS" },
+        { name: "HRR (Solid biopsy)", type: "NGS" },
+        { name: "PDL1 (Solid biopsy)", type: "IHC" },
+        { name: "HER2 (Solid biopsy)", type: "IHC" },
+        { name: "ER & PR (Solid biopsy)", type: "IHC" },
+        { name: "MMR (Solid biopsy)", type: "IHC" },
+        { name: "HER2 (Solid biopsy)", type: "FISH" },
+        { name: "Clinical Exome", type: "NGS" },
+        { name: "Whole Exome", type: "NGS" },
+        { name: "Whole Genome", type: "NGS" },
+        { name: "MLH1 Promoter Methylation", type: "PCR" },
+        { name: "MGMT Methylation", type: "PCR" },
+        { name: "ALL", type: "NGS" },
+        { name: "CLI", type: "NGS" },
+        { name: "AML", type: "NGS" },
+        { name: "MDS", type: "NGS" }
     ];
 
     const [errors, setErrors] = useState({});
@@ -279,7 +301,7 @@ const CancerTestForm = () => {
                         />
                         {errors.referredBy && <span className="error-message">{errors.referredBy}</span>}
                     </div>
-                    
+
                 </div>
 
                 <div className="form-group checkbox-group">

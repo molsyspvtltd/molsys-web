@@ -8,62 +8,103 @@ const CancerTestFilters = ({ testData, onFilterChange }) => {
   const [sortBy, setSortBy] = useState('name');
   const [testTypes, setTestTypes] = useState([]);
   const [cancerTypes, setCancerTypes] = useState([]);
+  const [selectedTurnaround, setSelectedTurnaround] = useState('');
+  const [uniqueTurnaroundTimes, setUniqueTurnaroundTimes] = useState([]);
 
   useEffect(() => {
     // Initialize filter options
     const uniqueTestTypes = [...new Set(testData.map(test => test['Type of test']))];
     setTestTypes(uniqueTestTypes);
 
+    const turnaroundTimes = [...new Set(testData
+      .map(test => test['Turnaround Time'])
+      .filter(time => time && time.trim() !== '')
+    )].sort();
+    setUniqueTurnaroundTimes(turnaroundTimes);
+
     const allCancerTypes = new Set();
     testData.forEach(test => {
-      test['Target Cancer Type(s)'].split(',').map(type => type.trim()).forEach(type => {
-        if (type) allCancerTypes.add(type);
-      });
+      const types = test['Target Cancer Type(s)'].split(',')
+        .map(type => type.trim())
+        .filter(type => type.length > 0);
+      types.forEach(type => allCancerTypes.add(type));
     });
     setCancerTypes([...allCancerTypes].sort());
   }, [testData]);
 
   useEffect(() => {
     filterTests();
-  }, [searchTerm, selectedTestType, selectedCancerType, sortBy, testData]);
+  }, [searchTerm, selectedTestType, selectedCancerType, sortBy, selectedTurnaround]);
 
-  const parseCost = (costStr) => parseFloat(costStr.replace(' L', ''));
+  const parseCost = (costStr) => {
+    if (!costStr) return 0;
+
+    if (costStr.includes(' L')) {
+      return parseFloat(costStr.replace(' L', '')) * 100000;
+    }
+
+    const numericStr = costStr.replace(/,/g, '');
+    return parseFloat(numericStr) || 0;
+  };
 
   const filterTests = () => {
     let filtered = [...testData];
-    
-    // Apply filters
+
     if (searchTerm) {
       const term = searchTerm.toLowerCase();
-      filtered = filtered.filter(test => 
-        test['Test Name'].toLowerCase().includes(term) ||
-        test['Type of test'].toLowerCase().includes(term) ||
-        test['Clinical Utility'].toLowerCase().includes(term) ||
-        test['Target Cancer Type(s)'].toLowerCase().includes(term) ||
-        test['Use Case Scenario'].toLowerCase().includes(term) ||
-        test['Best Fit Oncologist'].toLowerCase().includes(term) ||
-        test['Genetic Information Analyzed'].toLowerCase().includes(term)
+      filtered = filtered.filter(test =>
+        Object.values(test).some(
+          value => value &&
+            value.toString().toLowerCase().includes(term)
+        )
       );
     }
 
     if (selectedTestType) {
-      filtered = filtered.filter(test => test['Type of test'] === selectedTestType);
-    }
-
-    if (selectedCancerType) {
-      filtered = filtered.filter(test => 
-        test['Target Cancer Type(s)'].toLowerCase().includes(selectedCancerType.toLowerCase())
+      filtered = filtered.filter(test =>
+        test['Type of test'] === selectedTestType
       );
     }
 
-    // Apply sorting
+    if (selectedCancerType) {
+      filtered = filtered.filter(test => {
+        const testCancerTypes = test['Target Cancer Type(s)']
+          .split(',')
+          .map(type => type.trim().toLowerCase());
+        return testCancerTypes.includes(selectedCancerType.toLowerCase());
+      });
+    }
+
+    if (selectedTurnaround) {
+      filtered = filtered.filter(test =>
+        test['Turnaround Time'] === selectedTurnaround
+      );
+    }
+
+    // Improved sorting with secondary criteria
     filtered.sort((a, b) => {
+      let primarySort = 0;
       switch (sortBy) {
-        case 'name': return a['Test Name'].localeCompare(b['Test Name']);
-        case 'cost-low': return parseCost(a.Cost) - parseCost(b.Cost);
-        case 'cost-high': return parseCost(b.Cost) - parseCost(a.Cost);
-        case 'type': return a['Type of test'].localeCompare(b['Type of test']);
-        default: return 0;
+        case 'name':
+          primarySort = a['Test Name'].localeCompare(b['Test Name']);
+          if (primarySort === 0) {
+            return a['Type of test'].localeCompare(b['Type of test']);
+          }
+          return primarySort;
+        case 'cost-low':
+          return parseCost(a.Cost) - parseCost(b.Cost) ||
+            a['Test Name'].localeCompare(b['Test Name']);
+        case 'cost-high':
+          return parseCost(b.Cost) - parseCost(a.Cost) ||
+            a['Test Name'].localeCompare(b['Test Name']);
+        case 'type':
+          primarySort = a['Type of test'].localeCompare(b['Type of test']);
+          if (primarySort === 0) {
+            return a['Test Name'].localeCompare(b['Test Name']);
+          }
+          return primarySort;
+        default:
+          return 0;
       }
     });
 
@@ -74,6 +115,7 @@ const CancerTestFilters = ({ testData, onFilterChange }) => {
     setSearchTerm('');
     setSelectedTestType('');
     setSelectedCancerType('');
+    setSelectedTurnaround('');
     setSortBy('name');
   };
 
@@ -90,11 +132,12 @@ const CancerTestFilters = ({ testData, onFilterChange }) => {
           <input
             type="text"
             className="search-input"
+            placeholder="Search tests..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           {searchTerm && (
-            <button 
+            <button
               className="search-clear visible"
               onClick={() => setSearchTerm('')}
               aria-label="Clear search"
@@ -137,6 +180,20 @@ const CancerTestFilters = ({ testData, onFilterChange }) => {
         </div>
 
         <div className="filter-group">
+          <label className="filter-label">Turnaround Time</label>
+          <select
+            className="filter-select"
+            value={selectedTurnaround}
+            onChange={(e) => setSelectedTurnaround(e.target.value)}
+          >
+            <option value="">Any Time</option>
+            {uniqueTurnaroundTimes.map((time, index) => (
+              <option key={index} value={time}>{time}</option>
+            ))}
+          </select>
+        </div>
+
+        <div className="filter-group">
           <label className="filter-label">Sort By</label>
           <select
             className="filter-select"
@@ -151,7 +208,7 @@ const CancerTestFilters = ({ testData, onFilterChange }) => {
         </div>
 
         <div className="filter-actions">
-          <button 
+          <button
             className="btn btn--secondary"
             onClick={clearFilters}
           >
