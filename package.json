@@ -45,13 +45,14 @@
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
     "test-ci": "react-scripts test a --watchAll=false",
     "test:coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "clean": "rimraf build && rimraf node_modules/.cache",
+    "build": "npm run clean && cross-env NODE_OPTIONS='--max-old-space-size=4096' react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -74,6 +75,7 @@
     "@testing-library/react": "^10.4.8",
     "@testing-library/user-event": "^7.1.2",
     "axios-mock-adapter": "^1.18.2",
+    "cross-env": "^10.0.0",
     "css-mediaquery": "^0.1.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
@@ -81,7 +83,8 @@
     "history": "latest",
     "react-test-renderer": "^16.13.1",
     "redux-devtools-extension": "^2.13.8",
-    "redux-mock-store": "^1.5.4"
+    "redux-mock-store": "^1.5.4",
+    "rimraf": "^6.0.1"
   },
   "jest": {
     "coveragePathIgnorePatterns": [
