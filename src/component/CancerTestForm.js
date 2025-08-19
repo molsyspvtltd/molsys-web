@@ -20,12 +20,12 @@ const CancerTestForm = () => {
 
     // Hardcoded test options
     const testOptions = [
-        { name: "BRACAnalysis CDx", type: "Germline Diagnostic" },
-        { name: "EndoPredict", type: "Tumor Prognostic" },
-        { name: "myChoice CDx", type: "Tumor Diagnostic (HRD)" },
-        { name: "MyRisk Germline Test", type: "Germline Multi-Gene Panel" },
-        { name: "MyRisk Hereditary Cancer Risk Test", type: "Germline Multi-Gene Panel" },
-        { name: "Prolaris", type: "Tumor Prognostic" },
+        // { name: "BRACAnalysis CDx", type: "Germline Diagnostic" },
+        // { name: "EndoPredict", type: "Tumor Prognostic" },
+        // { name: "myChoice CDx", type: "Tumor Diagnostic (HRD)" },
+        // { name: "MyRisk Germline Test", type: "Germline Multi-Gene Panel" },
+        // { name: "MyRisk Hereditary Cancer Risk Test", type: "Germline Multi-Gene Panel" },
+        // { name: "Prolaris", type: "Tumor Prognostic" },
         { name: "Positive Select Flex (Solid biopsy)", type: "NGS Panel" },
         { name: "Positive Select Flex (Liquid biopsy)", type: "NGS Panel" },
         { name: "Positive Select Lite (Solid/Liquid biopsy)", type: "NGS Panel" },
