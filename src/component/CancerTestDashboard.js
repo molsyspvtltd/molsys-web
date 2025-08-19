@@ -495,7 +495,7 @@ const CancerTestDashboard = () => {
                         Request Test Consultation
                     </button>
                     <br></br>
-                    <button
+                    {/* <button
                         className="btn btn--secondary"
                         onClick={() => {
                             document.getElementById('endo-predict-details').scrollIntoView({
@@ -504,7 +504,7 @@ const CancerTestDashboard = () => {
                         }}
                     >
                         Learn About EndoPredict
-                    </button>
+                    </button> */}
                 </div>
             </header>
 
@@ -547,7 +547,7 @@ const CancerTestDashboard = () => {
                     )}
                 </section>
             </main>
-            <EndoPredictDetails />
+            {/* <EndoPredictDetails /> */}
         </div>
     );
 };
