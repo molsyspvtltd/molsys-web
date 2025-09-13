@@ -198,7 +198,8 @@ import FloatingButton from './component/FloatingButton'; // Import FloatingButto
 import Analysisform from './Pages/Analysisform';
 import CancerTestDashboard from './component/CancerTestDashboard';
 import CancerTestForm from './component/CancerTestForm';
-
+import Omics from "./Pages/Omics";
+import Registration from "./Pages/Registration";
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -283,6 +284,8 @@ function App() {
           <Route path="/Analysisform" component={Analysisform} />
           <Route path="/cancer" component={CancerTestDashboard} />
           <Route path="/request-test" component={CancerTestForm} />
+          <Route path="/Omicsworkshop" component={Omics} />
+          <Route path="/OmicsRegistration" component={Registration} />
         </Switch>
       </HashRouter>
       <Footer />
