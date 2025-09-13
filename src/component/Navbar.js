@@ -45,7 +45,7 @@
 
 // function Navbar() {
 //     const classes = useStyles();
-  
+
 //     const renderNavigationItems = () => {
 //       return (
 //         <ul className="navbar-nav me-auto mb-2 mb-lg-0 navbar-light bg-light" style={{ marginLeft: "-50px" }}>
@@ -92,7 +92,7 @@
 //         </ul>
 //       );
 //     };
-  
+
 //     return (
 //       <div>
 //         <nav className="navbar shadow navbar-expand-lg navbar-light bg-light fixed-top">
@@ -116,18 +116,15 @@
 //               <div className="me-auto">
 //               <SearchBar placeholder="Enter your Search..." data={BookData} />
 //             </div>
-              
+
 //             </div>
 //           </div>
 //         </nav>
 //       </div>
 //     );
 //   }
-  
 
 // export default Navbar;
-
-
 
 // import React from "react";
 // import { IconButton, Avatar } from "@material-ui/core";
@@ -176,7 +173,7 @@
 
 // function Navbar() {
 //     const classes = useStyles();
-  
+
 //     const renderNavigationItems = () => {
 //       return (
 //         <ul className="navbar-nav me-auto mb-2 mb-lg-0 navbar-light bg-light d-flex flex-wrap">
@@ -223,7 +220,7 @@
 //         </ul>
 //       );
 //     };
-  
+
 //     return (
 //       <div>
 //         <nav className="navbar shadow navbar-expand-lg navbar-light bg-light fixed-top">
@@ -257,7 +254,7 @@
 //       </div>
 //     );
 //   }
-  
+
 // export default Navbar;
 import React, { useRef } from "react";
 import { IconButton, Avatar } from "@material-ui/core";
@@ -266,8 +263,8 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import BookData from "./Data.json";
 import logo from "../assets/logo.png";
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const useStyles = makeStyles((theme) => ({
   "@global": {
@@ -305,99 +302,119 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Navbar() {
-    const classes = useStyles();
-    const navbarRef = useRef(null);
-  
-    const closeNavbar = () => {
-      if (window.innerWidth < 992) { // 992px is Bootstrap's lg breakpoint
-        const navbarToggler = navbarRef.current.querySelector('.navbar-toggler');
-        const navbarCollapse = navbarRef.current.querySelector('.navbar-collapse');
-        
-        if (navbarToggler && navbarCollapse.classList.contains('show')) {
-          navbarToggler.click(); // This will close the navbar
-        }
+  const classes = useStyles();
+  const navbarRef = useRef(null);
+
+  const closeNavbar = () => {
+    if (window.innerWidth < 992) {
+      // 992px is Bootstrap's lg breakpoint
+      const navbarToggler = navbarRef.current.querySelector(".navbar-toggler");
+      const navbarCollapse =
+        navbarRef.current.querySelector(".navbar-collapse");
+
+      if (navbarToggler && navbarCollapse.classList.contains("show")) {
+        navbarToggler.click(); // This will close the navbar
       }
-    };
-  
-    const renderNavigationItems = () => {
-      return (
-        <ul className="navbar-nav me-auto mb-2 mb-lg-0 navbar-light bg-light d-flex flex-wrap">
-          <li className="nav-item">
-            <Link className="nav-link" aria-current="page" to="/aboutUs" onClick={closeNavbar}>
-              About Us
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" aria-current="page" to="/market" onClick={closeNavbar}>
-              Services
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/contactUs" onClick={closeNavbar}>
-              Contact Us
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="#" onClick={closeNavbar}>
-              MolsysT
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/pms" onClick={closeNavbar}>
-              PMS
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/g-cell" onClick={closeNavbar}>
-              G-Cell
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/OmicsRegistration" onClick={closeNavbar}>
-              Workshops
-            </Link>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="https://dnalyst.in" target="_blank" rel="noopener noreferrer" onClick={closeNavbar}>
-              Dnalyst
-            </a>
-          </li>
-        </ul>
-      );
-    };
-  
+    }
+  };
+
+  const renderNavigationItems = () => {
     return (
-      <div ref={navbarRef}>
-        <nav className="navbar shadow navbar-expand-lg navbar-light bg-light fixed-top">
-          <div className="container-fluid">
-            <Link className="navbar-brand mx-lg-5 mx-2" to="/" onClick={closeNavbar}>
-              <img src={logo} height={35} width={130} alt="Logo" />
-            </Link>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <div className="container-fluid d-flex flex-column flex-lg-row">
-                <div className="w-100">
-                  {renderNavigationItems()}
-                </div>
-                <div className="ms-lg-auto mt-3 mt-lg-0">
-                  <SearchBar placeholder="Enter your Search..." data={BookData} />
-                </div>
+      <ul className="navbar-nav me-auto mb-2 mb-lg-0 navbar-light bg-light d-flex flex-wrap">
+        <li className="nav-item">
+          <Link
+            className="nav-link"
+            aria-current="page"
+            to="/aboutUs"
+            onClick={closeNavbar}
+          >
+            About Us
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link
+            className="nav-link"
+            aria-current="page"
+            to="/market"
+            onClick={closeNavbar}
+          >
+            Services
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/contactUs" onClick={closeNavbar}>
+            Contact Us
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="#" onClick={closeNavbar}>
+            MolsysT
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/pms" onClick={closeNavbar}>
+            PMS
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/g-cell" onClick={closeNavbar}>
+            G-Cell
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/Omicsworkshop" onClick={closeNavbar}>
+            Workshops
+          </Link>
+        </li>
+        <li className="nav-item">
+          <a
+            className="nav-link"
+            href="https://dnalyst.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={closeNavbar}
+          >
+            Dnalyst
+          </a>
+        </li>
+      </ul>
+    );
+  };
+
+  return (
+    <div ref={navbarRef}>
+      <nav className="navbar shadow navbar-expand-lg navbar-light bg-light fixed-top">
+        <div className="container-fluid">
+          <Link
+            className="navbar-brand mx-lg-5 mx-2"
+            to="/"
+            onClick={closeNavbar}
+          >
+            <img src={logo} height={35} width={130} alt="Logo" />
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <div className="container-fluid d-flex flex-column flex-lg-row">
+              <div className="w-100">{renderNavigationItems()}</div>
+              <div className="ms-lg-auto mt-3 mt-lg-0">
+                <SearchBar placeholder="Enter your Search..." data={BookData} />
               </div>
             </div>
           </div>
-        </nav>
-      </div>
-    );
-  }
-  
+        </div>
+      </nav>
+    </div>
+  );
+}
+
 export default Navbar;
