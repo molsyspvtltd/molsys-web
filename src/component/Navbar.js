@@ -353,7 +353,7 @@ function Navbar() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/WorkshopRegistration" onClick={closeNavbar}>
+            <Link className="nav-link" to="/OmicsRegistration" onClick={closeNavbar}>
               Workshops
             </Link>
           </li>
