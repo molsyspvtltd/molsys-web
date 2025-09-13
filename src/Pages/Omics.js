@@ -218,12 +218,28 @@ function Omics() {
                       <>
                         <p>Foundations of Omics & Computational Biology</p>
                         <div className="week-days">
-                          {[1, 2, 3, 4, 5].map((day) => (
-                            <div key={day} className="day">
-                              <h4>Day {day}</h4>
-                              <p>Introduction to Omics and NGS technologies</p>
-                            </div>
-                          ))}
+                          <div className="day">
+                            <h4>Day 1</h4>
+                            <p>Introduction to Omics and NGS technologies</p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 2</h4>
+                            <p>Overview of Computational Biology Techniques</p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 3</h4>
+                            <p>
+                              Public Data Repositories
+                            </p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 4</h4>
+                            <p>Omics Use Case</p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 5</h4>
+                            <p>Review + Hands-on Practice</p>
+                          </div>
                         </div>
                       </>
                     )}
@@ -231,12 +247,26 @@ function Omics() {
                       <>
                         <p>Data Processing & Quality Control</p>
                         <div className="week-days">
-                          {[6, 7, 8, 9, 10].map((day) => (
-                            <div key={day} className="day">
-                              <h4>Day {day}</h4>
-                              <p>Data quality assessment and preprocessing</p>
-                            </div>
-                          ))}
+                          <div className="day">
+                            <h4>Day 6</h4>
+                            <p>Data Quality Issues</p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 7</h4>
+                            <p>FastQC Hands-on</p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 8</h4>
+                            <p>Trimming & Filtering</p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 9</h4>
+                            <p>Data Wrangling for Omics</p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 10</h4>
+                            <p>Exome Analysis Intro</p>
+                          </div>
                         </div>
                       </>
                     )}
@@ -244,15 +274,26 @@ function Omics() {
                       <>
                         <p>Core NGS Pipelines + AI/ML Basics</p>
                         <div className="week-days">
-                          {[11, 12, 13, 14, 15].map((day) => (
-                            <div key={day} className="day">
-                              <h4>Day {day}</h4>
-                              <p>
-                                Read alignment, variant calling, and AI
-                                fundamentals
-                              </p>
-                            </div>
-                          ))}
+                          <div className="day">
+                            <h4>Day 11</h4>
+                            <p>Read Alignment</p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 12</h4>
+                            <p>Variant Calling</p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 13</h4>
+                            <p>Annotation</p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 14</h4>
+                            <p>AI/ML Fundamentals</p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 15</h4>
+                            <p>NLP on Omics</p>
+                          </div>
                         </div>
                       </>
                     )}
@@ -260,15 +301,26 @@ function Omics() {
                       <>
                         <p>AI Application in Omics</p>
                         <div className="week-days">
-                          {[16, 17, 18, 19, 20].map((day) => (
-                            <div key={day} className="day">
-                              <h4>Day {day}</h4>
-                              <p>
-                                Transcriptome analysis and multi-omics
-                                integration
-                              </p>
-                            </div>
-                          ))}
+                          <div className="day">
+                            <h4>Day 16</h4>
+                            <p>Transcriptome Analysis</p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 17</h4>
+                            <p>Diffrential Expression Analysis</p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 18</h4>
+                            <p>Metabolomics Analysis</p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 19</h4>
+                            <p>Multi-omics Integration</p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 20</h4>
+                            <p>Foundation Models & Human-AI Collaboration</p>
+                          </div>
                         </div>
                       </>
                     )}
@@ -276,15 +328,26 @@ function Omics() {
                       <>
                         <p>Advanced Topics, Ethics, & Integration</p>
                         <div className="week-days">
-                          {[21, 22, 23, 24, 25].map((day) => (
-                            <div key={day} className="day">
-                              <h4>Day {day}</h4>
-                              <p>
-                                Cloud computing, containerization, and ethical
-                                AI
-                              </p>
-                            </div>
-                          ))}
+                          <div className="day">
+                            <h4>Day 21</h4>
+                            <p>Cloud Computing </p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 22</h4>
+                            <p>Containerization</p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 23</h4>
+                            <p>Workflow Management</p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 24</h4>
+                            <p>Ethical AI in Genomics</p>
+                          </div>
+                          <div className="day">
+                            <h4>Day 25</h4>
+                            <p>Final project</p>
+                          </div>
                         </div>
                       </>
                     )}
