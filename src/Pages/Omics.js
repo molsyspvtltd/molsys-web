@@ -28,6 +28,7 @@ function Omics() {
             >
               Register Now
             </button>
+            <p>Register Fee : ₹25000 + GST</p>
           </div>
         </div>
       </header>
@@ -393,6 +394,7 @@ function Omics() {
                 <li>TensorFlow</li>
                 <li>WEKA</li>
                 <li>AlphaFold</li>
+                <li>BERT</li>
               </ul>
             </div>
             <div className="tool-category">
