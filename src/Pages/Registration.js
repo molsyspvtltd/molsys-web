@@ -8,6 +8,7 @@ function Registration() {
         lastName: '',
         email: '',
         phone: '',
+        workshopType: '',
         profession: '',
         education: '',
         organization: '',
@@ -45,6 +46,7 @@ function Registration() {
                     lastName: '',
                     email: '',
                     phone: '',
+                    workshopType: '',
                     profession: '',
                     education: '',
                     organization: '',
@@ -120,6 +122,30 @@ function Registration() {
                                     onChange={handleChange}
                                     disabled={isSubmitting}
                                 />
+                            </div>
+                        </div>
+                        <div className="form-row">
+                            <div className="form-group full-width">
+                                <label htmlFor="workshopType">Select Workshop Program *</label>
+                                <select
+                                    id="workshopType"
+                                    name="workshopType"
+                                    value={formData.workshopType}
+                                    onChange={handleChange}
+                                    required
+                                    disabled={isSubmitting}
+                                >
+                                    <option value="">Choose your program</option>
+                                    <option value="Genomics Workshop + Capstone Project (2 weeks)">
+                                        Genomics Workshop
+                                    </option>
+                                    <option value="Advanced AI in Lifesciences + Capstone Project (3 weeks)">
+                                        Advanced AI in Lifesciences
+                                    </option>
+                                    <option value="Complete Program (5 weeks)">
+                                        Complete Program
+                                    </option>
+                                </select>
                             </div>
                         </div>
 

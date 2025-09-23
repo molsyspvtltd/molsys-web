@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Omics.css";
 import { useHistory } from "react-router-dom";
 
@@ -10,25 +10,100 @@ function Omics() {
     setOpenWeek(openWeek === week ? null : week);
   };
 
+  useEffect(() => {
+    // Create particles animation
+    const createParticles = () => {
+      const particlesContainer = document.getElementById('particles');
+      if (!particlesContainer) return;
+
+      particlesContainer.innerHTML = '';
+      
+      for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.width = `${Math.random() * 5 + 2}px`;
+        particle.style.height = particle.style.width;
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+        particle.style.animationDelay = `${Math.random() * 6}s`;
+        particle.style.opacity = Math.random() * 0.5 + 0.1;
+        particlesContainer.appendChild(particle);
+      }
+    };
+
+    // Create pulse circles animation
+    const createPulseCircles = () => {
+      const circlesContainer = document.getElementById('pulseCircles');
+      if (!circlesContainer) return;
+
+      circlesContainer.innerHTML = '';
+      
+      for (let i = 0; i < 8; i++) {
+        const circle = document.createElement('div');
+        circle.className = 'pulse-circle';
+        circle.style.width = `${Math.random() * 300 + 100}px`;
+        circle.style.height = circle.style.width;
+        circle.style.left = `${Math.random() * 100}%`;
+        circle.style.top = `${Math.random() * 100}%`;
+        circle.style.animationDelay = `${Math.random() * 4}s`;
+        circle.style.borderColor = `rgba(255, 255, 255, ${Math.random() * 0.1 + 0.05})`;
+        circlesContainer.appendChild(circle);
+      }
+    };
+
+    createParticles();
+    createPulseCircles();
+
+    // Recreate animations on window resize
+    const handleResize = () => {
+      createParticles();
+      createPulseCircles();
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const handleRegisterClick = () => {
+    history.push("/OmicsRegistration");
+  };
+
   return (
     <div className="App">
       {/* Header Section */}
-      <header className="header">
-        <div className="container">
-          <div className="logo-section">
-            <h1>MOLSYS SCIENTIFIC</h1>
+      <header class="header">
+        <div class="particles" id="particles"></div>
+        <div class="pulse-circles" id="pulseCircles"></div>
+
+        <div class="container">
+          <div class="logo-section">
+            <h1>MOLSYS PVT LTD</h1>
           </div>
-          <div className="hero">
+          <div class="hero">
             <h2>AI-DRIVEN OMICS WORKSHOP:</h2>
             <h3>POWERING THE NEXT ERA OF BIOLOGICAL RESEARCH</h3>
             <p>A 5-WEEK Intensive Program to Decode Genomics with AI & ML</p>
             <button
-              className="cta-button"
+              class="cta-button"
               onClick={() => history.push("/OmicsRegistration")}
             >
               Register Now
             </button>
-            <p>Register Fee : ₹25000 + GST</p>
+
+            <div class="pricing-section">
+              <div class="pricing-option">
+                <h4>Genomics Workshop + Capstone Project (2 weeks)</h4>
+                <p class="price">₹10,000 + GST</p>
+              </div>
+              <div class="pricing-option">
+                <h4>Advanced AI in Lifesciences + Capstone Project (3 weeks)</h4>
+                <p class="price">₹15,000 + GST</p>
+              </div>
+              <div class="pricing-option highlight">
+                <h4>Complete Program (5 weeks)</h4>
+                <p class="price">₹25,000 + GST</p>
+              </div>
+            </div>
           </div>
         </div>
       </header>
@@ -169,6 +244,8 @@ function Omics() {
                 <h4>Specializations</h4>
                 <ul>
                   <li>Multi-omics</li>
+                  <li>Genomics</li>
+                  <li>Proteomics</li>
                   <li>Bioinformatics</li>
                   <li>Nutrigenomics</li>
                 </ul>
@@ -176,11 +253,11 @@ function Omics() {
               <div className="expertise-area">
                 <h4>Brand Products</h4>
                 <ul>
-                  <li>SlimCare</li>
-                  <li>FitCare</li>
-                  <li>HerCare</li>
-                  <li>KinCare</li>
-                  <li>GutCare</li>
+                  <li>slimKr</li>
+                  <li>fitKr</li>
+                  <li>herKr</li>
+                  <li>kinKr</li>
+                  <li>gutKr</li>
                 </ul>
               </div>
               <div className="expertise-area">
@@ -385,16 +462,23 @@ function Omics() {
               <ul>
                 <li>Python</li>
                 <li>R</li>
-                <li>Jupyter</li>
+                <li>Bash</li>
+                <li>React</li>
+                <li>Node JS</li>
+                <li>SQL</li>
+                <li>Mongo DB</li>
               </ul>
             </div>
             <div className="tool-category">
               <h3>AI/ML</h3>
               <ul>
                 <li>TensorFlow</li>
-                <li>WEKA</li>
+                <li>PyTorch</li>
                 <li>AlphaFold</li>
                 <li>BERT</li>
+                <li>GPT's</li>
+                <li>Fine Tuning</li>
+                <li>Training</li>
               </ul>
             </div>
             <div className="tool-category">
@@ -410,6 +494,14 @@ function Omics() {
                 <li>AWS</li>
                 <li>Docker</li>
                 <li>Singularity</li>
+              </ul>
+            </div>
+            <div className="tool-category">
+              <h3>NGS</h3>
+              <ul>
+                <li>Transcriptome</li>
+                <li>Metagenomics</li>
+                <li>Exome Analysis</li>
               </ul>
             </div>
           </div>
