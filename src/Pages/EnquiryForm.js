@@ -56,9 +56,9 @@ const EnquiryForm = () => {
       <div className="form-wrapper">
         <div className="form-card">
           <div className="form-header">
-            <h2 className="form-title">Get in Touch</h2>
+            <h2 className="form-title">⚡ Only 3 Days Left - Book Now!</h2>
             <p className="form-subtitle">
-              We'd love to hear from you. Send us your enquiry!
+              Hurry! Limited slots available. Secure your genomic sequencing at special rates before December 15, 2025!
             </p>
           </div>
 
@@ -189,11 +189,11 @@ const EnquiryForm = () => {
             </div>
 
             <button type="submit" className="submit-btn">
-              Submit Enquiry
+              Submit Enquiry - Don't Miss Out!
             </button>
 
             <p className="form-footer-text">
-              We'll get back to you within 24 hours
+              ⏰ Priority response within 24 hours - Offer ends December 15!
             </p>
           </form>
           {/* FORM END */}
