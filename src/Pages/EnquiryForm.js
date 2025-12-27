@@ -56,9 +56,9 @@ const EnquiryForm = () => {
       <div className="form-wrapper">
         <div className="form-card">
           <div className="form-header">
-            <h2 className="form-title">⚡ Only 3 Days Left - Book Now!</h2>
+            <h2 className="form-title">⚡ Only 5 Days Left - Book Now!</h2>
             <p className="form-subtitle">
-              Hurry! Limited slots available. Secure your genomic sequencing at special rates before December 15, 2025!
+              Hurry! Limited slots available. Secure your genomic sequencing at special rates before December 31, 2025!
             </p>
           </div>
 
