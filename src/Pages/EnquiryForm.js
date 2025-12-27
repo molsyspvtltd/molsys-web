@@ -193,7 +193,7 @@ const EnquiryForm = () => {
             </button>
 
             <p className="form-footer-text">
-              ⏰ Priority response within 24 hours - Offer ends December 15!
+              ⏰ Priority response within 24 hours - Offer ends December 31!
             </p>
           </form>
           {/* FORM END */}
