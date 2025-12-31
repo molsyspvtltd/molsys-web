@@ -56,9 +56,11 @@ const EnquiryForm = () => {
       <div className="form-wrapper">
         <div className="form-card">
           <div className="form-header">
-            <h2 className="form-title">⚡ Only 5 Days Left - Book Now!</h2>
+            <h2 className="form-title">🚨 FINAL HOURS - Book NOW!</h2>
             <p className="form-subtitle">
-              Hurry! Limited slots available. Secure your genomic sequencing at special rates before December 31, 2025!
+              This is it! Last chance to secure your genomic sequencing at
+              ₹6,500 special rate. Offer expires TODAY at midnight - December
+              31, 2025!
             </p>
           </div>
 
@@ -193,7 +195,7 @@ const EnquiryForm = () => {
             </button>
 
             <p className="form-footer-text">
-              ⏰ Priority response within 24 hours - Offer ends December 31!
+              ⏰ Priority response within 24 hours - Offer ends Today!
             </p>
           </form>
           {/* FORM END */}
