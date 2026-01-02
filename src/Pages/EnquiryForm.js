@@ -24,10 +24,10 @@ const EnquiryForm = () => {
 
     emailjs
       .send(
-        "service_e6ax5mf", // ✅ Your Service ID
-        "template_s0p2g4k", // ✅ Your Template ID
+        "service_e6ax5mf",
+        "template_s0p2g4k",
         formData,
-        "MHuXywcK2nvKGX8KQ" // ✅ Your Public Key
+        "MHuXywcK2nvKGX8KQ"
       )
       .then((response) => {
         alert("Enquiry sent successfully!");
@@ -56,11 +56,11 @@ const EnquiryForm = () => {
       <div className="form-wrapper">
         <div className="form-card">
           <div className="form-header">
-            <h2 className="form-title">🚨 FINAL HOURS - Book NOW!</h2>
+            <h2 className="form-title">Service Request Form</h2>
             <p className="form-subtitle">
-              This is it! Last chance to secure your genomic sequencing at
-              ₹6,500 special rate. Offer expires TODAY at midnight - December
-              31, 2025!
+              Welcome! Please fill out the form below to request genomic
+              sequencing services. Our team will review your submission and get
+              back to you shortly.
             </p>
           </div>
 
@@ -137,12 +137,27 @@ const EnquiryForm = () => {
                   required
                 >
                   <option value="">Select a Service</option>
-                  <option value="Whole Genome Sequencing (WGS–Bacteria)">
-                    Whole Genome Sequencing (WGS–Bacteria)
+
+                  <option value="Whole Genome Sequencing (WGS – Bacteria)">
+                    Whole Genome Sequencing (WGS – Bacteria)
                   </option>
+
                   <option value="Whole Metagenome Sequencing">
                     Whole Metagenome Sequencing
                   </option>
+
+                  <option value="Shallow-depth mtDNA Sequencing">
+                    Shallow-depth mtDNA Sequencing
+                  </option>
+
+                  <option value="RNA Sequencing (RNA-Seq)">
+                    RNA Sequencing (RNA-Seq)
+                  </option>
+
+                  <option value="Gene Expression Analysis (qPCR)">
+                    Gene Expression Analysis (qPCR)
+                  </option>
+
                   <option value="Other">Other</option>
                 </select>
               </div>
