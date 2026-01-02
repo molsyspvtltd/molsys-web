@@ -210,7 +210,7 @@ const EnquiryForm = () => {
             </button>
 
             <p className="form-footer-text">
-              ⏰ Priority response within 24 hours - Offer ends Today!
+              ⏰ Priority response within 24 hours!
             </p>
           </form>
           {/* FORM END */}
