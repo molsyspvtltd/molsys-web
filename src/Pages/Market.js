@@ -26,7 +26,7 @@ const dataList = [
           subcategories: [
             {
               subcatname: "SAMPLE ISOLATION",
-              description: "DNA and RNA isolation and sample preparation services are the bedrock of molecular biology and genomics research. Accurate and efficient extraction of genetic material is crucial for downstream applications.",
+              description: "  and sample preparation services are the bedrock of molecular biology and genomics research. Accurate and efficient extraction of genetic material is crucial for downstream applications.",
               screenRoute: "/SampleIsolationPage",
               products: [
                 {
