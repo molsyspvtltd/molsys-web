@@ -201,6 +201,7 @@ import CancerTestForm from './component/CancerTestForm';
 import Omics from "./Pages/Omics";
 import Registration from "./Pages/Registration";
 import EnquiryForm from "./Pages/EnquiryForm";
+import AIWorkshopRegistration from "./Pages/AIWorkshopRegistration";
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -288,7 +289,7 @@ function App() {
           <Route path="/Omicsworkshop" component={Omics} />
           <Route path="/OmicsRegistration" component={Registration} />
           <Route path="/enquiry" component={EnquiryForm} />
-
+          <Route path="/AIWorkshopRegistration" component={AIWorkshopRegistration} />
         </Switch>
       </HashRouter>
       <Footer />
