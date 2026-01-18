@@ -212,7 +212,7 @@ function Registration() {
                 cursor: isSubmitting ? "not-allowed" : "pointer",
               }}
             >
-              {isSubmitting ? "⏳ Submitting..." : "✅ Submit Registration"}
+              {isSubmitting ? " Submitting..." : " Submit Registration"}
             </button>
           </div>
 
@@ -224,12 +224,6 @@ function Registration() {
           </div>
         </div>
       </section>
-
-      {!showPDF && (
-        <button onClick={() => setShowPDF(true)} style={styles.showPDFButton}>
-          📄 Show Workshop Details
-        </button>
-      )}
     </div>
   );
 }
@@ -378,16 +372,16 @@ deadlineContainer: {
   textAlign: "center",
 },
 
-deadlineBadge: {
-  display: "inline-block",
-  backgroundColor: "#ff9800",
-  color: "#fff",
-  padding: "6px 14px",
-  borderRadius: "20px",
-  fontSize: "13px",
-  fontWeight: "700",
-  marginBottom: "10px",
+deadlineSection: {
+  maxWidth: "800px",
+  margin: "70px auto 30px", // ⬅️ Added bigger top margin
+  background: "linear-gradient(135deg, #fff3cd, #ffe8a1)",
+  borderRadius: "12px",
+  padding: "25px",
+  border: "2px solid #ffcc00",
+  boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
 },
+
 
 deadlineTitle: {
   margin: "10px 0",
