@@ -90,7 +90,7 @@ function Registration() {
         <div style={styles.deadlineContainer}>
           <span style={styles.deadlineBadge}>⏰ Deadline</span>
           <h3 style={styles.deadlineTitle}>
-            Last Day to Apply: <strong>20 January 2026</strong>
+            Last Day to Apply: <strong>25 January 2026</strong>
           </h3>
           <p style={styles.deadlineText}>
             Applications received after this date will not be considered.
