@@ -734,7 +734,7 @@ function Registration() {
                   cursor: isSubmitting ? "not-allowed" : "pointer",
                 }}
               >
-                {isSubmitting ? "🔄 Submitting..." : "✅ Submit Registration"}
+                {isSubmitting ? "🔄 Submitting..." : "Submit Registration"}
               </button>
             </div>
 
@@ -774,16 +774,14 @@ const styles = {
     fontWeight: "700",
     fontSize: "14px",
     letterSpacing: "0.5px",
-    position: "sticky",
-    top: 0,
-    zIndex: 1000,
+    marginTop: "80px",
     boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
   },
 
   heroSection: {
     background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
     padding: "80px 20px",
-    paddingTop: "200px",
+    paddingTop: "100px",
     textAlign: "center",
     color: "white",
   },
