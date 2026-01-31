@@ -734,7 +734,7 @@ function Registration() {
                   cursor: isSubmitting ? "not-allowed" : "pointer",
                 }}
               >
-                {isSubmitting ? "🔄 Submitting..." : "Submit Registration"}
+                {isSubmitting ? "🔄 Submitting..." : "✅ Submit Registration"}
               </button>
             </div>
 
@@ -825,9 +825,10 @@ const styles = {
   },
 
   container: {
-    maxWidth: "800px",
+    maxWidth: "1100px",
     margin: "0 auto",
-    padding: "0 20px",
+    padding: "0 15px",
+    width: "100%",
   },
 
   pricingSection: {
@@ -1079,15 +1080,17 @@ const styles = {
   },
 
   formSection: {
-    padding: "80px 20px",
+    padding: "60px 15px",
     background: "#f5f5f5",
   },
 
   formCard: {
     background: "white",
     borderRadius: "16px",
-    padding: "50px",
+    padding: "40px 25px",
     boxShadow: "0 10px 40px rgba(0,0,0,0.1)",
+    width: "100%",
+    maxWidth: "100%",
   },
 
   formTitle: {
