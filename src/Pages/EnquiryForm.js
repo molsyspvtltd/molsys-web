@@ -26,7 +26,7 @@ const EnquiryForm = () => {
         "service_e6ax5mf",
         "template_s0p2g4k",
         formData,
-        "MHuXywcK2nvKGX8KQ"
+        "MHuXywcK2nvKGX8KQ",
       )
       .then((response) => {
         alert("Enquiry sent successfully!");
@@ -55,62 +55,98 @@ const EnquiryForm = () => {
       icon: "🧬",
       name: "Whole Genome Sequencing",
       subtitle: "WGS – Bacteria",
-      description: "Complete bacterial genome analysis with high accuracy"
+      description: "Complete bacterial genome analysis with high accuracy",
     },
     {
       icon: "🦠",
       name: "Whole Metagenome Sequencing",
       subtitle: "Microbiome Analysis",
-      description: "Comprehensive microbial community profiling"
+      description: "Comprehensive microbial community profiling",
     },
     {
       icon: "🔬",
       name: "Shallow-depth mtDNA Sequencing",
       subtitle: "Mitochondrial DNA",
-      description: "Cost-effective mitochondrial genome sequencing"
+      description: "Cost-effective mitochondrial genome sequencing",
     },
     {
       icon: "📊",
       name: "RNA Sequencing",
       subtitle: "RNA-Seq",
-      description: "Transcriptome analysis and gene expression profiling"
+      description: "Transcriptome analysis and gene expression profiling",
     },
     {
       icon: "🧪",
       name: "Gene Expression Analysis",
       subtitle: "qPCR",
-      description: "Quantitative PCR for precise gene expression measurement"
+      description: "Quantitative PCR for precise gene expression measurement",
     },
     {
       icon: "🎯",
       name: "SNP Genotyping",
       subtitle: "Variant Detection",
-      description: "High-throughput genetic variation analysis"
-    }
+      description: "High-throughput genetic variation analysis",
+    },
   ];
 
   return (
-    <div style={{ minHeight: "100vh", background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)", padding: "100px 20px 40px 20px" }}>
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        padding: "100px 20px 40px 20px",
+      }}
+    >
       <div style={{ maxWidth: "900px", margin: "0 auto" }}>
-        
         {/* Hero Section */}
-        <div style={{ textAlign: "center", marginBottom: "60px", color: "white" }}>
-          <h1 style={{ fontSize: "48px", fontWeight: "bold", marginBottom: "16px", textShadow: "2px 2px 4px rgba(0,0,0,0.2)" }}>
+        <div
+          style={{ textAlign: "center", marginBottom: "60px", color: "white" }}
+        >
+          <h1
+            style={{
+              fontSize: "48px",
+              fontWeight: "bold",
+              marginBottom: "16px",
+              textShadow: "2px 2px 4px rgba(0,0,0,0.2)",
+            }}
+          >
             Advanced Genomic Sequencing Services
           </h1>
-          <p style={{ fontSize: "20px", opacity: 0.95, maxWidth: "600px", margin: "0 auto" }}>
-            Cutting-edge genomic analysis for research institutions, hospitals, and biotech companies worldwide
+          <p
+            style={{
+              fontSize: "20px",
+              opacity: 0.95,
+              maxWidth: "600px",
+              margin: "0 auto",
+            }}
+          >
+            Cutting-edge genomic analysis for research institutions, hospitals,
+            and biotech companies worldwide
           </p>
         </div>
 
         {/* Services Showcase */}
         <div style={{ marginBottom: "60px" }}>
-          <h2 style={{ fontSize: "32px", fontWeight: "bold", color: "white", textAlign: "center", marginBottom: "40px" }}>
+          <h2
+            style={{
+              fontSize: "32px",
+              fontWeight: "bold",
+              color: "white",
+              textAlign: "center",
+              marginBottom: "40px",
+            }}
+          >
             🌟 Our Premium Services
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "24px",
+            }}
+          >
             {services.map((service, index) => (
-              <div 
+              <div
                 key={index}
                 style={{
                   background: "white",
@@ -118,25 +154,49 @@ const EnquiryForm = () => {
                   padding: "24px",
                   boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
                   transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                  cursor: "pointer"
+                  cursor: "pointer",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "translateY(-8px)";
-                  e.currentTarget.style.boxShadow = "0 15px 40px rgba(0,0,0,0.3)";
+                  e.currentTarget.style.boxShadow =
+                    "0 15px 40px rgba(0,0,0,0.3)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.2)";
+                  e.currentTarget.style.boxShadow =
+                    "0 10px 30px rgba(0,0,0,0.2)";
                 }}
               >
-                <div style={{ fontSize: "48px", marginBottom: "12px" }}>{service.icon}</div>
-                <h3 style={{ fontSize: "20px", fontWeight: "bold", color: "#2d3748", marginBottom: "4px" }}>
+                <div style={{ fontSize: "48px", marginBottom: "12px" }}>
+                  {service.icon}
+                </div>
+                <h3
+                  style={{
+                    fontSize: "20px",
+                    fontWeight: "bold",
+                    color: "#2d3748",
+                    marginBottom: "4px",
+                  }}
+                >
                   {service.name}
                 </h3>
-                <p style={{ fontSize: "14px", color: "#667eea", fontWeight: "600", marginBottom: "12px" }}>
+                <p
+                  style={{
+                    fontSize: "14px",
+                    color: "#667eea",
+                    fontWeight: "600",
+                    marginBottom: "12px",
+                  }}
+                >
                   {service.subtitle}
                 </p>
-                <p style={{ fontSize: "14px", color: "#4a5568", lineHeight: "1.6" }}>
+                <p
+                  style={{
+                    fontSize: "14px",
+                    color: "#4a5568",
+                    lineHeight: "1.6",
+                  }}
+                >
                   {service.description}
                 </p>
               </div>
@@ -145,20 +205,50 @@ const EnquiryForm = () => {
         </div>
 
         {/* Form Section */}
-        <div style={{ background: "white", borderRadius: "24px", boxShadow: "0 20px 60px rgba(0,0,0,0.3)", overflow: "hidden" }}>
+        <div
+          style={{
+            background: "white",
+            borderRadius: "24px",
+            boxShadow: "0 20px 60px rgba(0,0,0,0.3)",
+            overflow: "hidden",
+          }}
+        >
           <div style={{ padding: "48px" }}>
             <div style={{ marginBottom: "32px" }}>
-              <h2 style={{ fontSize: "32px", fontWeight: "bold", color: "#2d3748", marginBottom: "12px" }}>
+              <h2
+                style={{
+                  fontSize: "32px",
+                  fontWeight: "bold",
+                  color: "#2d3748",
+                  marginBottom: "12px",
+                }}
+              >
                 Service Request Form
               </h2>
-              <p style={{ fontSize: "16px", color: "#4a5568", lineHeight: "1.6" }}>
-                Welcome! Please fill out the form below to request genomic sequencing services. Our team will review your submission and get back to you shortly.
+              <p
+                style={{
+                  fontSize: "16px",
+                  color: "#4a5568",
+                  lineHeight: "1.6",
+                }}
+              >
+                Welcome! Please fill out the form below to request genomic
+                sequencing services. Our team will review your submission and
+                get back to you shortly.
               </p>
             </div>
 
             <div>
               <div style={{ marginBottom: "24px" }}>
-                <label style={{ display: "block", fontSize: "14px", fontWeight: "600", color: "#2d3748", marginBottom: "8px" }}>
+                <label
+                  style={{
+                    display: "block",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                    color: "#2d3748",
+                    marginBottom: "8px",
+                  }}
+                >
                   Full Name <span style={{ color: "#e53e3e" }}>*</span>
                 </label>
                 <input
@@ -174,17 +264,32 @@ const EnquiryForm = () => {
                     borderRadius: "8px",
                     fontSize: "16px",
                     outline: "none",
-                    transition: "border-color 0.3s ease"
+                    transition: "border-color 0.3s ease",
                   }}
-                  onFocus={(e) => e.target.style.borderColor = "#667eea"}
-                  onBlur={(e) => e.target.style.borderColor = "#e2e8f0"}
+                  onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                  onBlur={(e) => (e.target.style.borderColor = "#e2e8f0")}
                   required
                 />
               </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px", marginBottom: "24px" }}>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: "24px",
+                  marginBottom: "24px",
+                }}
+              >
                 <div>
-                  <label style={{ display: "block", fontSize: "14px", fontWeight: "600", color: "#2d3748", marginBottom: "8px" }}>
+                  <label
+                    style={{
+                      display: "block",
+                      fontSize: "14px",
+                      fontWeight: "600",
+                      color: "#2d3748",
+                      marginBottom: "8px",
+                    }}
+                  >
                     Email Address <span style={{ color: "#e53e3e" }}>*</span>
                   </label>
                   <input
@@ -199,16 +304,24 @@ const EnquiryForm = () => {
                       border: "2px solid #e2e8f0",
                       borderRadius: "8px",
                       fontSize: "16px",
-                      outline: "none"
+                      outline: "none",
                     }}
-                    onFocus={(e) => e.target.style.borderColor = "#667eea"}
-                    onBlur={(e) => e.target.style.borderColor = "#e2e8f0"}
+                    onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                    onBlur={(e) => (e.target.style.borderColor = "#e2e8f0")}
                     required
                   />
                 </div>
 
                 <div>
-                  <label style={{ display: "block", fontSize: "14px", fontWeight: "600", color: "#2d3748", marginBottom: "8px" }}>
+                  <label
+                    style={{
+                      display: "block",
+                      fontSize: "14px",
+                      fontWeight: "600",
+                      color: "#2d3748",
+                      marginBottom: "8px",
+                    }}
+                  >
                     Phone Number <span style={{ color: "#e53e3e" }}>*</span>
                   </label>
                   <input
@@ -223,17 +336,25 @@ const EnquiryForm = () => {
                       border: "2px solid #e2e8f0",
                       borderRadius: "8px",
                       fontSize: "16px",
-                      outline: "none"
+                      outline: "none",
                     }}
-                    onFocus={(e) => e.target.style.borderColor = "#667eea"}
-                    onBlur={(e) => e.target.style.borderColor = "#e2e8f0"}
+                    onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                    onBlur={(e) => (e.target.style.borderColor = "#e2e8f0")}
                     required
                   />
                 </div>
               </div>
 
               <div style={{ marginBottom: "24px" }}>
-                <label style={{ display: "block", fontSize: "14px", fontWeight: "600", color: "#2d3748", marginBottom: "8px" }}>
+                <label
+                  style={{
+                    display: "block",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                    color: "#2d3748",
+                    marginBottom: "8px",
+                  }}
+                >
                   Institution / Organization
                 </label>
                 <input
@@ -248,16 +369,32 @@ const EnquiryForm = () => {
                     border: "2px solid #e2e8f0",
                     borderRadius: "8px",
                     fontSize: "16px",
-                    outline: "none"
+                    outline: "none",
                   }}
-                  onFocus={(e) => e.target.style.borderColor = "#667eea"}
-                  onBlur={(e) => e.target.style.borderColor = "#e2e8f0"}
+                  onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                  onBlur={(e) => (e.target.style.borderColor = "#e2e8f0")}
                 />
               </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: formData.service === "Other" ? "1fr 1fr" : "1fr", gap: "24px", marginBottom: "24px" }}>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns:
+                    formData.service === "Other" ? "1fr 1fr" : "1fr",
+                  gap: "24px",
+                  marginBottom: "24px",
+                }}
+              >
                 <div>
-                  <label style={{ display: "block", fontSize: "14px", fontWeight: "600", color: "#2d3748", marginBottom: "8px" }}>
+                  <label
+                    style={{
+                      display: "block",
+                      fontSize: "14px",
+                      fontWeight: "600",
+                      color: "#2d3748",
+                      marginBottom: "8px",
+                    }}
+                  >
                     Selected Service
                   </label>
                   <select
@@ -271,13 +408,17 @@ const EnquiryForm = () => {
                       borderRadius: "8px",
                       fontSize: "16px",
                       outline: "none",
-                      cursor: "pointer"
+                      cursor: "pointer",
                     }}
-                    onFocus={(e) => e.target.style.borderColor = "#667eea"}
-                    onBlur={(e) => e.target.style.borderColor = "#e2e8f0"}
+                    onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                    onBlur={(e) => (e.target.style.borderColor = "#e2e8f0")}
                     required
                   >
                     <option value="">Select a Service</option>
+
+                    {/* Added at the top */}
+                    <option value="16S Metagenomics">16S Metagenomics</option>
+
                     <option value="Whole Genome Sequencing (WGS – Bacteria)">
                       Whole Genome Sequencing (WGS – Bacteria)
                     </option>
@@ -300,7 +441,15 @@ const EnquiryForm = () => {
 
                 {formData.service === "Other" && (
                   <div>
-                    <label style={{ display: "block", fontSize: "14px", fontWeight: "600", color: "#2d3748", marginBottom: "8px" }}>
+                    <label
+                      style={{
+                        display: "block",
+                        fontSize: "14px",
+                        fontWeight: "600",
+                        color: "#2d3748",
+                        marginBottom: "8px",
+                      }}
+                    >
                       Please specify the service
                     </label>
                     <input
@@ -315,10 +464,10 @@ const EnquiryForm = () => {
                         border: "2px solid #e2e8f0",
                         borderRadius: "8px",
                         fontSize: "16px",
-                        outline: "none"
+                        outline: "none",
                       }}
-                      onFocus={(e) => e.target.style.borderColor = "#667eea"}
-                      onBlur={(e) => e.target.style.borderColor = "#e2e8f0"}
+                      onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                      onBlur={(e) => (e.target.style.borderColor = "#e2e8f0")}
                       required
                     />
                   </div>
@@ -326,7 +475,15 @@ const EnquiryForm = () => {
               </div>
 
               <div style={{ marginBottom: "24px" }}>
-                <label style={{ display: "block", fontSize: "14px", fontWeight: "600", color: "#2d3748", marginBottom: "8px" }}>
+                <label
+                  style={{
+                    display: "block",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                    color: "#2d3748",
+                    marginBottom: "8px",
+                  }}
+                >
                   Final Service to Process
                 </label>
                 <input
@@ -341,15 +498,23 @@ const EnquiryForm = () => {
                     border: "2px solid #e2e8f0",
                     borderRadius: "8px",
                     fontSize: "16px",
-                    outline: "none"
+                    outline: "none",
                   }}
-                  onFocus={(e) => e.target.style.borderColor = "#667eea"}
-                  onBlur={(e) => e.target.style.borderColor = "#e2e8f0"}
+                  onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                  onBlur={(e) => (e.target.style.borderColor = "#e2e8f0")}
                 />
               </div>
 
               <div style={{ marginBottom: "24px" }}>
-                <label style={{ display: "block", fontSize: "14px", fontWeight: "600", color: "#2d3748", marginBottom: "8px" }}>
+                <label
+                  style={{
+                    display: "block",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                    color: "#2d3748",
+                    marginBottom: "8px",
+                  }}
+                >
                   Message (Optional)
                 </label>
                 <textarea
@@ -365,30 +530,32 @@ const EnquiryForm = () => {
                     borderRadius: "8px",
                     fontSize: "16px",
                     outline: "none",
-                    resize: "vertical"
+                    resize: "vertical",
                   }}
-                  onFocus={(e) => e.target.style.borderColor = "#667eea"}
-                  onBlur={(e) => e.target.style.borderColor = "#e2e8f0"}
+                  onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                  onBlur={(e) => (e.target.style.borderColor = "#e2e8f0")}
                 ></textarea>
               </div>
 
-              <button 
+              <button
                 onClick={sendEmail}
                 style={{
                   width: "100%",
                   padding: "16px",
-                  background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                  background:
+                    "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
                   color: "white",
                   fontSize: "18px",
                   fontWeight: "bold",
                   border: "none",
                   borderRadius: "8px",
                   cursor: "pointer",
-                  transition: "transform 0.3s ease, box-shadow 0.3s ease"
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.transform = "translateY(-2px)";
-                  e.target.style.boxShadow = "0 10px 20px rgba(102, 126, 234, 0.4)";
+                  e.target.style.boxShadow =
+                    "0 10px 20px rgba(102, 126, 234, 0.4)";
                 }}
                 onMouseLeave={(e) => {
                   e.target.style.transform = "translateY(0)";
@@ -398,7 +565,15 @@ const EnquiryForm = () => {
                 Submit Enquiry - Don't Miss Out!
               </button>
 
-              <p style={{ textAlign: "center", marginTop: "16px", fontSize: "16px", color: "#667eea", fontWeight: "600" }}>
+              <p
+                style={{
+                  textAlign: "center",
+                  marginTop: "16px",
+                  fontSize: "16px",
+                  color: "#667eea",
+                  fontWeight: "600",
+                }}
+              >
                 ⏰ Priority response within 24 hours!
               </p>
             </div>
