@@ -487,7 +487,7 @@ function Registration() {
     <div style={styles.pageWrapper}>
       {/* Urgent Banner */}
       <div style={styles.urgentBanner}>
-        ⚡ REGISTRATION CLOSES ON 3RD FEBRUARY - BATCH 2 STARTS 5TH FEB ⚡
+        ⚡ REGISTRATION CLOSES ON 11TH FEBRUARY - BATCH 3 STARTS 12TH FEB ⚡
       </div>
 
       {/* Hero Section */}
@@ -497,129 +497,14 @@ function Registration() {
           <p style={styles.heroSubtitle}>
             Master 2 Critical Skills in Just 5 Days
           </p>
-          <div style={styles.badge}>BATCH 2 - LIMITED SEATS</div>
+          <div style={styles.badge}>BATCH 3 - LIMITED SEATS</div>
           <div style={styles.heroHighlight}>
             100% HANDS-ON | Every Attendee Analyzes Real Data
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section style={styles.pricingSection}>
-        <div style={styles.container}>
-          <h2 style={styles.sectionTitle}>💰 Special Workshop Pricing</h2>
-          <div style={styles.pricingGrid}>
-            <div style={styles.priceCard}>
-              <div style={styles.priceCardHeader}>
-                🇮🇳 Indian Students
-              </div>
-              <div style={styles.oldPrice}>₹7,999</div>
-              <div style={styles.arrowDown}>↓</div>
-              <div style={styles.newPrice}>₹2,999</div>
-              <div style={styles.savingsTag}>Save ₹5,000 (62% OFF)</div>
-            </div>
-            <div style={styles.priceCard}>
-              <div style={styles.priceCardHeader}>
-                🌍 International
-              </div>
-              <div style={styles.oldPrice}>$100</div>
-              <div style={styles.arrowDown}>↓</div>
-              <div style={styles.newPrice}>$35</div>
-              <div style={styles.savingsTag}>Save $65 (65% OFF)</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Schedule Section */}
-      <section style={styles.scheduleSection}>
-        <div style={styles.container}>
-          <div style={styles.scheduleCard}>
-            <h2 style={styles.scheduleTitleLarge}>📅 Workshop Schedule - Batch 2</h2>
-            <div style={styles.scheduleGrid}>
-              <div style={styles.scheduleItem}>
-                <div style={styles.scheduleLabel}>Batch 2 Starts</div>
-                <div style={styles.scheduleValue}>Thursday, 5th February 2026</div>
-              </div>
-              <div style={styles.scheduleItem}>
-                <div style={styles.scheduleLabel}>Format</div>
-                <div style={styles.scheduleValue}>
-                  <span style={styles.onlineBadge}>💻 100% ONLINE</span>
-                </div>
-              </div>
-              <div style={styles.scheduleItem}>
-                <div style={styles.scheduleLabel}>Duration</div>
-                <div style={styles.scheduleValue}>5 Days Intensive Training</div>
-              </div>
-              <div style={styles.scheduleItem}>
-                <div style={styles.scheduleLabel}>Registration Deadline</div>
-                <div style={styles.deadlineValue}>⏰ 3rd February 2026</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What You'll Learn Section */}
-      <section style={styles.curriculumSection}>
-        <div style={styles.container}>
-          <h2 style={styles.sectionTitle}>🎓 What You Will Learn</h2>
-          
-          {/* Skill 1 */}
-          <div style={styles.skillCard}>
-            <div style={styles.skillHeader}>
-              <h3 style={styles.skillTitle}>Skill 1: Transcriptome Analysis (RNA-seq)</h3>
-              <p style={styles.skillSubtitle}>
-                Complete end-to-end pipeline from raw data to biological insights
-              </p>
-            </div>
-            <ul style={styles.skillList}>
-              <li style={styles.skillListItem}>✓ Basics of Quality Control (QC)</li>
-              <li style={styles.skillListItem}>✓ Alignment or Assembly Techniques</li>
-              <li style={styles.skillListItem}>✓ Differential Expression Analysis</li>
-              <li style={styles.skillListItem}>✓ Pathway Enrichment Analysis</li>
-              <li style={styles.skillListItem}>✓ AI-Based Results Interpretation (Special Feature)</li>
-            </ul>
-          </div>
-
-          {/* Skill 2 */}
-          <div style={styles.skillCard}>
-            <div style={styles.skillHeader}>
-              <h3 style={styles.skillTitle}>Skill 2: Exome / Variant Analysis</h3>
-              <p style={styles.skillSubtitle}>
-                Hands-on variant prioritization and clinical interpretation
-              </p>
-            </div>
-            <ul style={styles.skillList}>
-              <li style={styles.skillListItem}>✓ End-to-End Exome Pipeline</li>
-              <li style={styles.skillListItem}>✓ Variant Calling Techniques</li>
-              <li style={styles.skillListItem}>✓ ClinVarBERT / AI-Based Variant Interpretation</li>
-              <li style={styles.skillListItem}>✓ Hands-On Variant Prioritization Exercises</li>
-              <li style={styles.skillListItem}>✓ SIFT, Allele Frequency Analysis</li>
-              <li style={styles.skillListItem}>✓ Literature Search & Conflict Interpretation</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Tools Section */}
-      <section style={styles.toolsSection}>
-        <div style={styles.container}>
-          <h2 style={styles.sectionTitleWhite}>🛠️ Hands-On Tools You'll Use</h2>
-          <div style={styles.toolsGrid}>
-            <div style={styles.toolItem}>🐍 Google Colab (Python)</div>
-            <div style={styles.toolItem}>💻 Linux/Bash</div>
-            <div style={styles.toolItem}>☁️ AWS Instances</div>
-            <div style={styles.toolItem}>🔧 Container-Based Pipelines</div>
-            <div style={styles.toolItem}>🧬 Public Cancer Panel Datasets</div>
-            <div style={styles.toolItem}>🤖 ClinVarBERT</div>
-            <div style={styles.toolItem}>🔬 AI Interpretation Tools</div>
-            <div style={styles.toolItem}>📊 Advanced Analytics</div>
-          </div>
-        </div>
-      </section>
-
-      {/* PDF Download Section */}
+      {/* PDF Download Section - MOVED UP */}
       <section style={styles.pdfSection}>
         <div style={styles.container}>
           <div style={styles.pdfCard}>
@@ -634,13 +519,13 @@ function Registration() {
         </div>
       </section>
 
-      {/* Registration Form */}
+      {/* Registration Form - MOVED UP */}
       <section style={styles.formSection} id="register">
         <div style={styles.container}>
           <div style={styles.formCard}>
             <h2 style={styles.formTitle}>🚀 Secure Your Seat Now!</h2>
             <p style={styles.formSubtitle}>
-              Fill in your details below to register for Batch 2
+              Fill in your details below to register for Batch 3
             </p>
 
             <div style={styles.formContent}>
@@ -752,6 +637,121 @@ function Registration() {
                 Please complete payment within 24 hours to confirm your seat.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section style={styles.pricingSection}>
+        <div style={styles.container}>
+          <h2 style={styles.sectionTitle}>💰 Special Workshop Pricing</h2>
+          <div style={styles.pricingGrid}>
+            <div style={styles.priceCard}>
+              <div style={styles.priceCardHeader}>
+                🇮🇳 Indian Students
+              </div>
+              <div style={styles.oldPrice}>₹7,999</div>
+              <div style={styles.arrowDown}>↓</div>
+              <div style={styles.newPrice}>₹2,999</div>
+              <div style={styles.savingsTag}>Save ₹5,000 (62% OFF)</div>
+            </div>
+            <div style={styles.priceCard}>
+              <div style={styles.priceCardHeader}>
+                🌍 International
+              </div>
+              <div style={styles.oldPrice}>$100</div>
+              <div style={styles.arrowDown}>↓</div>
+              <div style={styles.newPrice}>$35</div>
+              <div style={styles.savingsTag}>Save $65 (65% OFF)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Schedule Section */}
+      <section style={styles.scheduleSection}>
+        <div style={styles.container}>
+          <div style={styles.scheduleCard}>
+            <h2 style={styles.scheduleTitleLarge}>📅 Workshop Schedule - Batch 3</h2>
+            <div style={styles.scheduleGrid}>
+              <div style={styles.scheduleItem}>
+                <div style={styles.scheduleLabel}>Batch 3 Starts</div>
+                <div style={styles.scheduleValue}>Thursday, 12th February 2026</div>
+              </div>
+              <div style={styles.scheduleItem}>
+                <div style={styles.scheduleLabel}>Format</div>
+                <div style={styles.scheduleValue}>
+                  <span style={styles.onlineBadge}>💻 100% ONLINE</span>
+                </div>
+              </div>
+              <div style={styles.scheduleItem}>
+                <div style={styles.scheduleLabel}>Duration</div>
+                <div style={styles.scheduleValue}>5 Days Intensive Training</div>
+              </div>
+              <div style={styles.scheduleItem}>
+                <div style={styles.scheduleLabel}>Registration Deadline</div>
+                <div style={styles.deadlineValue}>⏰ 11th February 2026</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What You'll Learn Section */}
+      <section style={styles.curriculumSection}>
+        <div style={styles.container}>
+          <h2 style={styles.sectionTitle}>🎓 What You Will Learn</h2>
+          
+          {/* Skill 1 */}
+          <div style={styles.skillCard}>
+            <div style={styles.skillHeader}>
+              <h3 style={styles.skillTitle}>Skill 1: Transcriptome Analysis (RNA-seq)</h3>
+              <p style={styles.skillSubtitle}>
+                Complete end-to-end pipeline from raw data to biological insights
+              </p>
+            </div>
+            <ul style={styles.skillList}>
+              <li style={styles.skillListItem}>✓ Basics of Quality Control (QC)</li>
+              <li style={styles.skillListItem}>✓ Alignment or Assembly Techniques</li>
+              <li style={styles.skillListItem}>✓ Differential Expression Analysis</li>
+              <li style={styles.skillListItem}>✓ Pathway Enrichment Analysis</li>
+              <li style={styles.skillListItem}>✓ AI-Based Results Interpretation (Special Feature)</li>
+            </ul>
+          </div>
+
+          {/* Skill 2 */}
+          <div style={styles.skillCard}>
+            <div style={styles.skillHeader}>
+              <h3 style={styles.skillTitle}>Skill 2: Exome / Variant Analysis</h3>
+              <p style={styles.skillSubtitle}>
+                Hands-on variant prioritization and clinical interpretation
+              </p>
+            </div>
+            <ul style={styles.skillList}>
+              <li style={styles.skillListItem}>✓ End-to-End Exome Pipeline</li>
+              <li style={styles.skillListItem}>✓ Variant Calling Techniques</li>
+              <li style={styles.skillListItem}>✓ ClinVarBERT / AI-Based Variant Interpretation</li>
+              <li style={styles.skillListItem}>✓ Hands-On Variant Prioritization Exercises</li>
+              <li style={styles.skillListItem}>✓ SIFT, Allele Frequency Analysis</li>
+              <li style={styles.skillListItem}>✓ Literature Search & Conflict Interpretation</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Tools Section */}
+      <section style={styles.toolsSection}>
+        <div style={styles.container}>
+          <h2 style={styles.sectionTitleWhite}>🛠️ Hands-On Tools You'll Use</h2>
+          <div style={styles.toolsGrid}>
+            <div style={styles.toolItem}>🐍 Google Colab (Python)</div>
+            <div style={styles.toolItem}>💻 Linux/Bash</div>
+            <div style={styles.toolItem}>☁️ AWS Instances</div>
+            <div style={styles.toolItem}>🔧 Container-Based Pipelines</div>
+            <div style={styles.toolItem}>🧬 Public Cancer Panel Datasets</div>
+            <div style={styles.toolItem}>🤖 ClinVarBERT</div>
+            <div style={styles.toolItem}>🔬 AI Interpretation Tools</div>
+            <div style={styles.toolItem}>📊 Advanced Analytics</div>
           </div>
         </div>
       </section>
