@@ -487,7 +487,7 @@ function Registration() {
     <div style={styles.pageWrapper}>
       {/* Urgent Banner */}
       <div style={styles.urgentBanner}>
-        ⚡ REGISTRATION CLOSES ON 11TH FEBRUARY - BATCH 3 STARTS 12TH FEB ⚡
+        ⚡ REGISTRATION CLOSES ON 18TH FEBRUARY - BATCH 4 STARTS 19TH FEB ⚡
       </div>
 
       {/* Hero Section */}
@@ -672,11 +672,11 @@ function Registration() {
       <section style={styles.scheduleSection}>
         <div style={styles.container}>
           <div style={styles.scheduleCard}>
-            <h2 style={styles.scheduleTitleLarge}>📅 Workshop Schedule - Batch 3</h2>
+            <h2 style={styles.scheduleTitleLarge}>📅 Workshop Schedule - Batch 4</h2>
             <div style={styles.scheduleGrid}>
               <div style={styles.scheduleItem}>
-                <div style={styles.scheduleLabel}>Batch 3 Starts</div>
-                <div style={styles.scheduleValue}>Thursday, 12th February 2026</div>
+                <div style={styles.scheduleLabel}>Batch 4 Starts</div>
+                <div style={styles.scheduleValue}>Thursday, 19th February 2026</div>
               </div>
               <div style={styles.scheduleItem}>
                 <div style={styles.scheduleLabel}>Format</div>
@@ -690,7 +690,7 @@ function Registration() {
               </div>
               <div style={styles.scheduleItem}>
                 <div style={styles.scheduleLabel}>Registration Deadline</div>
-                <div style={styles.deadlineValue}>⏰ 11th February 2026</div>
+                <div style={styles.deadlineValue}>⏰ 18th February 2026</div>
               </div>
             </div>
           </div>
