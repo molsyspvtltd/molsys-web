@@ -397,6 +397,7 @@ const EnquiryForm = () => {
                   >
                     Selected Service
                   </label>
+
                   <select
                     name="service"
                     value={formData.service}
@@ -416,25 +417,39 @@ const EnquiryForm = () => {
                   >
                     <option value="">Select a Service</option>
 
-                    {/* Added at the top */}
+                    {/* Microbial Sequencing Services */}
                     <option value="16S Metagenomics">16S Metagenomics</option>
+                    <option value="ITS Metagenomic Sequencing (Fungal Profiling)">
+                      ITS Metagenomic Sequencing (Fungal Profiling)
+                    </option>
+                    <option value="18S / Eukaryotic Amplicon Sequencing">
+                      18S / Eukaryotic Amplicon Sequencing
+                    </option>
 
                     <option value="Whole Genome Sequencing (WGS – Bacteria)">
                       Whole Genome Sequencing (WGS – Bacteria)
                     </option>
+
                     <option value="Whole Metagenome Sequencing">
                       Whole Metagenome Sequencing
                     </option>
+
+                    {/* Other Genomics Services */}
                     <option value="Shallow-depth mtDNA Sequencing">
                       Shallow-depth mtDNA Sequencing
                     </option>
+
                     <option value="RNA Sequencing (RNA-Seq)">
                       RNA Sequencing (RNA-Seq)
                     </option>
+
                     <option value="Gene Expression Analysis (qPCR)">
                       Gene Expression Analysis (qPCR)
                     </option>
+
                     <option value="SNP Genotyping">SNP Genotyping</option>
+
+                    {/* Custom Service */}
                     <option value="Other">Other</option>
                   </select>
                 </div>
