@@ -450,8 +450,8 @@ function AboutUs() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="team-section" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(${Teambg})` }}>
+      {/* Team Section - COMMENTED OUT */}
+      {/* <section className="team-section" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(${Teambg})` }}>
         <div className="container">
           <div className="section-header">
             <h2>Meet Our Team</h2>
@@ -459,7 +459,6 @@ function AboutUs() {
           </div>
 
           <div className="team-grid">
-            {/* Team Member 1 */}
             <div className="team-card">
               <div className="team-image">
                 <img src={GaurabBanerjee} alt="Gaurab Banerjee" />
@@ -475,7 +474,6 @@ function AboutUs() {
               </div>
             </div>
 
-            {/* Team Member 2 */}
             <div className="team-card">
               <div className="team-image">
                 <img src={Nishanth} alt="Nishant Sharma" />
@@ -491,7 +489,6 @@ function AboutUs() {
               </div>
             </div>
 
-            {/* Team Member 3 */}
             <div className="team-card">
               <div className="team-image">
                 <img src={madhurima} alt="Madhurima Mukherjee" />
@@ -507,7 +504,6 @@ function AboutUs() {
               </div>
             </div>
 
-            {/* Team Member 4 */}
             <div className="team-card">
               <div className="team-image">
                 <img src={melbin} alt="Melbin George" />
@@ -523,7 +519,6 @@ function AboutUs() {
               </div>
             </div>
 
-            {/* Team Member 5 */}
             <div className="team-card">
               <div className="team-image">
                 <img src={Anuraj} alt="Anuraj O P" />
@@ -539,7 +534,6 @@ function AboutUs() {
               </div>
             </div>
 
-            {/* Team Member 6 */}
             <div className="team-card">
               <div className="team-image">
                 <img src={None} alt="Dr. Shrayashi Biswas" />
@@ -556,10 +550,10 @@ function AboutUs() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Scientific Advisory Section */}
-      <section className="advisory-section">
+      {/* Scientific Advisory Section - COMMENTED OUT */}
+      {/* <section className="advisory-section">
         <div className="container">
           <div className="section-header">
             <h2>Scientific Advisory</h2>
@@ -582,7 +576,8 @@ function AboutUs() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
     </div>
   );
 }
