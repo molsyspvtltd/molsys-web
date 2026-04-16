@@ -5,6 +5,7 @@ const multer = require("multer");
 const path = require("path");
 const aws = require("aws-sdk");
 const multerS3 = require("multer-s3");
+const mime = require("mime-types");
 require("dotenv").config();
 
 const Application = require("./models/Application");
@@ -33,6 +34,29 @@ mongoose
   });
 
 // ===================================
+// ADMIN AUTHENTICATION
+// ===================================
+
+const ADMIN_KEY = process.env.ADMIN_KEY;
+
+if (!ADMIN_KEY) {
+  console.error("❌ FATAL ERROR: ADMIN_KEY not found in environment variables");
+  console.error("Please add ADMIN_KEY=your_key in .env file");
+  process.exit(1);
+}
+
+// Admin auth middleware
+const adminAuth = (req, res, next) => {
+  const key = req.headers["x-admin-key"];
+
+  if (!key || key !== ADMIN_KEY) {
+    return res.status(403).json({ error: "Unauthorized - Invalid admin key" });
+  }
+
+  next();
+};
+
+// ===================================
 // AWS S3 FILE UPLOAD SETUP
 // ===================================
 
@@ -45,12 +69,12 @@ aws.config.update({
 
 const s3 = new aws.S3();
 
-
 // Upload to S3
 const upload = multer({
   storage: multerS3({
     s3: s3,
     bucket: "molsys-sra-bucket",
+    contentType: multerS3.AUTO_CONTENT_TYPE,
     key: function (req, file, cb) {
       const fileName =
         "molsys-internship-resumes/" +
@@ -135,7 +159,7 @@ app.post("/apply", upload.single("resume"), async (req, res) => {
       name: fullName,
       email: email,
       role: roleApplying,
-      resumeFile: req.file ? req.file.filename : "No file uploaded",
+      resumeFile: req.file ? req.file.key : "No file uploaded",
     });
 
     res.status(201).json({
@@ -151,8 +175,8 @@ app.post("/apply", upload.single("resume"), async (req, res) => {
   }
 });
 
-// GET - Retrieve all applications (Admin only - no auth for now)
-app.get("/applications", async (req, res) => {
+// GET - Retrieve all applications (Admin protected)
+app.get("/applications", adminAuth, async (req, res) => {
   try {
     const applications = await Application.find().sort({ createdAt: -1 });
     res.json({
@@ -168,8 +192,8 @@ app.get("/applications", async (req, res) => {
   }
 });
 
-// GET - Get single application by ID
-app.get("/applications/:id", async (req, res) => {
+// GET - Get single application by ID (Admin protected)
+app.get("/applications/:id", adminAuth, async (req, res) => {
   try {
     const application = await Application.findById(req.params.id);
     if (!application) {
