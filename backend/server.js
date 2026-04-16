@@ -45,6 +45,7 @@ aws.config.update({
 
 const s3 = new aws.S3();
 
+
 // Upload to S3
 const upload = multer({
   storage: multerS3({
