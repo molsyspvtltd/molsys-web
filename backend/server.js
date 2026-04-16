@@ -50,7 +50,6 @@ const upload = multer({
   storage: multerS3({
     s3: s3,
     bucket: "molsys-sra-bucket",
-    acl: "public-read",
     key: function (req, file, cb) {
       const fileName =
         "molsys-internship-resumes/" +
