@@ -22,19 +22,13 @@ app.use("/uploads", express.static("uploads"));
 // MONGODB CONNECTION
 // ===================================
 
-const MONGODB_URI =
-  process.env.MONGODB_URI ||
-  "mongodb+srv://username:password@cluster.mongodb.net/molsys";
-
 mongoose
-  .connect(MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+  .connect(process.env.MONGODB_URI)
+  .then(() => {
+    console.log("✅ MongoDB Connected Successfully");
   })
-  .then(() => console.log("✅ MongoDB Connected Successfully"))
   .catch((err) => {
-    console.error("❌ MongoDB Connection Error:", err.message);
-    process.exit(1);
+    console.error("❌ MongoDB Connection Error:", err);
   });
 
 // ===================================
