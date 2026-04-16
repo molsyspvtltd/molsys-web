@@ -938,10 +938,13 @@ function Careers() {
         data.append(key, formData[key]);
       });
 
-      const res = await fetch("http://localhost:5000/apply", {
-        method: "POST",
-        body: data,
-      });
+      const res = await fetch(
+        "https://internship-backend-t60m.onrender.com/apply",
+        {
+          method: "POST",
+          body: data,
+        },
+      );
 
       const result = await res.json();
 
@@ -971,9 +974,7 @@ function Careers() {
       }
     } catch (err) {
       console.error(err);
-      alert(
-        "Error submitting form. Make sure backend is running on localhost:5000",
-      );
+      alert("Error submitting form. Please try again or contact support.");
     }
   };
 

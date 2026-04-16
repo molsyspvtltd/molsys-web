@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const multer = require("multer");
 const path = require("path");
+const aws = require("aws-sdk");
+const multerS3 = require("multer-s3");
 require("dotenv").config();
 
 const Application = require("./models/Application");
@@ -32,30 +34,40 @@ mongoose
   });
 
 // ===================================
-// FILE UPLOAD SETUP
+// AWS S3 FILE UPLOAD SETUP
 // ===================================
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "./uploads/");
-  },
-  filename: (req, file, cb) => {
-    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    cb(null, uniqueSuffix + "-" + file.originalname);
-  },
+// AWS config
+aws.config.update({
+  accessKeyId: process.env.AWS_ACCESS_KEY,
+  secretAccessKey: process.env.AWS_SECRET_KEY,
+  region: process.env.AWS_REGION,
 });
 
-const fileFilter = (req, file, cb) => {
-  if (file.mimetype === "application/pdf") {
-    cb(null, true);
-  } else {
-    cb(new Error("Only PDF files are allowed"), false);
-  }
-};
+const s3 = new aws.S3();
 
+// Upload to S3
 const upload = multer({
-  storage: storage,
-  fileFilter: fileFilter,
+  storage: multerS3({
+    s3: s3,
+    bucket: "molsys-sra-bucket",
+    acl: "public-read",
+    key: function (req, file, cb) {
+      const fileName =
+        "molsys-internship-resumes/" +
+        Date.now().toString() +
+        "-" +
+        file.originalname;
+      cb(null, fileName);
+    },
+  }),
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype === "application/pdf") {
+      cb(null, true);
+    } else {
+      cb(new Error("Only PDF allowed"), false);
+    }
+  },
   limits: { fileSize: 5 * 1024 * 1024 }, // 5MB limit
 });
 
@@ -113,7 +125,7 @@ app.post("/apply", upload.single("resume"), async (req, res) => {
       tools,
       projects,
       github,
-      resume: req.file ? `/uploads/${req.file.filename}` : null,
+      resume: req.file ? req.file.location : null,
       isFresher: isFresher === "true" || isFresher === true,
     });
 
