@@ -15,12 +15,12 @@ const DashboardContainer = styled.div`
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 
   @media (max-width: 768px) {
-    margin: 70px auto 30px;
+    margin: 80px auto 30px;
     padding: 30px 15px;
   }
 
   @media (max-width: 480px) {
-    margin: 60px auto 20px;
+    margin: 80px auto 20px;
     padding: 20px 12px;
   }
 `;
