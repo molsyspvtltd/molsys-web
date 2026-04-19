@@ -157,12 +157,15 @@ const TableWrapper = styled.div`
 
 const StyledTable = styled.table`
   width: 100%;
+  min-width: 900px;
   border-collapse: collapse;
   background: #ffffff;
 
   thead {
     background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
     border-bottom: 2px solid #e5e7eb;
+    position: sticky;
+    top: 0;
   }
 
   th {
@@ -173,6 +176,27 @@ const StyledTable = styled.table`
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    white-space: nowrap;
+
+    /* Column width definitions */
+    &:nth-child(1) {
+      width: 18%;
+    } /* Name */
+    &:nth-child(2) {
+      width: 22%;
+    } /* Email */
+    &:nth-child(3) {
+      width: 15%;
+    } /* Role */
+    &:nth-child(4) {
+      width: 12%;
+    } /* Resume */
+    &:nth-child(5) {
+      width: 13%;
+    } /* Date */
+    &:nth-child(6) {
+      width: 20%;
+    } /* University */
 
     @media (max-width: 768px) {
       padding: 12px;
@@ -185,6 +209,27 @@ const StyledTable = styled.table`
     color: #374151;
     border-bottom: 1px solid #e5e7eb;
     font-size: 0.95rem;
+    vertical-align: middle;
+
+    /* Column width definitions */
+    &:nth-child(1) {
+      width: 18%;
+    } /* Name */
+    &:nth-child(2) {
+      width: 22%;
+    } /* Email */
+    &:nth-child(3) {
+      width: 15%;
+    } /* Role */
+    &:nth-child(4) {
+      width: 12%;
+    } /* Resume */
+    &:nth-child(5) {
+      width: 13%;
+    } /* Date */
+    &:nth-child(6) {
+      width: 20%;
+    } /* University */
 
     @media (max-width: 768px) {
       padding: 12px;
@@ -608,15 +653,17 @@ function AdminDashboard() {
                       style={{
                         background: getRoleColor(app.roleApplying),
                         color: "#ffffff",
-                        padding: "6px 12px",
+                        padding: "5px 10px",
                         borderRadius: "20px",
-                        fontSize: "0.8rem",
+                        fontSize: "0.75rem",
                         fontWeight: "600",
                         textTransform: "capitalize",
+                        whiteSpace: "nowrap",
+                        display: "inline-block",
                       }}
                     >
                       {app.roleApplying === "genome-informatics"
-                        ? "🧬 Genome-informatics"
+                        ? "🧬 Genome"
                         : app.roleApplying === "ai-ml"
                           ? "🤖 AI/ML"
                           : app.roleApplying === "frontend"
