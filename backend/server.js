@@ -225,6 +225,7 @@ app.get("/applications", adminAuth, async (req, res) => {
     const limit = parseInt(req.query.limit) || 10;
     const skip = (page - 1) * limit;
 
+    
     // Get total count of unique applicants
     const totalCountPipeline = [
       { $sort: { createdAt: -1 } },
