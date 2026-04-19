@@ -282,6 +282,56 @@ const EmptyState = styled.div`
   }
 `;
 
+const PaginationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    gap: 8px;
+  }
+`;
+
+const PaginationButton = styled.button`
+  padding: 10px 14px;
+  border: 2px solid #e5e7eb;
+  background: ${(props) => (props.active ? "#3b82f6" : "#ffffff")};
+  color: ${(props) => (props.active ? "#ffffff" : "#374151")};
+  border-radius: 6px;
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
+
+  &:hover:not(:disabled) {
+    border-color: #3b82f6;
+    background: ${(props) => (props.active ? "#3b82f6" : "#eff6ff")};
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+`;
+
+const PaginationInfo = styled.span`
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-weight: 500;
+  min-width: 200px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    min-width: auto;
+  }
+`;
+
 // ===================================
 // MAIN COMPONENT
 // ===================================
@@ -298,12 +348,19 @@ function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch applications on mount
-  useEffect(() => {
-    fetchApplications();
-  }, []);
+  // Pagination states
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
+  const [totalCount, setTotalCount] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
+  const [pagination, setPagination] = useState(null);
 
-  // Filter and sort applications
+  // Fetch applications on mount and when page changes
+  useEffect(() => {
+    fetchApplications(currentPage);
+  }, [currentPage]);
+
+  // Filter and sort applications (client-side)
   useEffect(() => {
     let filtered = [...applications];
 
@@ -333,15 +390,18 @@ function AdminDashboard() {
     setFilteredApps(filtered);
   }, [search, sortBy, roleFilter, applications]);
 
-  const fetchApplications = async () => {
+  const fetchApplications = async (page = 1) => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(`${API_URL}/applications`, {
-        headers: {
-          "x-admin-key": ADMIN_KEY,
+      const res = await fetch(
+        `${API_URL}/applications?page=${page}&limit=${pageSize}`,
+        {
+          headers: {
+            "x-admin-key": ADMIN_KEY,
+          },
         },
-      });
+      );
 
       if (!res.ok) {
         const errorData = await res.json();
@@ -352,6 +412,13 @@ function AdminDashboard() {
 
       const data = await res.json();
       setApplications(data.applications || []);
+
+      // Update pagination info from backend
+      if (data.pagination) {
+        setPagination(data.pagination);
+        setTotalCount(data.pagination.totalCount);
+        setTotalPages(data.pagination.totalPages);
+      }
     } catch (err) {
       console.error("Error fetching applications:", err);
       setError(err.message || "Failed to load applications. Check admin key.");
@@ -370,6 +437,12 @@ function AdminDashboard() {
     return colors[role] || "#6b7280";
   };
 
+  const handlePageChange = (newPage) => {
+    if (newPage >= 1 && newPage <= totalPages) {
+      setCurrentPage(newPage);
+    }
+  };
+
   // ===================================
   // RENDER
   // ===================================
@@ -384,7 +457,6 @@ function AdminDashboard() {
     );
   }
 
-  const totalApplications = applications.length;
   const roles = [
     ...new Set(applications.map((app) => app.roleApplying)),
   ].filter(Boolean);
@@ -405,7 +477,7 @@ function AdminDashboard() {
       <Stats>
         <StatCard>
           <h3>Total Applications</h3>
-          <div className="value">{totalApplications}</div>
+          <div className="value">{totalCount}</div>
         </StatCard>
         <StatCard>
           <h3>This Month</h3>
@@ -470,7 +542,10 @@ function AdminDashboard() {
         </Select>
 
         <button
-          onClick={fetchApplications}
+          onClick={() => {
+            setCurrentPage(1);
+            fetchApplications(1);
+          }}
           style={{
             padding: "12px 24px",
             background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
@@ -571,17 +646,55 @@ function AdminDashboard() {
         </TableWrapper>
       )}
 
-      {/* FOOTER */}
-      <div
-        style={{
-          marginTop: "30px",
-          textAlign: "center",
-          color: "#6b7280",
-          fontSize: "0.9rem",
-        }}
-      >
-        Showing {filteredApps.length} of {totalApplications} applications
-      </div>
+      {/* PAGINATION */}
+      {filteredApps.length > 0 && pagination && (
+        <PaginationContainer>
+          <PaginationButton
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={!pagination.hasPrevPage}
+          >
+            ← Previous
+          </PaginationButton>
+
+          {/* Page numbers */}
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <PaginationButton
+              key={page}
+              active={page === currentPage}
+              onClick={() => handlePageChange(page)}
+            >
+              {page}
+            </PaginationButton>
+          ))}
+
+          <PaginationButton
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={!pagination.hasNextPage}
+          >
+            Next →
+          </PaginationButton>
+
+          <PaginationInfo>
+            Page {pagination.currentPage} of {pagination.totalPages} | Total:{" "}
+            {totalCount}
+          </PaginationInfo>
+        </PaginationContainer>
+      )}
+
+      {/* FOOTER INFO */}
+      {filteredApps.length > 0 && (
+        <div
+          style={{
+            marginTop: "20px",
+            textAlign: "center",
+            color: "#6b7280",
+            fontSize: "0.9rem",
+          }}
+        >
+          Showing {filteredApps.length} of {totalCount} applications on this
+          page
+        </div>
+      )}
     </DashboardContainer>
   );
 }

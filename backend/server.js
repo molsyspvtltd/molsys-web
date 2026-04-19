@@ -150,7 +150,8 @@ app.post("/apply", upload.single("resume"), async (req, res) => {
       existingApplication.tools = tools;
       existingApplication.projects = projects;
       existingApplication.github = github;
-      existingApplication.isFresher = isFresher === "true" || isFresher === true;
+      existingApplication.isFresher =
+        isFresher === "true" || isFresher === true;
       if (req.file) {
         existingApplication.resume = req.file.location;
       }
@@ -217,8 +218,31 @@ app.post("/apply", upload.single("resume"), async (req, res) => {
 
 // GET - Retrieve all applications (Admin protected)
 // Returns unique applicants by email (latest submission only)
+// Query params: ?page=1&limit=10 (default: page 1, limit 10 per page)
 app.get("/applications", adminAuth, async (req, res) => {
   try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const skip = (page - 1) * limit;
+
+    // Get total count of unique applicants
+    const totalCountPipeline = [
+      { $sort: { createdAt: -1 } },
+      {
+        $group: {
+          _id: "$email",
+        },
+      },
+      {
+        $count: "total",
+      },
+    ];
+
+    const countResult = await Application.aggregate(totalCountPipeline);
+    const totalCount = countResult.length > 0 ? countResult[0].total : 0;
+    const totalPages = Math.ceil(totalCount / limit);
+
+    // Get paginated applications
     const applications = await Application.aggregate([
       { $sort: { createdAt: -1 } }, // latest first
 
@@ -241,8 +265,8 @@ app.get("/applications", adminAuth, async (req, res) => {
           github: { $first: "$github" },
           resume: { $first: "$resume" },
           isFresher: { $first: "$isFresher" },
-          createdAt: { $first: "$createdAt" }
-        }
+          createdAt: { $first: "$createdAt" },
+        },
       },
 
       {
@@ -264,14 +288,24 @@ app.get("/applications", adminAuth, async (req, res) => {
           github: 1,
           resume: 1,
           isFresher: 1,
-          createdAt: 1
-        }
+          createdAt: 1,
+        },
       },
 
-      { $sort: { createdAt: -1 } }
+      { $sort: { createdAt: -1 } },
+      { $skip: skip },
+      { $limit: limit },
     ]);
 
     res.json({
+      pagination: {
+        currentPage: page,
+        limit: limit,
+        totalCount: totalCount,
+        totalPages: totalPages,
+        hasNextPage: page < totalPages,
+        hasPrevPage: page > 1,
+      },
       count: applications.length,
       applications: applications,
     });
