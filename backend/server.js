@@ -132,7 +132,46 @@ app.post("/apply", upload.single("resume"), async (req, res) => {
       });
     }
 
-    // Create new application
+    // Check if application already exists for this email
+    const existingApplication = await Application.findOne({ email });
+
+    if (existingApplication) {
+      // Update existing application
+      existingApplication.fullName = fullName;
+      existingApplication.phone = phone;
+      existingApplication.location = location;
+      existingApplication.degree = degree;
+      existingApplication.fieldOfStudy = fieldOfStudy;
+      existingApplication.university = university;
+      existingApplication.graduationYear = graduationYear;
+      existingApplication.roleApplying = roleApplying;
+      existingApplication.skills = skills;
+      existingApplication.languages = languages;
+      existingApplication.tools = tools;
+      existingApplication.projects = projects;
+      existingApplication.github = github;
+      existingApplication.isFresher = isFresher === "true" || isFresher === true;
+      if (req.file) {
+        existingApplication.resume = req.file.location;
+      }
+
+      await existingApplication.save();
+
+      console.log("✅ Application updated:", {
+        name: fullName,
+        email: email,
+        role: roleApplying,
+        resumeFile: req.file ? req.file.key : "No file uploaded",
+      });
+
+      return res.status(200).json({
+        message: "Application updated successfully!",
+        applicationId: existingApplication._id,
+        isUpdate: true,
+      });
+    }
+
+    // Create new application if email doesn't exist
     const newApplication = new Application({
       fullName,
       email,
@@ -165,6 +204,7 @@ app.post("/apply", upload.single("resume"), async (req, res) => {
     res.status(201).json({
       message: "Application submitted successfully!",
       applicationId: newApplication._id,
+      isUpdate: false,
     });
   } catch (error) {
     console.error("❌ Error saving application:", error.message);
@@ -176,9 +216,61 @@ app.post("/apply", upload.single("resume"), async (req, res) => {
 });
 
 // GET - Retrieve all applications (Admin protected)
+// Returns unique applicants by email (latest submission only)
 app.get("/applications", adminAuth, async (req, res) => {
   try {
-    const applications = await Application.find().sort({ createdAt: -1 });
+    const applications = await Application.aggregate([
+      { $sort: { createdAt: -1 } }, // latest first
+
+      {
+        $group: {
+          _id: "$email",
+          fullName: { $first: "$fullName" },
+          email: { $first: "$email" },
+          phone: { $first: "$phone" },
+          location: { $first: "$location" },
+          degree: { $first: "$degree" },
+          fieldOfStudy: { $first: "$fieldOfStudy" },
+          university: { $first: "$university" },
+          graduationYear: { $first: "$graduationYear" },
+          roleApplying: { $first: "$roleApplying" },
+          skills: { $first: "$skills" },
+          languages: { $first: "$languages" },
+          tools: { $first: "$tools" },
+          projects: { $first: "$projects" },
+          github: { $first: "$github" },
+          resume: { $first: "$resume" },
+          isFresher: { $first: "$isFresher" },
+          createdAt: { $first: "$createdAt" }
+        }
+      },
+
+      {
+        $project: {
+          _id: 0,
+          fullName: 1,
+          email: 1,
+          phone: 1,
+          location: 1,
+          degree: 1,
+          fieldOfStudy: 1,
+          university: 1,
+          graduationYear: 1,
+          roleApplying: 1,
+          skills: 1,
+          languages: 1,
+          tools: 1,
+          projects: 1,
+          github: 1,
+          resume: 1,
+          isFresher: 1,
+          createdAt: 1
+        }
+      },
+
+      { $sort: { createdAt: -1 } }
+    ]);
+
     res.json({
       count: applications.length,
       applications: applications,
