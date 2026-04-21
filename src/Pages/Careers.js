@@ -1283,7 +1283,7 @@ function Careers() {
 
           <form onSubmit={handleSubmit}>
             {/* PERSONAL INFO */}
-            {/* <h3
+      {/* <h3
               style={{
                 color: "#1f2937",
                 fontSize: "1.1rem",
@@ -1348,7 +1348,7 @@ function Careers() {
             </FormGroup>
 
             {/* EDUCATION */}
-            {/* <h3
+      {/* <h3
               style={{
                 color: "#1f2937",
                 fontSize: "1.1rem",
@@ -1404,7 +1404,7 @@ function Careers() {
             </FormGroup>
 
             {/* ROLE */}
-            {/* <h3
+      {/* <h3
               style={{
                 color: "#1f2937",
                 fontSize: "1.1rem",
@@ -1436,7 +1436,7 @@ function Careers() {
             </FormGroup>
 
             {/* SKILLS */}
-            {/* <h3
+      {/* <h3
               style={{
                 color: "#1f2937",
                 fontSize: "1.1rem",
@@ -1478,7 +1478,7 @@ function Careers() {
             </FormGroup>
 
             {/* EXPERIENCE */}
-            {/* <h3
+      {/* <h3
               style={{
                 color: "#1f2937",
                 fontSize: "1.1rem",
@@ -1511,7 +1511,7 @@ function Careers() {
             </FormGroup>
 
             {/* RESUME */}
-            {/* <h3
+      {/* <h3
               style={{
                 color: "#1f2937",
                 fontSize: "1.1rem",
@@ -1533,7 +1533,7 @@ function Careers() {
             </FormGroup>
 
             {/* DECLARATION */}
-            {/* <CheckboxLabel>
+      {/* <CheckboxLabel>
               <input
                 type="checkbox"
                 name="isFresher"
