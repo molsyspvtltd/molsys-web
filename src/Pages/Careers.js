@@ -844,9 +844,10 @@ const SubmitBtn = styled.button`
 `;
 
 // ============================================
-// INTERNSHIP DATA
+// INTERNSHIP DATA (COMMENTED OUT - HIRING CLOSED)
 // ============================================
 
+/*
 const internshipRoles = [
   {
     id: 1,
@@ -888,12 +889,110 @@ const internshipRoles = [
     pdf: "/backend.pdf",
   },
 ];
+*/
+
+// ============================================
+// CLOSING MESSAGE STYLED COMPONENT
+// ============================================
+
+const ClosedMessageContainer = styled.div`
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  padding: 40px 20px;
+  margin-top: 70px;
+`;
+
+const ClosedMessageContent = styled.div`
+  max-width: 700px;
+  text-align: center;
+  background: #ffffff;
+  padding: 60px 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e5e7eb;
+  animation: fadeInUp 0.8s ease-out;
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 40px 25px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 30px 20px;
+  }
+
+  .icon {
+    font-size: 5rem;
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1f2937;
+    margin-bottom: 16px;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #6b7280;
+    line-height: 1.8;
+    margin-bottom: 12px;
+
+    @media (max-width: 480px) {
+      font-size: 0.95rem;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .highlight {
+    color: #3b82f6;
+    font-weight: 600;
+  }
+
+  .footer-text {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 0.9rem;
+    color: #9ca3af;
+  }
+`;
 
 // ============================================
 // MAIN COMPONENT
 // ============================================
 
 function Careers() {
+  /*
+  // ============================================
+  // STATE MANAGEMENT (COMMENTED OUT - HIRING CLOSED)
+  // ============================================
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -977,11 +1076,46 @@ function Careers() {
       alert("Error submitting form. Please try again or contact support.");
     }
   };
+  */
+
+  // ============================================
+  // MAIN RETURN - HIRING CLOSED MESSAGE
+  // ============================================
 
   return (
     <CareersContainer>
+      <ClosedMessageContainer>
+        <ClosedMessageContent>
+          <div className="icon">✨</div>
+          <h1>Thank You for Your Interest!</h1>
+          <p>
+            We appreciate your enthusiasm about joining the Molsys team. Our
+            <span className="highlight"> internship recruitment process </span>
+            for this cycle has now concluded.
+          </p>
+          <p>
+            We had an overwhelming response from talented candidates, and we're
+            grateful for the opportunity to work with brilliant minds.
+          </p>
+          <p style={{ marginBottom: "24px" }}>
+            We encourage you to stay tuned for future opportunities by visiting
+            our careers page periodically. If you meet the requirements for
+            future openings, we'd love to hear from you!
+          </p>
+
+          <p style={{ color: "#3b82f6", fontSize: "1rem", fontWeight: "600" }}>
+            🚀 Keep innovating. Great opportunities are coming!
+          </p>
+        </ClosedMessageContent>
+      </ClosedMessageContainer>
+
+      {/* 
+      ============================================
+      ALL PREVIOUS SECTIONS COMMENTED OUT
+      ============================================
+
       {/* HERO SECTION */}
-      <HeroSection>
+      {/* <HeroSection>
         <HeroContent>
           <h1>Build the Future of AI & Genomics</h1>
           <p>
@@ -1013,7 +1147,7 @@ function Careers() {
       </HeroSection>
 
       {/* NVIDIA INCEPTION SECTION */}
-      <NvidiaSection>
+      {/* <NvidiaSection>
         <NvidiaContent>
           <img
             src="/internship.png"
@@ -1023,7 +1157,7 @@ function Careers() {
       </NvidiaSection>
 
       {/* OVERVIEW SECTION */}
-      <OverviewSection>
+      {/* <OverviewSection>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <SectionTitle>Why This Internship?</SectionTitle>
           <OverviewGrid>
@@ -1052,7 +1186,7 @@ function Careers() {
       </OverviewSection>
 
       {/* ROLES SECTION */}
-      <RolesSection id="roles">
+      {/* <RolesSection id="roles">
         <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
           <RolesContainer>
             <h2>Explore Internship Roles</h2>
@@ -1093,7 +1227,7 @@ function Careers() {
       </RolesSection>
 
       {/* WHY JOIN SECTION */}
-      <WhyJoinSection>
+      {/* <WhyJoinSection>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <SectionTitle>Why Join Molsys?</SectionTitle>
           <WhyJoinContent>
@@ -1119,7 +1253,7 @@ function Careers() {
       </WhyJoinSection>
 
       {/* FINAL CTA */}
-      <FinalCTASection>
+      {/* <FinalCTASection>
         <FinalCTAContent>
           <h2>Ready to Start Your Journey?</h2>
           <p>
@@ -1133,7 +1267,7 @@ function Careers() {
       </FinalCTASection>
 
       {/* APPLY MODAL */}
-      <ModalOverlay isOpen={isModalOpen} onClick={() => setIsModalOpen(false)}>
+      {/* <ModalOverlay isOpen={isModalOpen} onClick={() => setIsModalOpen(false)}>
         <ModalContent onClick={(e) => e.stopPropagation()}>
           <CloseBtn onClick={() => setIsModalOpen(false)}>&times;</CloseBtn>
 
@@ -1149,7 +1283,7 @@ function Careers() {
 
           <form onSubmit={handleSubmit}>
             {/* PERSONAL INFO */}
-            <h3
+            {/* <h3
               style={{
                 color: "#1f2937",
                 fontSize: "1.1rem",
@@ -1214,7 +1348,7 @@ function Careers() {
             </FormGroup>
 
             {/* EDUCATION */}
-            <h3
+            {/* <h3
               style={{
                 color: "#1f2937",
                 fontSize: "1.1rem",
@@ -1270,7 +1404,7 @@ function Careers() {
             </FormGroup>
 
             {/* ROLE */}
-            <h3
+            {/* <h3
               style={{
                 color: "#1f2937",
                 fontSize: "1.1rem",
@@ -1302,7 +1436,7 @@ function Careers() {
             </FormGroup>
 
             {/* SKILLS */}
-            <h3
+            {/* <h3
               style={{
                 color: "#1f2937",
                 fontSize: "1.1rem",
@@ -1344,7 +1478,7 @@ function Careers() {
             </FormGroup>
 
             {/* EXPERIENCE */}
-            <h3
+            {/* <h3
               style={{
                 color: "#1f2937",
                 fontSize: "1.1rem",
@@ -1377,7 +1511,7 @@ function Careers() {
             </FormGroup>
 
             {/* RESUME */}
-            <h3
+            {/* <h3
               style={{
                 color: "#1f2937",
                 fontSize: "1.1rem",
@@ -1399,7 +1533,7 @@ function Careers() {
             </FormGroup>
 
             {/* DECLARATION */}
-            <CheckboxLabel>
+            {/* <CheckboxLabel>
               <input
                 type="checkbox"
                 name="isFresher"
@@ -1414,7 +1548,7 @@ function Careers() {
             <SubmitBtn type="submit">Submit Application</SubmitBtn>
           </form>
         </ModalContent>
-      </ModalOverlay>
+      </ModalOverlay> */}
     </CareersContainer>
   );
 }
