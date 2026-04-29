@@ -123,18 +123,7 @@ const EnquiryFormIITM = () => {
             }}
           >
             Our Collaboration
-            <div
-              style={{
-                position: "absolute",
-                bottom: "0",
-                left: "50%",
-                transform: "translateX(-50%)",
-                width: "100px",
-                height: "2px",
-                background: "#667eea",
-                borderRadius: "1px",
-              }}
-            />
+           
           </h2>
           <div
             style={{
