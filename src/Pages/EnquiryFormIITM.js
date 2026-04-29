@@ -123,7 +123,6 @@ const EnquiryFormIITM = () => {
             }}
           >
             Our Collaboration
-           
           </h2>
           <div
             style={{
