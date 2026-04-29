@@ -199,6 +199,7 @@ import CancerTestForm from "./component/CancerTestForm";
 import Omics from "./Pages/Omics";
 import Registration from "./Pages/Registration";
 import EnquiryForm from "./Pages/EnquiryForm";
+import EnquiryFormIITM from "./Pages/EnquiryFormIITM";
 import AIWorkshopRegistration from "./Pages/AIWorkshopRegistration";
 import AdminDashboard from "./Pages/AdminDashboard";
 
@@ -323,6 +324,7 @@ function App() {
           <Route path="/Omicsworkshop" component={Omics} />
           <Route path="/OmicsRegistration" component={Registration} />
           <Route path="/enquiry" component={EnquiryForm} />
+          <Route path="/enquiry_iitm" component={EnquiryFormIITM} />
           <Route
             path="/AIWorkshopRegistration"
             component={AIWorkshopRegistration}
