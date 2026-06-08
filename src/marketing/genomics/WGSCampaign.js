@@ -508,6 +508,28 @@ const WGSCampaign = () => {
                                 </ul>
                             </div>
                         </div>
+
+                        {/* Call to Action Button */}
+                        <div style={{ textAlign: 'center', marginTop: '40px', marginBottom: '30px' }}>
+                            <button
+                                className="submit-btn"
+                                onClick={() => setActiveTab('calc')}
+                                style={{
+                                    padding: '18px 40px',
+                                    fontSize: '16px',
+                                    fontWeight: '700',
+                                    background: 'linear-gradient(135deg, #0055FF 0%, #00A88F 100%)',
+                                    border: 'none',
+                                    borderRadius: '12px',
+                                    color: 'white',
+                                    cursor: 'pointer',
+                                    boxShadow: '0 4px 15px rgba(0, 85, 255, 0.3)',
+                                    transition: 'all 0.3s ease'
+                                }}
+                            >
+                                 Try Interactive Calculator & Get Your Quote
+                            </button>
+                        </div>
                     </div>
                 )}
 
@@ -608,7 +630,7 @@ const WGSCampaign = () => {
                                                 <input
                                                     type="text"
                                                     className="form-control"
-                                                    placeholder="e.g. Dr. Ramesh Kumar"
+                                                    placeholder="e.g. Dr. John Doe"
                                                     value={formData.name}
                                                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                                                 />
@@ -619,7 +641,7 @@ const WGSCampaign = () => {
                                                     <input
                                                         type="email"
                                                         className="form-control"
-                                                        placeholder="e.g. ramesh@iari.res.in"
+                                                        placeholder="e.g. john.doe@university.edu"
                                                         value={formData.email}
                                                         onChange={(e) => setFormData({...formData, email: e.target.value})}
                                                     />
@@ -641,7 +663,7 @@ const WGSCampaign = () => {
                                                     <input
                                                         type="text"
                                                         className="form-control"
-                                                        placeholder="e.g. Indian Agricultural Research Institute"
+                                                        placeholder="e.g. Your University Name"
                                                         value={formData.institution}
                                                         onChange={(e) => setFormData({...formData, institution: e.target.value})}
                                                     />
@@ -651,7 +673,7 @@ const WGSCampaign = () => {
                                                     <input
                                                         type="text"
                                                         className="form-control"
-                                                        placeholder="e.g. Division of Microbiology"
+                                                        placeholder="e.g. Department of Biology"
                                                         value={formData.department}
                                                         onChange={(e) => setFormData({...formData, department: e.target.value})}
                                                     />
