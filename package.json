@@ -19,7 +19,7 @@
     "google-auth-library": "^9.2.0",
     "googleapis": "^128.0.0",
     "html2canvas": "^1.4.1",
-    "html2pdf.js": "^0.10.1",
+    "html2pdf.js": "^0.10.3",
     "jspdf": "^2.5.1",
     "local-storage": "^2.0.0",
     "mui-datatables": "^3.4.0",
