@@ -532,7 +532,7 @@ const WGSCampaign = () => {
                         </div>
                     </div>
                 )}
-
+    
                 {/* Tab Content - Calculator */}
                 {activeTab === 'calc' && (
                     <div className="tab-content active">
