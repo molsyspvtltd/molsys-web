@@ -1133,7 +1133,7 @@ function Omics() {
                       borderRadius: "4px",
                     }}
                   >
-                    it@molsys.in
+                    info@molsys.in
                   </strong>
                   <br />
                   Please only respond to emails from this address. Do not trust
