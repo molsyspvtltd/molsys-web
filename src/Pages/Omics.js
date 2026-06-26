@@ -579,7 +579,7 @@ export default Omics;
 // NEW IMPLEMENTATION - SynthMind Bootcamp
 import React, { useState } from "react";
 import "./Omics.css";
-import flyerImage from "../assets/IMG_1047.PNG";
+import flyerImage from "../assets/IMG_1047.png";
 
 function Omics() {
   const [formData, setFormData] = useState({
@@ -648,9 +648,9 @@ function Omics() {
         timestamp: timestamp,
       });
 
-      // Google Apps Script URL for form submission
+      // Google Apps Script URL for form submission (Production - info@molsys.in)
       await fetch(
-        "https://script.google.com/macros/s/AKfycbyBM_w6e2clGRBdPs7G7ZtQJXWsOtWJy-8DgymsYuTCZvrTUS_VMEuxfKaXF2SU41FT/exec",
+        "https://script.google.com/macros/s/AKfycbyUERFbKvklJ5lzzcdzxQ_UGyehdOCR6fbOGH9T7vWkgRUaRJWfGxmfasRV4RSIkQZ6/exec",
         {
           method: "POST",
           mode: "no-cors",

@@ -244,7 +244,8 @@ function App() {
       <UINavBar />
       {/* {isLoggedIn && <Drawer />} */}
       <ConfirmMessageComponent />
-      {location.pathname === "/home" && <FloatingButton />}
+      {/* Commented out old FloatingButton - now using SynthMind modal's floating button */}
+      {/* {location.pathname === "/home" && <FloatingButton />} */}
 
       {/* Using HashRouter for routing */}
       <HashRouter>

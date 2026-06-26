@@ -18,6 +18,7 @@ import ImageContainer from '../component/ImageContainer';
 import logo from '../assets/logo.png';
 import wadhwani from '../assets/wadhwani_logo.png';
 import yti from '../assets/yenTI_nobg.png';
+import SynthMindModal from '../components/SynthMindModal'; // SynthMind Bootcamp Modal
 
 
 
@@ -68,6 +69,8 @@ class Home extends React.Component {
 
     return (
       <div className="container-fluid fade-in">
+        {/* SynthMind Bootcamp Modal */}
+        <SynthMindModal />
 
         {/*Section1 - Molsys */}
 
