@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/static/css/main.b00e8090.css",
-    "main.js": "/static/js/main.f10d9da2.js",
+    "main.js": "/static/js/main.8c40c6ed.js",
     "static/js/213.a109a162.chunk.js": "/static/js/213.a109a162.chunk.js",
     "static/js/455.e9b284f8.chunk.js": "/static/js/455.e9b284f8.chunk.js",
     "static/js/337.2ba92f3d.chunk.js": "/static/js/337.2ba92f3d.chunk.js",
     "static/media/gcell_ad.mp4": "/static/media/gcell_ad.288923e8c0d125ea616e.mp4",
+    "static/media/IMG_1047.png": "/static/media/IMG_1047.d09776ccc8aed64f2881.png",
     "static/media/education&emp.jpg": "/static/media/education&emp.c515259ddd5731dbbc76.jpg",
     "static/media/research&dev.jpg": "/static/media/research&dev.293d95f9d2c946f3599c.jpg",
     "static/media/world.jpg": "/static/media/world.053e9341185865301351.jpg",
@@ -60,13 +61,13 @@
     "static/media/karthik.jpg": "/static/media/karthik.fc0adc829b6df8e983a6.jpg",
     "index.html": "/index.html",
     "main.b00e8090.css.map": "/static/css/main.b00e8090.css.map",
-    "main.f10d9da2.js.map": "/static/js/main.f10d9da2.js.map",
+    "main.8c40c6ed.js.map": "/static/js/main.8c40c6ed.js.map",
     "213.a109a162.chunk.js.map": "/static/js/213.a109a162.chunk.js.map",
     "455.e9b284f8.chunk.js.map": "/static/js/455.e9b284f8.chunk.js.map",
     "337.2ba92f3d.chunk.js.map": "/static/js/337.2ba92f3d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b00e8090.css",
-    "static/js/main.f10d9da2.js"
+    "static/js/main.8c40c6ed.js"
   ]
 }
