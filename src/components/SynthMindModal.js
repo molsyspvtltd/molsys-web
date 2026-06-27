@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { useHistory } from "react-router-dom";
+import bootcampVideo from "../assets/IMG_1153.mp4";
 
 const SynthMindModal = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [dontShowAgain, setDontShowAgain] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const history = useHistory();
-
-  // Video URL from S3 bucket
-  const bootcampVideoUrl = "https://molsys-sra-bucket.s3.amazonaws.com/videos/IMG_1153.MP4";
 
   useEffect(() => {
     // Check if user has chosen "don't show again" today
@@ -257,8 +255,7 @@ const SynthMindModal = () => {
                       height: "40px",
                       animation: "spin 1s linear infinite",
                     }}></div>
-                    <div>Loading video from cloud...</div>
-                    <div style={{fontSize: "14px", opacity: 0.8}}>This may take a moment</div>
+                    <div>Loading video...</div>
                   </div>
                 )}
 
@@ -281,7 +278,7 @@ const SynthMindModal = () => {
                   onCanPlay={() => setIsVideoLoaded(true)}
                   poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect fill='%23667eea' width='100' height='100'/%3E%3C/svg%3E"
                 >
-                  <source src={bootcampVideoUrl} type="video/mp4" />
+                  <source src={bootcampVideo} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>

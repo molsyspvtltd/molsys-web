@@ -1,0 +1,273 @@
+/* ========================================
+   NAVBAR - Mobile First Design
+   ======================================== */
+
+/* Navbar Container */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+  flex-shrink: 0;
+}
+
+.navbar-logo img {
+  height: 35px;
+  width: auto;
+  display: block;
+}
+
+/* Hamburger Menu (Mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  z-index: 1001;
+  transition: all 0.3s ease;
+  outline: none;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2.5px;
+  background: #374151;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hamburger span:nth-child(1) {
+  top: 3px;
+}
+
+.hamburger span:nth-child(2) {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hamburger span:nth-child(3) {
+  bottom: 3px;
+  transform: translateX(-50%);
+}
+
+.hamburger.active span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.hamburger.active span:nth-child(3) {
+  bottom: 50%;
+  transform: translate(-50%, 50%) rotate(-45deg);
+}
+
+/* Navigation Menu */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 8px;
+}
+
+.navbar-item {
+  position: relative;
+}
+
+.navbar-link {
+  display: block;
+  padding: 10px 16px;
+  color: #374151;
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.navbar-link:hover {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet and Mobile (≤992px) */
+@media (max-width: 992px) {
+  .hamburger {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .navbar-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 20px 20px;
+    gap: 0;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  .navbar-menu.active {
+    right: 0;
+  }
+
+  .navbar-item {
+    width: 100%;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  .navbar-item:last-child {
+    border-bottom: none;
+  }
+
+  .navbar-link {
+    width: 100%;
+    padding: 16px 12px;
+    font-size: 16px;
+    border-radius: 0;
+  }
+
+  .navbar-link:hover {
+    transform: translateX(8px);
+    background: rgba(16, 185, 129, 0.08);
+  }
+}
+
+/* Small Mobile (≤480px) */
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 10px 16px;
+  }
+
+  .navbar-logo img {
+    height: 30px;
+  }
+
+  .hamburger {
+    display: flex !important;
+    width: 28px;
+    height: 22px;
+  }
+
+  .hamburger span {
+    height: 3px;
+    display: block !important;
+  }
+
+  .navbar-menu {
+    width: 260px;
+  }
+}
+
+/* Desktop (≥993px) */
+@media (min-width: 993px) {
+  .navbar-container {
+    padding: 12px 40px;
+  }
+
+  .navbar-logo img {
+    height: 40px;
+  }
+
+  .navbar-menu {
+    gap: 12px;
+  }
+
+  .navbar-link {
+    font-size: 15px;
+  }
+}
+
+/* Large Desktop (≥1200px) */
+@media (min-width: 1200px) {
+  .navbar-container {
+    max-width: 1400px;
+    padding: 12px 60px;
+  }
+
+  .navbar-menu {
+    gap: 16px;
+  }
+}
+
+/* Backdrop for Mobile Menu */
+@media (max-width: 992px) {
+  .navbar-menu.active::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    animation: fadeIn 0.3s ease;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Smooth Scrolling Fix for Fixed Navbar */
+html {
+  scroll-padding-top: 70px;
+}
