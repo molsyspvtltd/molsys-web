@@ -580,6 +580,7 @@ export default Omics;
 import React, { useState } from "react";
 import "./Omics.css";
 import flyerImage from "../assets/IMG_1047.png";
+import SynthMindModal from "../components/SynthMindModal";
 
 function Omics() {
   const [formData, setFormData] = useState({
@@ -1783,6 +1784,9 @@ function Omics() {
           Questions? Contact us at info@molsys.in
         </p>
       </div>
+
+      {/* SynthMind Bootcamp Promotion Modal */}
+      <SynthMindModal />
     </div>
   );
 }
