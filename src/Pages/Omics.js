@@ -72,7 +72,7 @@ function Omics() {
 
   return (
     <div className="App">
-      {/* Header Section *//*}
+      {/* Header Section */ /*}
       <header class="header">
         <div class="particles" id="particles"></div>
         <div class="pulse-circles" id="pulseCircles"></div>
@@ -110,7 +110,7 @@ function Omics() {
         </div>
       </header>
 
-      {/* About Section *//*}
+      {/* About Section */ /*}
       <section className="about">
         <div className="container">
           <h2>Molsys: Your Partner in AI-Driven Genomics</h2>
@@ -153,7 +153,7 @@ function Omics() {
         </div>
       </section>
 
-      {/* Problem Statement Section *//*}
+      {/* Problem Statement Section */ /*}
       <section className="problem">
         <div className="container">
           <h2>THE PROBLEM WE ARE TRYING TO SOLVE</h2>
@@ -192,7 +192,7 @@ function Omics() {
         </div>
       </section>
 
-      {/* Challenge Section *//*}
+      {/* Challenge Section */ /*}
       <section className="challenge">
         <div className="container">
           <h2>THE GENOMICS DATA CHALLENGE</h2>
@@ -222,7 +222,7 @@ function Omics() {
         </div>
       </section>
 
-      {/* Expertise Section *//*}
+      {/* Expertise Section */ /*}
       <section className="expertise">
         <div className="container">
           <h2>Molsys and its expertise</h2>
@@ -276,7 +276,7 @@ function Omics() {
         </div>
       </section>
 
-      {/* Timeline Section *//*}
+      {/* Timeline Section */ /*}
       <section className="timeline-section">
         <div className="container">
           <h2>Workshop Timeline</h2>
@@ -439,7 +439,7 @@ function Omics() {
         </div>
       </section>
 
-      {/* Tools Section *//*}
+      {/* Tools Section */ /*}
       <section className="tools">
         <div className="container">
           <h2>Key Tools and Platforms</h2>
@@ -510,7 +510,7 @@ function Omics() {
         </div>
       </section>
 
-      {/* Outcomes Section *//*}
+      {/* Outcomes Section */ /*}
       <section className="outcomes">
         <div className="container">
           <h2>Expected Outcomes</h2>
@@ -596,6 +596,7 @@ function Omics() {
     areaOfInterest: "",
     goals: "",
     selectedTier: "",
+    couponCode: "",
     registrationId: "",
     timestamp: "",
   });
@@ -644,23 +645,24 @@ function Omics() {
         areaOfInterest: formData.areaOfInterest,
         goals: formData.goals,
         selectedTier: formData.selectedTier,
+        couponCode: formData.couponCode || "N/A",
         registrationId: registrationId,
         timestamp: timestamp,
       });
 
       // Google Apps Script URL for form submission (Production - info@molsys.in)
       await fetch(
-        "https://script.google.com/macros/s/AKfycbyUERFbKvklJ5lzzcdzxQ_UGyehdOCR6fbOGH9T7vWkgRUaRJWfGxmfasRV4RSIkQZ6/exec",
+        "https://script.google.com/macros/s/AKfycbzIQpF-IRlAysFptVuk9ZipUPoRl8HS_0hNechr1GpYOAhGHCwHDmkfUv6apNOCPcC3/exec",
         {
           method: "POST",
           mode: "no-cors",
           body: params,
-        }
+        },
       );
 
       // Show success message with registration ID
       alert(
-        `✅ Registration Successful!\n\nYour Registration ID: ${registrationId}\n\nPlease save this ID for future reference.\n\nA confirmation email has been sent to ${formData.email}`
+        `✅ Registration Successful!\n\nYour Registration ID: ${registrationId}\n\nPlease save this ID for future reference.\n\nA confirmation email has been sent to ${formData.email}`,
       );
 
       // Reset form
@@ -678,6 +680,7 @@ function Omics() {
         areaOfInterest: "",
         goals: "",
         selectedTier: "",
+        couponCode: "",
         registrationId: "",
         timestamp: "",
       });
@@ -837,7 +840,9 @@ function Omics() {
       </div>
 
       {/* About Section */}
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "60px 20px" }}>
+      <div
+        style={{ maxWidth: "1200px", margin: "0 auto", padding: "60px 20px" }}
+      >
         <div
           style={{
             background: "white",
@@ -866,11 +871,11 @@ function Omics() {
               marginBottom: "20px",
             }}
           >
-            SynthMind is an intensive bootcamp designed to bridge the gap between
-            AI, Biology, and Agentic Workflows. Whether you're a student,
-            researcher, or professional, this program will equip you with
-            cutting-edge skills to build industry-ready AI products and automate
-            complex biological research workflows.
+            SynthMind is an intensive bootcamp designed to bridge the gap
+            between AI, Biology, and Agentic Workflows. Whether you're a
+            student, researcher, or professional, this program will equip you
+            with cutting-edge skills to build industry-ready AI products and
+            automate complex biological research workflows.
           </p>
           <div
             style={{
@@ -924,7 +929,9 @@ function Omics() {
                 >
                   {item.title}
                 </h3>
-                <p style={{ fontSize: "14px", color: "#718096" }}>{item.desc}</p>
+                <p style={{ fontSize: "14px", color: "#718096" }}>
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -1012,7 +1019,13 @@ function Omics() {
                     One-time payment
                   </p>
                 </div>
-                <ul style={{ listStyle: "none", padding: 0, marginBottom: "32px" }}>
+                <ul
+                  style={{
+                    listStyle: "none",
+                    padding: 0,
+                    marginBottom: "32px",
+                  }}
+                >
                   {tier.features.map((feature, idx) => (
                     <li
                       key={idx}
@@ -1049,7 +1062,8 @@ function Omics() {
                       formData.selectedTier === tier.name
                         ? tier.gradient
                         : "#e2e8f0",
-                    color: formData.selectedTier === tier.name ? "white" : "#4a5568",
+                    color:
+                      formData.selectedTier === tier.name ? "white" : "#4a5568",
                     fontSize: "16px",
                     fontWeight: "bold",
                     border: "none",
@@ -1068,7 +1082,9 @@ function Omics() {
                     }
                   }}
                 >
-                  {formData.selectedTier === tier.name ? "✓ Selected" : "Select Plan"}
+                  {formData.selectedTier === tier.name
+                    ? "✓ Selected"
+                    : "Select Plan"}
                 </button>
               </div>
             ))}
@@ -1269,7 +1285,8 @@ function Omics() {
                     marginBottom: "8px",
                   }}
                 >
-                  College / Organization <span style={{ color: "#e53e3e" }}>*</span>
+                  College / Organization{" "}
+                  <span style={{ color: "#e53e3e" }}>*</span>
                 </label>
                 <input
                   type="text"
@@ -1300,7 +1317,8 @@ function Omics() {
                     marginBottom: "8px",
                   }}
                 >
-                  Degree / Qualification <span style={{ color: "#e53e3e" }}>*</span>
+                  Degree / Qualification{" "}
+                  <span style={{ color: "#e53e3e" }}>*</span>
                 </label>
                 <input
                   type="text"
@@ -1531,7 +1549,8 @@ function Omics() {
                   appearance: "none",
                   WebkitAppearance: "none",
                   MozAppearance: "none",
-                  backgroundImage: "url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e\")",
+                  backgroundImage:
+                    "url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e\")",
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "right 12px center",
                   backgroundSize: "20px",
@@ -1540,9 +1559,15 @@ function Omics() {
                 onFocus={(e) => (e.target.style.borderColor = "#667eea")}
                 onBlur={(e) => (e.target.style.borderColor = "#e2e8f0")}
               >
-                <option value="" style={{ color: "#a0aec0" }}>Select your area of interest</option>
+                <option value="" style={{ color: "#a0aec0" }}>
+                  Select your area of interest
+                </option>
                 {areasOfInterest.map((area, idx) => (
-                  <option key={idx} value={area} style={{ color: "#2d3748", padding: "10px" }}>
+                  <option
+                    key={idx}
+                    value={area}
+                    style={{ color: "#2d3748", padding: "10px" }}
+                  >
                     {area}
                   </option>
                 ))}
@@ -1584,6 +1609,72 @@ function Omics() {
               />
             </div>
 
+            {/* Coupon Code */}
+            <div style={{ marginBottom: "32px" }}>
+              <label
+                style={{
+                  display: "block",
+                  fontSize: "14px",
+                  fontWeight: "600",
+                  color: "#2d3748",
+                  marginBottom: "8px",
+                }}
+              >
+                🎟️ Coupon Code (Optional)
+              </label>
+              <div style={{ position: "relative" }}>
+                <input
+                  type="text"
+                  name="couponCode"
+                  value={formData.couponCode}
+                  onChange={handleChange}
+                  placeholder="Enter your coupon code"
+                  style={{
+                    width: "100%",
+                    padding: "12px 16px",
+                    border: "2px solid #e2e8f0",
+                    borderRadius: "8px",
+                    fontSize: "16px",
+                    outline: "none",
+                    textTransform: "uppercase",
+                  }}
+                  onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                  onBlur={(e) => (e.target.style.borderColor = "#e2e8f0")}
+                />
+                {formData.couponCode && (
+                  <div
+                    style={{
+                      marginTop: "8px",
+                      padding: "8px 12px",
+                      background: "#f0fff4",
+                      border: "1px solid #9ae6b4",
+                      borderRadius: "6px",
+                      fontSize: "14px",
+                      color: "#2f855a",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                    }}
+                  >
+                    <span>✓</span>
+                    <span>
+                      Coupon code applied:{" "}
+                      <strong>{formData.couponCode}</strong>
+                    </span>
+                  </div>
+                )}
+              </div>
+              <p
+                style={{
+                  fontSize: "13px",
+                  color: "#718096",
+                  marginTop: "8px",
+                }}
+              >
+                Have a discount code? Enter it here to avail special offers
+              </p>
+            </div>
+
             {/* Selected Tier Display */}
             {formData.selectedTier && (
               <div
@@ -1596,7 +1687,13 @@ function Omics() {
                   textAlign: "center",
                 }}
               >
-                <p style={{ fontSize: "14px", color: "#2f855a", marginBottom: "4px" }}>
+                <p
+                  style={{
+                    fontSize: "14px",
+                    color: "#2f855a",
+                    marginBottom: "4px",
+                  }}
+                >
                   Selected Plan:
                 </p>
                 <p
@@ -1628,13 +1725,16 @@ function Omics() {
                 border: "none",
                 borderRadius: "12px",
                 cursor:
-                  !formData.selectedTier || isSubmitting ? "not-allowed" : "pointer",
+                  !formData.selectedTier || isSubmitting
+                    ? "not-allowed"
+                    : "pointer",
                 transition: "all 0.3s ease",
               }}
               onMouseEnter={(e) => {
                 if (formData.selectedTier && !isSubmitting) {
                   e.target.style.transform = "translateY(-2px)";
-                  e.target.style.boxShadow = "0 10px 30px rgba(102, 126, 234, 0.4)";
+                  e.target.style.boxShadow =
+                    "0 10px 30px rgba(102, 126, 234, 0.4)";
                 }
               }}
               onMouseLeave={(e) => {
@@ -1645,8 +1745,8 @@ function Omics() {
               {isSubmitting
                 ? "Submitting..."
                 : !formData.selectedTier
-                ? "Please Select a Tier Above"
-                : "🚀 Register Now"}
+                  ? "Please Select a Tier Above"
+                  : "🚀 Register Now"}
             </button>
 
             {!formData.selectedTier && (
@@ -1659,7 +1759,8 @@ function Omics() {
                   fontWeight: "600",
                 }}
               >
-                ⚠️ Please select a registration tier from the pricing section above
+                ⚠️ Please select a registration tier from the pricing section
+                above
               </p>
             )}
           </form>
