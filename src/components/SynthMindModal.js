@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import bootcampVideo from "../assets/IMG_1153.mp4";
 
 const SynthMindModal = () => {
@@ -8,6 +8,7 @@ const SynthMindModal = () => {
   const [dontShowAgain, setDontShowAgain] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const history = useHistory();
+  const location = useLocation();
 
   useEffect(() => {
     // Check if user has chosen "don't show again" today
@@ -40,7 +41,23 @@ const SynthMindModal = () => {
   };
 
   const handleRegister = () => {
-    history.push("/Omicsworkshop");
+    // If already on Omics page, just close modal and scroll to form
+    if (location.pathname === "/Omicsworkshop") {
+      setIsModalOpen(false);
+      // Scroll to registration form smoothly
+      setTimeout(() => {
+        const formSection = document.querySelector('[style*="background: #f7fafc"]');
+        if (formSection) {
+          formSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          // Fallback: scroll to top
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }, 300);
+    } else {
+      // Navigate to Omics page
+      history.push("/Omicsworkshop");
+    }
   };
 
   const handleFloatingButtonClick = () => {
