@@ -699,6 +699,7 @@ function Omics() {
       price: "₹1,249",
       tier: "tier1",
       gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+      popular: true,
       features: [
         "AI Agents",
         "Bioinformatics Workflows",
@@ -718,7 +719,6 @@ function Omics() {
       price: "₹7,999",
       tier: "tier2",
       gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
-      popular: true,
       features: [
         "Everything in Foundation Bootcamp",
         "Build AI SaaS Products",
@@ -1103,6 +1103,7 @@ function Omics() {
         >
           <div style={{ textAlign: "center", marginBottom: "40px" }}>
             <h2
+              id="registration-form"
               style={{
                 fontSize: "36px",
                 fontWeight: "bold",

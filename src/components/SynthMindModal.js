@@ -44,19 +44,25 @@ const SynthMindModal = () => {
     // If already on Omics page, just close modal and scroll to form
     if (location.pathname === "/Omicsworkshop") {
       setIsModalOpen(false);
-      // Scroll to registration form smoothly
+      // Scroll to registration form smoothly using the ID
       setTimeout(() => {
-        const formSection = document.querySelector('[style*="background: #f7fafc"]');
-        if (formSection) {
-          formSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        const registrationForm = document.getElementById("registration-form");
+        if (registrationForm) {
+          registrationForm.scrollIntoView({ behavior: "smooth", block: "start" });
         } else {
           // Fallback: scroll to top
           window.scrollTo({ top: 0, behavior: "smooth" });
         }
       }, 300);
     } else {
-      // Navigate to Omics page
+      // Navigate to Omics page and then scroll to form
       history.push("/Omicsworkshop");
+      setTimeout(() => {
+        const registrationForm = document.getElementById("registration-form");
+        if (registrationForm) {
+          registrationForm.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 500);
     }
   };
 
