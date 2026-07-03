@@ -1113,6 +1113,22 @@ function Omics() {
             >
               📝 Registration Form
             </h2>
+            <div
+              style={{
+                display: "inline-block",
+                background: "linear-gradient(135deg, rgba(102, 126, 234, 0.12) 0%, rgba(118, 75, 162, 0.12) 100%)",
+                border: "1px solid rgba(102, 126, 234, 0.25)",
+                color: "#2d3748",
+                padding: "10px 18px",
+                borderRadius: "999px",
+                fontSize: "15px",
+                fontWeight: "700",
+                boxShadow: "0 8px 24px rgba(102, 126, 234, 0.12)",
+                marginBottom: "10px",
+              }}
+            >
+              Last date to apply: 5 July 2026
+            </div>
             <p style={{ fontSize: "16px", color: "#718096" }}>
               Fill in your details to secure your spot
             </p>
