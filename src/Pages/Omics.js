@@ -1116,7 +1116,8 @@ function Omics() {
             <div
               style={{
                 display: "inline-block",
-                background: "linear-gradient(135deg, rgba(102, 126, 234, 0.12) 0%, rgba(118, 75, 162, 0.12) 100%)",
+                background:
+                  "linear-gradient(135deg, rgba(102, 126, 234, 0.12) 0%, rgba(118, 75, 162, 0.12) 100%)",
                 border: "1px solid rgba(102, 126, 234, 0.25)",
                 color: "#2d3748",
                 padding: "10px 18px",
