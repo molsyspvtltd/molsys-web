@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { useHistory, useLocation } from "react-router-dom";
 import bootcampVideo from "../assets/IMG_1153.mp4";
 
-const SynthMindModal = () => {
+const SynthMindModal = ({ autoOpen = true }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [dontShowAgain, setDontShowAgain] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
@@ -11,6 +11,8 @@ const SynthMindModal = () => {
   const location = useLocation();
 
   useEffect(() => {
+    if (!autoOpen) return undefined;
+
     // Check if user has chosen "don't show again" today
     const lastDismissed = localStorage.getItem("synthMindModalDismissed");
     const today = new Date().toDateString();
@@ -30,7 +32,7 @@ const SynthMindModal = () => {
     } else {
       console.log("SynthMind Modal: User dismissed today, not showing");
     }
-  }, []);
+  }, [autoOpen]);
 
   const handleClose = () => {
     setIsModalOpen(false);
@@ -48,7 +50,10 @@ const SynthMindModal = () => {
       setTimeout(() => {
         const registrationForm = document.getElementById("registration-form");
         if (registrationForm) {
-          registrationForm.scrollIntoView({ behavior: "smooth", block: "start" });
+          registrationForm.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
         } else {
           // Fallback: scroll to top
           window.scrollTo({ top: 0, behavior: "smooth" });
@@ -60,7 +65,10 @@ const SynthMindModal = () => {
       setTimeout(() => {
         const registrationForm = document.getElementById("registration-form");
         if (registrationForm) {
-          registrationForm.scrollIntoView({ behavior: "smooth", block: "start" });
+          registrationForm.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
         }
       }, 500);
     }
@@ -167,13 +175,17 @@ const SynthMindModal = () => {
               }}
               onMouseEnter={(e) => {
                 e.target.style.backgroundColor = "#764ba2";
-                e.target.style.transform = window.innerWidth > 768 ? "scale(1.1) rotate(90deg)" : "scale(1.05)";
+                e.target.style.transform =
+                  window.innerWidth > 768
+                    ? "scale(1.1) rotate(90deg)"
+                    : "scale(1.05)";
                 e.target.style.boxShadow = "0 6px 20px rgba(118, 75, 162, 0.6)";
               }}
               onMouseLeave={(e) => {
                 e.target.style.backgroundColor = "#667eea";
                 e.target.style.transform = "scale(1) rotate(0deg)";
-                e.target.style.boxShadow = "0 4px 12px rgba(102, 126, 234, 0.4)";
+                e.target.style.boxShadow =
+                  "0 4px 12px rgba(102, 126, 234, 0.4)";
               }}
             >
               ×
@@ -191,7 +203,8 @@ const SynthMindModal = () => {
                 style={{
                   fontSize: "clamp(24px, 5vw, 36px)",
                   fontWeight: "800",
-                  background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                  background:
+                    "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -230,7 +243,10 @@ const SynthMindModal = () => {
                     "0 20px 40px -10px rgba(102, 126, 234, 0.5), inset 0 0 0 6px rgba(102, 126, 234, 0.15)",
                   background: "#000",
                   marginBottom: "clamp(20px, 4vw, 40px)",
-                  transform: window.innerWidth > 768 ? "perspective(1200px) rotateX(1deg)" : "none",
+                  transform:
+                    window.innerWidth > 768
+                      ? "perspective(1200px) rotateX(1deg)"
+                      : "none",
                   transition: "all 0.4s ease",
                 }}
                 onMouseEnter={(e) => {
@@ -263,21 +279,25 @@ const SynthMindModal = () => {
                       flexDirection: "column",
                       alignItems: "center",
                       justifyContent: "center",
-                      background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                      background:
+                        "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
                       color: "white",
                       fontSize: "18px",
                       fontWeight: "600",
                       gap: "12px",
                     }}
                   >
-                    <div className="spinner" style={{
-                      border: "4px solid rgba(255,255,255,0.3)",
-                      borderTop: "4px solid white",
-                      borderRadius: "50%",
-                      width: "40px",
-                      height: "40px",
-                      animation: "spin 1s linear infinite",
-                    }}></div>
+                    <div
+                      className="spinner"
+                      style={{
+                        border: "4px solid rgba(255,255,255,0.3)",
+                        borderTop: "4px solid white",
+                        borderRadius: "50%",
+                        width: "40px",
+                        height: "40px",
+                        animation: "spin 1s linear infinite",
+                      }}
+                    ></div>
                     <div>Loading video...</div>
                   </div>
                 )}
@@ -316,7 +336,8 @@ const SynthMindModal = () => {
                   fontSize: "clamp(16px, 3vw, 20px)",
                   fontWeight: "700",
                   color: "white",
-                  background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                  background:
+                    "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
                   border: "none",
                   borderRadius: "12px",
                   cursor: "pointer",
@@ -326,11 +347,13 @@ const SynthMindModal = () => {
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.transform = "translateY(-2px)";
-                  e.target.style.boxShadow = "0 15px 30px -5px rgba(102, 126, 234, 0.6)";
+                  e.target.style.boxShadow =
+                    "0 15px 30px -5px rgba(102, 126, 234, 0.6)";
                 }}
                 onMouseLeave={(e) => {
                   e.target.style.transform = "translateY(0)";
-                  e.target.style.boxShadow = "0 10px 25px -5px rgba(102, 126, 234, 0.5)";
+                  e.target.style.boxShadow =
+                    "0 10px 25px -5px rgba(102, 126, 234, 0.5)";
                 }}
               >
                 🎓 Register Now - Limited Seats!
@@ -400,11 +423,13 @@ const SynthMindModal = () => {
           }}
           onMouseEnter={(e) => {
             e.target.style.transform = "scale(1.05)";
-            e.target.style.boxShadow = "0 15px 35px -5px rgba(102, 126, 234, 0.7)";
+            e.target.style.boxShadow =
+              "0 15px 35px -5px rgba(102, 126, 234, 0.7)";
           }}
           onMouseLeave={(e) => {
             e.target.style.transform = "scale(1)";
-            e.target.style.boxShadow = "0 10px 25px -5px rgba(102, 126, 234, 0.6)";
+            e.target.style.boxShadow =
+              "0 10px 25px -5px rgba(102, 126, 234, 0.6)";
           }}
         >
           <span style={{ fontSize: "20px" }}>🚀</span>
@@ -515,10 +540,7 @@ const SynthMindModal = () => {
   );
 
   // Use React Portal to render modal at document root level (outside all parent containers)
-  return ReactDOM.createPortal(
-    modalContent,
-    document.body
-  );
+  return ReactDOM.createPortal(modalContent, document.body);
 };
 
 export default SynthMindModal;
