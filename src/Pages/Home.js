@@ -18,7 +18,6 @@ import ImageContainer from "../component/ImageContainer";
 import logo from "../assets/logo.png";
 import wadhwani from "../assets/wadhwani_logo.png";
 import yti from "../assets/yenTI_nobg.png";
-import SynthMindModal from "../components/SynthMindModal"; // SynthMind Bootcamp Modal
 
 import { Link } from "react-router-dom";
 import { ObserveOnOperator } from "rxjs/internal/operators/observeOn";
@@ -73,9 +72,6 @@ class Home extends React.Component {
   render() {
     return (
       <div className="container-fluid fade-in">
-        {/* SynthMind Bootcamp Modal */}
-        <SynthMindModal autoOpen={false} />
-
         {/*Section1 - Molsys */}
 
         <section className="section-fluid">
