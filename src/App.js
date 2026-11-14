@@ -203,7 +203,7 @@ import EnquiryFormIITM from "./Pages/EnquiryFormIITM";
 import AIWorkshopRegistration from "./Pages/AIWorkshopRegistration";
 import AdminDashboard from "./Pages/AdminDashboard";
 import WGSCampaign from "./marketing/genomics/WGSCampaign";
-
+import MargOncoFeedbackForm from "./Pages/MargOncoFeedbackForm";
 const useStyles = makeStyles((theme) => ({
   "@global": {
     body: {
@@ -332,6 +332,7 @@ function App() {
             component={AIWorkshopRegistration}
           />
           <Route path="/wgs-campaign" component={WGSCampaign} />
+          <Route exact path="/marg-onco-feedback" component={MargOncoFeedbackForm} />
         </Switch>
       </HashRouter>
       <Footer />

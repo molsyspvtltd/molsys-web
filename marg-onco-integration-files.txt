@@ -1,0 +1,1467 @@
+
+========== src/App.js ==========
+
+// import {CssBaseline, makeStyles, React, UINavBar,} from "./component"
+// import './App.css';
+// import {useSelector} from "react-redux";
+// import {useEffect} from "react";
+// import {setAuthToken} from "./auth/authDispatcher";
+// import AppNotificationComponent from "./shared/notification/app-notification-component";
+// import LoadingIndicatorComponent from "./shared/loader/loading-indicator-component";
+// import ConfirmMessageComponent from "./shared/confirm/confirm-message-component";
+// import AboutUS from "./Pages/AboutUS";
+// import ContactUs from "./Pages/Contact";
+// import Home  from "./Pages/Home";
+// import Pms from './Pages/Pms';
+// import G_cell from './Pages/G_Cell';
+// import WellnessAssessment from "./Pages/WellnessAssessment";
+// import Footer from './component/Footer';
+// import Documents from "./Pages/Documents";
+// import Market from './Pages/Market';
+// import WholeGenomeSequencing from './Servicespages/WholeGenomeSequencing';
+// import rnaSequencing from './Servicespages/rnaSequencing';
+// import MetagenomeAnalysisPage from './Servicespages/MetagenomeAnalysisPage';
+// import SmallRNASeqPage from './Servicespages/SmallRNASeqPage';
+// import ChIPSeqPage from './Servicespages/ChIPSeqPage';
+// import WholeGenomeReSeqPage from './Servicespages/WholeGenomeRe-SeqPage';
+// import WholeExomeAnalysisPage from './Servicespages/WholeExomeAnalysisPage';
+// import BiocloudServicesPage from './Servicespages/BiocloudServicesPage';
+// import SampleIsolationPage from './Servicespages/SampleIsolationPage';
+// import WholeGenomeSeqGen from './Servicespages/WholeGenomeSeqGen';
+// import SMetagenomeSequencing from './Servicespages/16SMetagenomeSequencing';
+// import ITSMetagenomeSequencing from './Servicespages/ITSMetagenomeSequencing';
+// import GenotypingbySequencing from './Servicespages/GenotypingbySequencing';
+// import Agrigenotyping from './Servicespages/Agrigenotyping';
+// import LivestockGenotyping from './Servicespages/LivestockGenotyping';
+// import PetGenotyping from './Servicespages/PetGenotyping';
+// import MouseArrays from './Servicespages/MouseArrays';
+// import HumanArrays from './Servicespages/HumanArrays';
+// import MetaTranscriptomeAnalysisPage from './Servicespages/MetaTranscriptomeAnalysisPage';
+// import OligosForm from './forms/OligosForm';
+// import DataGenerationform from './forms/DataGenerationform';
+// import DataAnalysisform from './forms/DataAnalysisform';
+// import notification from './shared/notification/notificationpopup';
+// import Careers from "./Pages/Careers";
+// import Privacypolicy from "./Pages/Privacypolicy";
+// import { Route, Switch, Redirect } from 'react-router-dom';
+
+// const useStyles = makeStyles((theme) => ({
+
+//   '@global': {
+//     body: {
+//       backgroundColor: '#e6e6e6'
+//     },
+//     footer:{
+//       marginTop:'calc(5% + 60px)',
+//       bottom: 0
+//     }
+//   },
+//   footer:{
+//     marginTop:'calc(5% + 60px)',
+//     bottom: 0
+//   }
+
+// }));
+
+// function App() {
+//   const classes = useStyles();
+//   const {user,token,isLoggedIn,roles} = useSelector(state => state.auth);
+
+//   const auth = {user,token,isLoggedIn,roles}
+
+//   let homePage = '/home'
+
+//   if(isLoggedIn)
+//     homePage ='/profile'
+
+//   useEffect(() => {
+
+//     if(token && user){
+//       setAuthToken(token)
+
+//     }
+
+//   }, [token]);
+
+//   return (<React.Fragment>
+
+//         <LoadingIndicatorComponent></LoadingIndicatorComponent>
+//         <UINavBar />
+//         {/* {isLoggedIn && <Drawer />} */}
+//         <ConfirmMessageComponent/>
+//         <Switch >
+//           <Route path='/home' component={Home} />
+//           <Route path='/aboutUs' component={AboutUS} />
+//           <Route path='/contactUs' component={ContactUs} />
+//           {/* <Route path='/services' component={Services} /> */}
+//           <Route path='/documents' component={Documents} />
+//           <Route path='/Market' component={Market} />
+//           <Route path='/pms' component={Pms} />
+//           <Route path='/g-cell' component={G_cell} />
+//           <Route path='/Privacypolicy' component={Privacypolicy} />
+//           <Route path='/Careers' component={Careers} />
+//           <Route path='/wellnessAssessment' component={WellnessAssessment} />
+//           <Route path='/WholeGenomeSequencing' component={WholeGenomeSequencing}/>
+//           <Route path='/rnaSequencing' component={rnaSequencing} />
+//           <Route path='/MetagenomeAnalysisPage' component={MetagenomeAnalysisPage} />
+//           <Route path='/SmallRNASeqPage' component={SmallRNASeqPage} />
+//           <Route path='/ChIPSeqPage' component={ChIPSeqPage} />
+//           <Route path='/WholeGenomeReSeqPage' component={WholeGenomeReSeqPage} />
+//           <Route path='/WholeExomeAnalysisPage' component={WholeExomeAnalysisPage} />
+//           <Route path='/BiocloudServicesPage' component={BiocloudServicesPage} />
+//           <Route path='/SampleIsolationPage' component={SampleIsolationPage}/>
+//           <Route path='/WholeGenomeSeqGen' component={WholeGenomeSeqGen} />
+//           <Route path='/SMetagenomeSequencing' component={SMetagenomeSequencing}/>
+//           <Route path='/ITSMetagenomeSequencing' component={ITSMetagenomeSequencing} />
+//           <Route path='/GenotypingbySequencing' component={GenotypingbySequencing}/>
+//           <Route path='/Agrigenotyping' component={Agrigenotyping} auth={isLoggedIn}/>
+//           <Route path='/LivestockGenotyping' component={LivestockGenotyping}/>
+//           <Route path='/PetGenotyping' component={PetGenotyping}/>
+//           <Route path='/MouseArrays' component={MouseArrays}/>
+//           <Route path='/HumanArrays' component={HumanArrays}/>
+//           <Route path='/MetaTranscriptomeAnalysisPage' component={MetaTranscriptomeAnalysisPage}/>
+//           <Route path='/OligosForm' component={OligosForm} />
+//           <Route path='/DataGenerationform' component={DataGenerationform}/>
+//           <Route path='/DataAnalysisform' component={DataAnalysisform}/>
+//           <Route path='/notification' component={notification}  />
+
+//           {/* <Route path="/">
+//             <Redirect to={homePage} />
+//           </Route> */}
+//           <Route exact path="/">
+//   <Redirect to={homePage} />
+// </Route>
+
+//         </Switch>
+//         <Footer />
+
+//         <AppNotificationComponent/>
+
+//     </React.Fragment>
+
+//   );
+// }
+
+// export default App;
+
+import { CssBaseline, makeStyles, React, UINavBar } from "./component";
+import "./App.css";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { setAuthToken } from "./auth/authDispatcher";
+import AppNotificationComponent from "./shared/notification/app-notification-component";
+import LoadingIndicatorComponent from "./shared/loader/loading-indicator-component";
+import ConfirmMessageComponent from "./shared/confirm/confirm-message-component";
+import AboutUS from "./Pages/AboutUS";
+import ContactUs from "./Pages/Contact";
+import Home from "./Pages/Home";
+import Pms from "./Pages/Pms";
+import G_cell from "./Pages/G_Cell";
+import WellnessAssessment from "./Pages/WellnessAssessment";
+import Footer from "./component/Footer";
+import Documents from "./Pages/Documents";
+import Market from "./Pages/Market";
+import WholeGenomeSequencing from "./Servicespages/WholeGenomeSequencing";
+import rnaSequencing from "./Servicespages/rnaSequencing";
+import MetagenomeAnalysisPage from "./Servicespages/MetagenomeAnalysisPage";
+import SmallRNASeqPage from "./Servicespages/SmallRNASeqPage";
+import ChIPSeqPage from "./Servicespages/ChIPSeqPage";
+import WholeGenomeReSeqPage from "./Servicespages/WholeGenomeRe-SeqPage";
+import WholeExomeAnalysisPage from "./Servicespages/WholeExomeAnalysisPage";
+import BiocloudServicesPage from "./Servicespages/BiocloudServicesPage";
+import SampleIsolationPage from "./Servicespages/SampleIsolationPage";
+import WholeGenomeSeqGen from "./Servicespages/WholeGenomeSeqGen";
+import SMetagenomeSequencing from "./Servicespages/16SMetagenomeSequencing";
+import ITSMetagenomeSequencing from "./Servicespages/ITSMetagenomeSequencing";
+import GenotypingbySequencing from "./Servicespages/GenotypingbySequencing";
+import Agrigenotyping from "./Servicespages/Agrigenotyping";
+import LivestockGenotyping from "./Servicespages/LivestockGenotyping";
+import PetGenotyping from "./Servicespages/PetGenotyping";
+import MouseArrays from "./Servicespages/MouseArrays";
+import HumanArrays from "./Servicespages/HumanArrays";
+import MetaTranscriptomeAnalysisPage from "./Servicespages/MetaTranscriptomeAnalysisPage";
+import OligosForm from "./forms/OligosForm";
+import DataGenerationform from "./forms/DataGenerationform";
+import DataAnalysisform from "./forms/DataAnalysisform";
+import notification from "./shared/notification/notificationpopup";
+import Careers from "./Pages/Careers";
+import WorkshopRegistration from "./Pages/WorkshopRegistrationPage";
+import Privacypolicy from "./Pages/Privacypolicy";
+import {
+  Route,
+  Switch,
+  Redirect,
+  HashRouter,
+  useHistory,
+  useLocation,
+} from "react-router-dom";
+import FloatingButton from "./component/FloatingButton"; // Import FloatingButton
+import Analysisform from "./Pages/Analysisform";
+import CancerTestDashboard from "./component/CancerTestDashboard";
+import CancerTestForm from "./component/CancerTestForm";
+import Omics from "./Pages/Omics";
+import Registration from "./Pages/Registration";
+import EnquiryForm from "./Pages/EnquiryForm";
+import EnquiryFormIITM from "./Pages/EnquiryFormIITM";
+import AIWorkshopRegistration from "./Pages/AIWorkshopRegistration";
+import AdminDashboard from "./Pages/AdminDashboard";
+import WGSCampaign from "./marketing/genomics/WGSCampaign";
+
+const useStyles = makeStyles((theme) => ({
+  "@global": {
+    body: {
+      backgroundColor: "#e6e6e6",
+    },
+    footer: {
+      marginTop: "calc(5% + 60px)",
+      bottom: 0,
+    },
+  },
+  footer: {
+    marginTop: "calc(5% + 60px)",
+    bottom: 0,
+  },
+}));
+
+function App() {
+  const classes = useStyles();
+  const { user, token, isLoggedIn, roles } = useSelector((state) => state.auth);
+
+  const auth = { user, token, isLoggedIn, roles };
+  const history = useHistory();
+  const location = useLocation();
+
+  let homePage = "/home";
+
+  if (isLoggedIn) homePage = "/profile";
+
+  useEffect(() => {
+    if (token && user) {
+      setAuthToken(token);
+    }
+  }, [token]);
+
+  return (
+    <React.Fragment>
+      <LoadingIndicatorComponent />
+      <UINavBar />
+      {/* {isLoggedIn && <Drawer />} */}
+      <ConfirmMessageComponent />
+      {/* Commented out old FloatingButton - now using SynthMind modal's floating button */}
+      {/* {location.pathname === "/home" && <FloatingButton />} */}
+
+      {/* Using HashRouter for routing */}
+      <HashRouter>
+        <Switch>
+          <Route exact path="/" render={() => <Redirect to="/home" />} />
+          <Route path="/home" component={Home} />
+          <Route path="/aboutUs" component={AboutUS} />
+          <Route path="/contactUs" component={ContactUs} />
+          <Route path="/documents" component={Documents} />
+          <Route path="/Market" component={Market} />
+          <Route path="/pms" component={Pms} />
+          <Route path="/g-cell" component={G_cell} />
+          <Route path="/Privacypolicy" component={Privacypolicy} />
+          <Route path="/Careers" component={Careers} />
+          <Route path="/admin" component={AdminDashboard} />
+          <Route path="/wellnessAssessment" component={WellnessAssessment} />
+          <Route
+            path="/WholeGenomeSequencing"
+            component={WholeGenomeSequencing}
+          />
+          <Route path="/rnaSequencing" component={rnaSequencing} />
+          <Route
+            path="/MetagenomeAnalysisPage"
+            component={MetagenomeAnalysisPage}
+          />
+          <Route path="/SmallRNASeqPage" component={SmallRNASeqPage} />
+          <Route path="/ChIPSeqPage" component={ChIPSeqPage} />
+          <Route
+            path="/WholeGenomeReSeqPage"
+            component={WholeGenomeReSeqPage}
+          />
+          <Route
+            path="/WholeExomeAnalysisPage"
+            component={WholeExomeAnalysisPage}
+          />
+          <Route
+            path="/BiocloudServicesPage"
+            component={BiocloudServicesPage}
+          />
+          <Route path="/SampleIsolationPage" component={SampleIsolationPage} />
+          <Route path="/WholeGenomeSeqGen" component={WholeGenomeSeqGen} />
+          <Route
+            path="/SMetagenomeSequencing"
+            component={SMetagenomeSequencing}
+          />
+          <Route
+            path="/ITSMetagenomeSequencing"
+            component={ITSMetagenomeSequencing}
+          />
+          <Route
+            path="/GenotypingbySequencing"
+            component={GenotypingbySequencing}
+          />
+          <Route
+            path="/Agrigenotyping"
+            component={Agrigenotyping}
+            auth={isLoggedIn}
+          />
+          <Route path="/LivestockGenotyping" component={LivestockGenotyping} />
+          <Route path="/PetGenotyping" component={PetGenotyping} />
+          <Route path="/MouseArrays" component={MouseArrays} />
+          <Route path="/HumanArrays" component={HumanArrays} />
+          <Route
+            path="/MetaTranscriptomeAnalysisPage"
+            component={MetaTranscriptomeAnalysisPage}
+          />
+          <Route path="/OligosForm" component={OligosForm} />
+          <Route path="/DataGenerationform" component={DataGenerationform} />
+          <Route path="/DataAnalysisform" component={DataAnalysisform} />
+          <Route path="/notification" component={notification} />
+          <Route
+            path="/WorkshopRegistration"
+            component={WorkshopRegistration}
+          />
+          <Route path="/Analysisform" component={Analysisform} />
+          <Route path="/cancer" component={CancerTestDashboard} />
+          <Route path="/request-test" component={CancerTestForm} />
+          <Route path="/Omicsworkshop" component={Omics} />
+          <Route path="/OmicsRegistration" component={Registration} />
+          <Route path="/enquiry" component={EnquiryForm} />
+          <Route path="/enquiry_iitm" component={EnquiryFormIITM} />
+          <Route
+            path="/AIWorkshopRegistration"
+            component={AIWorkshopRegistration}
+          />
+          <Route path="/wgs-campaign" component={WGSCampaign} />
+        </Switch>
+      </HashRouter>
+      <Footer />
+      <AppNotificationComponent />
+    </React.Fragment>
+  );
+}
+
+export default App;
+
+
+========== src/index.js ==========
+
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+// import './items.scss';
+// import App from './App';
+// import * as serviceWorker from './serviceWorker';
+// import { Provider } from "react-redux";
+// import {PersistGate} from 'redux-persist/integration/react';
+// import { persistor, store } from './config/store';
+// import {LoadingView} from "./component/LoadingView";
+// import {CssBaseline, Router, UINavBar} from "./component";
+// import LoadingIndicatorComponent from "./shared/loader/loading-indicator-component";
+// import ConfirmMessageComponent from "./shared/confirm/confirm-message-component";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+
+
+// ReactDOM.render(
+//      <Provider store={store}>
+//           <PersistGate loading={<LoadingView/>} persistor={persistor}>
+//               <CssBaseline />
+//               <Router>
+//               <App />
+//               </Router>
+//           </PersistGate>
+//       </Provider>,
+//   document.getElementById('root')
+// );
+
+// // If you want your app to work offline and load faster, you can change
+// // unregister() to register() below. Note this comes with some pitfalls.
+// // Learn more about service workers: https://bit.ly/CRA-PWA
+// serviceWorker.unregister();
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import { Provider } from "react-redux";
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistor, store } from './config/store';
+// import { BrowserRouter as Router } from 'react-router-dom';
+
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
+//       <Router>
+//         <App />
+//       </Router>
+//     </PersistGate>
+//   </Provider>,
+//   document.getElementById('root')
+// );
+import { HashRouter as Router } from 'react-router-dom';  // Import HashRouter
+
+ReactDOM.render(
+  <Provider store={store}>
+    <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
+      <Router>  {/* Use HashRouter here */}
+        <App />
+      </Router>
+    </PersistGate>
+  </Provider>,
+  document.getElementById('root')
+);
+
+
+========== src/Pages/EnquiryForm.js ==========
+
+import React, { useState } from "react";
+import emailjs from "@emailjs/browser"; // ✅ REQUIRED for sending emails
+
+const EnquiryForm = () => {
+  const [formData, setFormData] = useState({
+    from_name: "",
+    email: "",
+    phone: "",
+    institution: "",
+    service: "",
+    other_service: "",
+    final_service: "",
+    message: "",
+    title: "New Company Enquiry",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .send(
+        "service_e6ax5mf",
+        "template_s0p2g4k",
+        formData,
+        "MHuXywcK2nvKGX8KQ",
+      )
+      .then((response) => {
+        alert("Enquiry sent successfully!");
+        console.log("SUCCESS!", response.status, response.text);
+
+        setFormData({
+          from_name: "",
+          email: "",
+          phone: "",
+          institution: "",
+          service: "",
+          other_service: "",
+          final_service: "",
+          message: "",
+          title: "New Company Enquiry",
+        });
+      })
+      .catch((err) => {
+        alert("Error sending enquiry!");
+        console.error("FAILED...", err);
+      });
+  };
+
+  const services = [
+    {
+      icon: "🧬",
+      name: "Whole Genome Sequencing",
+      subtitle: "WGS – Bacteria",
+      description: "Complete bacterial genome analysis with high accuracy",
+    },
+    {
+      icon: "🦠",
+      name: "Whole Metagenome Sequencing",
+      subtitle: "Microbiome Analysis",
+      description: "Comprehensive microbial community profiling",
+    },
+    {
+      icon: "🔬",
+      name: "Shallow-depth mtDNA Sequencing",
+      subtitle: "Mitochondrial DNA",
+      description: "Cost-effective mitochondrial genome sequencing",
+    },
+    {
+      icon: "📊",
+      name: "RNA Sequencing",
+      subtitle: "RNA-Seq",
+      description: "Transcriptome analysis and gene expression profiling",
+    },
+    {
+      icon: "🧪",
+      name: "Gene Expression Analysis",
+      subtitle: "qPCR",
+      description: "Quantitative PCR for precise gene expression measurement",
+    },
+    {
+      icon: "🎯",
+      name: "SNP Genotyping",
+      subtitle: "Variant Detection",
+      description: "High-throughput genetic variation analysis",
+    },
+  ];
+
+  return (
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        padding: "100px 20px 40px 20px",
+      }}
+    >
+      <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+        {/* Hero Section */}
+        <div
+          style={{ textAlign: "center", marginBottom: "60px", color: "white" }}
+        >
+          <h1
+            style={{
+              fontSize: "48px",
+              fontWeight: "bold",
+              marginBottom: "16px",
+              textShadow: "2px 2px 4px rgba(0,0,0,0.2)",
+            }}
+          >
+            Advanced Genomic Sequencing Services
+          </h1>
+          <p
+            style={{
+              fontSize: "20px",
+              opacity: 0.95,
+              maxWidth: "600px",
+              margin: "0 auto",
+            }}
+          >
+            Cutting-edge genomic analysis for research institutions, hospitals,
+            and biotech companies worldwide
+          </p>
+        </div>
+
+        {/* Services Showcase */}
+        <div style={{ marginBottom: "60px" }}>
+          <h2
+            style={{
+              fontSize: "32px",
+              fontWeight: "bold",
+              color: "white",
+              textAlign: "center",
+              marginBottom: "40px",
+            }}
+          >
+            🌟 Our Premium Services
+          </h2>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "24px",
+            }}
+          >
+            {services.map((service, index) => (
+              <div
+                key={index}
+                style={{
+                  background: "white",
+                  borderRadius: "16px",
+                  padding: "24px",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-8px)";
+                  e.currentTarget.style.boxShadow =
+                    "0 15px 40px rgba(0,0,0,0.3)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow =
+                    "0 10px 30px rgba(0,0,0,0.2)";
+                }}
+              >
+                <div style={{ fontSize: "48px", marginBottom: "12px" }}>
+                  {service.icon}
+                </div>
+                <h3
+                  style={{
+                    fontSize: "20px",
+                    fontWeight: "bold",
+                    color: "#2d3748",
+                    marginBottom: "4px",
+                  }}
+                >
+                  {service.name}
+                </h3>
+                <p
+                  style={{
+                    fontSize: "14px",
+                    color: "#667eea",
+                    fontWeight: "600",
+                    marginBottom: "12px",
+                  }}
+                >
+                  {service.subtitle}
+                </p>
+                <p
+                  style={{
+                    fontSize: "14px",
+                    color: "#4a5568",
+                    lineHeight: "1.6",
+                  }}
+                >
+                  {service.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Form Section */}
+        <div
+          style={{
+            background: "white",
+            borderRadius: "24px",
+            boxShadow: "0 20px 60px rgba(0,0,0,0.3)",
+            overflow: "hidden",
+          }}
+        >
+          <div style={{ padding: "48px" }}>
+            <div style={{ marginBottom: "32px" }}>
+              <h2
+                style={{
+                  fontSize: "32px",
+                  fontWeight: "bold",
+                  color: "#2d3748",
+                  marginBottom: "12px",
+                }}
+              >
+                Service Request Form
+              </h2>
+              <p
+                style={{
+                  fontSize: "16px",
+                  color: "#4a5568",
+                  lineHeight: "1.6",
+                }}
+              >
+                Welcome! Please fill out the form below to request genomic
+                sequencing services. Our team will review your submission and
+                get back to you shortly.
+              </p>
+            </div>
+
+            <div>
+              <div style={{ marginBottom: "24px" }}>
+                <label
+                  style={{
+                    display: "block",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                    color: "#2d3748",
+                    marginBottom: "8px",
+                  }}
+                >
+                  Full Name <span style={{ color: "#e53e3e" }}>*</span>
+                </label>
+                <input
+                  type="text"
+                  name="from_name"
+                  value={formData.from_name}
+                  placeholder="Enter your full name"
+                  onChange={handleChange}
+                  style={{
+                    width: "100%",
+                    padding: "12px 16px",
+                    border: "2px solid #e2e8f0",
+                    borderRadius: "8px",
+                    fontSize: "16px",
+                    outline: "none",
+                    transition: "border-color 0.3s ease",
+                  }}
+                  onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                  onBlur={(e) => (e.target.style.borderColor = "#e2e8f0")}
+                  required
+                />
+              </div>
+
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: "24px",
+                  marginBottom: "24px",
+                }}
+              >
+                <div>
+                  <label
+                    style={{
+                      display: "block",
+                      fontSize: "14px",
+                      fontWeight: "600",
+                      color: "#2d3748",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    Email Address <span style={{ color: "#e53e3e" }}>*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    placeholder="Enter your email address"
+                    onChange={handleChange}
+                    style={{
+                      width: "100%",
+                      padding: "12px 16px",
+                      border: "2px solid #e2e8f0",
+                      borderRadius: "8px",
+                      fontSize: "16px",
+                      outline: "none",
+                    }}
+                    onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                    onBlur={(e) => (e.target.style.borderColor = "#e2e8f0")}
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label
+                    style={{
+                      display: "block",
+                      fontSize: "14px",
+                      fontWeight: "600",
+                      color: "#2d3748",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    Phone Number <span style={{ color: "#e53e3e" }}>*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="phone"
+                    value={formData.phone}
+                    placeholder="+1 234 567 8900"
+                    onChange={handleChange}
+                    style={{
+                      width: "100%",
+                      padding: "12px 16px",
+                      border: "2px solid #e2e8f0",
+                      borderRadius: "8px",
+                      fontSize: "16px",
+                      outline: "none",
+                    }}
+                    onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                    onBlur={(e) => (e.target.style.borderColor = "#e2e8f0")}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div style={{ marginBottom: "24px" }}>
+                <label
+                  style={{
+                    display: "block",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                    color: "#2d3748",
+                    marginBottom: "8px",
+                  }}
+                >
+                  Institution / Organization
+                </label>
+                <input
+                  type="text"
+                  name="institution"
+                  value={formData.institution}
+                  placeholder="Your Company Name"
+                  onChange={handleChange}
+                  style={{
+                    width: "100%",
+                    padding: "12px 16px",
+                    border: "2px solid #e2e8f0",
+                    borderRadius: "8px",
+                    fontSize: "16px",
+                    outline: "none",
+                  }}
+                  onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                  onBlur={(e) => (e.target.style.borderColor = "#e2e8f0")}
+                />
+              </div>
+
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns:
+                    formData.service === "Other" ? "1fr 1fr" : "1fr",
+                  gap: "24px",
+                  marginBottom: "24px",
+                }}
+              >
+                <div>
+                  <label
+                    style={{
+                      display: "block",
+                      fontSize: "14px",
+                      fontWeight: "600",
+                      color: "#2d3748",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    Selected Service
+                  </label>
+
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    style={{
+                      width: "100%",
+                      padding: "12px 16px",
+                      border: "2px solid #e2e8f0",
+                      borderRadius: "8px",
+                      fontSize: "16px",
+                      outline: "none",
+                      cursor: "pointer",
+                    }}
+                    onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                    onBlur={(e) => (e.target.style.borderColor = "#e2e8f0")}
+                    required
+                  >
+                    <option value="">Select a Service</option>
+
+                    {/* Microbial Sequencing Services */}
+                    <option value="16S Metagenomics">16S Metagenomics</option>
+                    <option value="ITS Metagenomic Sequencing (Fungal Profiling)">
+                      ITS Metagenomic Sequencing (Fungal Profiling)
+                    </option>
+                    <option value="18S / Eukaryotic Amplicon Sequencing">
+                      18S / Eukaryotic Amplicon Sequencing
+                    </option>
+
+                    <option value="Whole Genome Sequencing (WGS – Bacteria)">
+                      Whole Genome Sequencing (WGS – Bacteria)
+                    </option>
+
+                    <option value="Whole Metagenome Sequencing">
+                      Whole Metagenome Sequencing
+                    </option>
+
+                    {/* Other Genomics Services */}
+                    <option value="Shallow-depth mtDNA Sequencing">
+                      Shallow-depth mtDNA Sequencing
+                    </option>
+
+                    <option value="RNA Sequencing (RNA-Seq)">
+                      RNA Sequencing (RNA-Seq)
+                    </option>
+
+                    <option value="Gene Expression Analysis (qPCR)">
+                      Gene Expression Analysis (qPCR)
+                    </option>
+
+                    <option value="SNP Genotyping">SNP Genotyping</option>
+
+                    {/* Custom Service */}
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                {formData.service === "Other" && (
+                  <div>
+                    <label
+                      style={{
+                        display: "block",
+                        fontSize: "14px",
+                        fontWeight: "600",
+                        color: "#2d3748",
+                        marginBottom: "8px",
+                      }}
+                    >
+                      Please specify the service
+                    </label>
+                    <input
+                      type="text"
+                      name="other_service"
+                      value={formData.other_service}
+                      placeholder="Enter your custom service"
+                      onChange={handleChange}
+                      style={{
+                        width: "100%",
+                        padding: "12px 16px",
+                        border: "2px solid #e2e8f0",
+                        borderRadius: "8px",
+                        fontSize: "16px",
+                        outline: "none",
+                      }}
+                      onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                      onBlur={(e) => (e.target.style.borderColor = "#e2e8f0")}
+                      required
+                    />
+                  </div>
+                )}
+              </div>
+
+              <div style={{ marginBottom: "24px" }}>
+                <label
+                  style={{
+                    display: "block",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                    color: "#2d3748",
+                    marginBottom: "8px",
+                  }}
+                >
+                  Final Service to Process
+                </label>
+                <input
+                  type="text"
+                  name="final_service"
+                  value={formData.final_service}
+                  placeholder="Primary service you're interested in"
+                  onChange={handleChange}
+                  style={{
+                    width: "100%",
+                    padding: "12px 16px",
+                    border: "2px solid #e2e8f0",
+                    borderRadius: "8px",
+                    fontSize: "16px",
+                    outline: "none",
+                  }}
+                  onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                  onBlur={(e) => (e.target.style.borderColor = "#e2e8f0")}
+                />
+              </div>
+
+              <div style={{ marginBottom: "24px" }}>
+                <label
+                  style={{
+                    display: "block",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                    color: "#2d3748",
+                    marginBottom: "8px",
+                  }}
+                >
+                  Message (Optional)
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  placeholder="Tell us more about your requirements..."
+                  onChange={handleChange}
+                  rows="5"
+                  style={{
+                    width: "100%",
+                    padding: "12px 16px",
+                    border: "2px solid #e2e8f0",
+                    borderRadius: "8px",
+                    fontSize: "16px",
+                    outline: "none",
+                    resize: "vertical",
+                  }}
+                  onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                  onBlur={(e) => (e.target.style.borderColor = "#e2e8f0")}
+                ></textarea>
+              </div>
+
+              <button
+                onClick={sendEmail}
+                style={{
+                  width: "100%",
+                  padding: "16px",
+                  background:
+                    "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                  color: "white",
+                  fontSize: "18px",
+                  fontWeight: "bold",
+                  border: "none",
+                  borderRadius: "8px",
+                  cursor: "pointer",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.transform = "translateY(-2px)";
+                  e.target.style.boxShadow =
+                    "0 10px 20px rgba(102, 126, 234, 0.4)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.transform = "translateY(0)";
+                  e.target.style.boxShadow = "none";
+                }}
+              >
+                Submit Enquiry - Don't Miss Out!
+              </button>
+
+              <p
+                style={{
+                  textAlign: "center",
+                  marginTop: "16px",
+                  fontSize: "16px",
+                  color: "#667eea",
+                  fontWeight: "600",
+                }}
+              >
+                ⏰ Priority response within 24 hours!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default EnquiryForm;
+
+
+========== src/Pages/WorkshopRegistrationPage.js ==========
+
+// WorkshopRegistrationPage.jsx
+import React, { useState } from "react";
+import emailjs from 'emailjs-com';
+import "../style/Workshop.css";
+
+const WorkshopRegistrationPage = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    designation: "",
+    workshop: "",
+    agreeTerms: false,
+  });
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errors, setErrors] = useState({});
+
+  const workshops = [
+    {
+      id: "metagenomics",
+      name: "Amplicon Metagenomics & RNA Sequencing",
+      date: "May 12th - May 14th, 2025",
+    },
+    {
+      id: "biological",
+      name: "AI in Biological Research",
+      date: "May 16th - May 17th, 2025",
+    },
+  ];
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Invalid email address";
+    }
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone is required";
+    } else if (!/^[0-9]{10}$/.test(formData.phone)) {
+      newErrors.phone = "Enter valid 10-digit phone number";
+    }
+    if (!formData.designation.trim())
+      newErrors.designation = "Designation is required";
+    if (!formData.workshop) newErrors.workshop = "Workshop is required";
+    if (!formData.agreeTerms) newErrors.agreeTerms = "Required";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      setIsSubmitted(true);
+      const selectedWorkshop = workshops.find((w) => w.id === formData.workshop);
+  
+      // Send the registration details via EmailJS
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        designation: formData.designation,
+        workshop: selectedWorkshop?.name,
+        workshopDate: selectedWorkshop?.date,
+      };
+  
+      emailjs
+        .send(
+          'service_4qrjs0o', // Your EmailJS Service ID
+          'template_kl20bjm', // Your EmailJS Template ID
+          templateParams,
+          'LV_-uXhtrexl-6c74' // Your EmailJS User ID
+        )
+        .then(
+          (response) => {
+            console.log('Email sent successfully!', response);
+          },
+          (error) => {
+            console.error('Error sending email:', error);
+          }
+        );
+    }
+  };
+  
+  const resetForm = () => {
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      designation: "",
+      workshop: "",
+      agreeTerms: false,
+    });
+    setErrors({});
+    setIsSubmitted(false);
+  };
+
+  if (isSubmitted) {
+    const selectedWorkshop = workshops.find((w) => w.id === formData.workshop);
+
+    return (
+      <div className="submitted-wrapper">
+        <div className="submitted-box">
+          <h2>Registration Successful!</h2>
+          <p>
+            Thank you, <strong>{formData.name}</strong>! You've registered for{" "}
+          </p>
+          <p>
+            <strong>{selectedWorkshop?.name}</strong>
+            <br />
+            <span>{selectedWorkshop?.date}</span>
+          </p>
+
+          <button onClick={resetForm}>Register Another</button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="form-wrapper">
+      <form onSubmit={handleSubmit} className="registration-form">
+        <h2>Workshop Registration</h2>
+
+        <div className="form-group">
+          <input
+            type="text"
+            name="name"
+            placeholder={errors.name || "Full Name"}
+            className={errors.name ? "error" : ""}
+            value={formData.name}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="form-group">
+          <input
+            type="email"
+            name="email"
+            placeholder={errors.email || "Email Address"}
+            className={errors.email ? "error" : ""}
+            value={formData.email}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="form-group">
+          <input
+            type="text"
+            name="phone"
+            placeholder={errors.phone || "Phone Number"}
+            className={errors.phone ? "error" : ""}
+            value={formData.phone}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="form-group">
+          <input
+            type="text"
+            name="designation"
+            placeholder={errors.designation || "Designation"}
+            className={errors.designation ? "error" : ""}
+            value={formData.designation}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="form-group">
+          <select
+            name="workshop"
+            className={errors.workshop ? "error" : ""}
+            value={formData.workshop}
+            onChange={handleChange}
+          >
+            <option value="">{errors.workshop || "Select Workshop"}</option>
+            {workshops.map((w) => (
+              <option key={w.id} value={w.id}>
+                {w.name}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="form-group checkbox-group">
+          <label>
+            <input
+              type="checkbox"
+              name="agreeTerms"
+              checked={formData.agreeTerms}
+              onChange={handleChange}
+            />
+            I agree to the <a href="#">terms and conditions</a>
+          </label>
+          {errors.agreeTerms && (
+            <span className="checkbox-error">{errors.agreeTerms}</span>
+          )}
+        </div>
+
+        <button type="submit" className="submit-btn">
+          Register Now
+        </button>
+      </form>
+    </div>
+  );
+};
+
+export default WorkshopRegistrationPage;
+
+
+========== package.json ==========
+
+{
+  "name": "molsys-ui",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://molsys.in",
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@mui/styled-engine-sc": "^5.14.12",
+    "@reduxjs/toolkit": "^1.4.0",
+    "axios": "^0.19.2",
+    "bootstrap": "^5.3.3",
+    "chart.js": "^2.9.3",
+    "chartjs-plugin-datalabels": "^0.7.0",
+    "D": "^1.0.0",
+    "emailjs-com": "^3.2.0",
+    "google-auth-library": "^9.2.0",
+    "googleapis": "^128.0.0",
+    "html2canvas": "^1.4.1",
+    "html2pdf.js": "^0.10.3",
+    "jspdf": "^2.5.1",
+    "local-storage": "^2.0.0",
+    "mui-datatables": "^3.4.0",
+    "particles.js": "^2.0.0",
+    "react": "^16.13.1",
+    "react-bootstrap": "^2.9.0",
+    "react-bootstrap-icons": "^1.10.3",
+    "react-chartjs-2": "^2.10.0",
+    "react-dom": "^16.13.1",
+    "react-draggable": "^4.4.3",
+    "react-icons": "^5.5.0",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.3.4",
+    "react-scripts": "^5.0.1",
+    "react-select": "^5.9.0",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0",
+    "rxjs": "^6.6.7",
+    "sass": "^1.68.0",
+    "styled-components": "^5.3.11",
+    "uuid": "^9.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts --openssl-legacy-provider start",
+    "test": "react-scripts test",
+    "test-ci": "react-scripts test a --watchAll=false",
+    "test:coverage": "react-scripts test --coverage --watchAll=false",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "clean": "rimraf build && rimraf node_modules/.cache",
+    "build": "npm run clean && cross-env NODE_OPTIONS='--max-old-space-size=4096' react-scripts build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^7.22.2",
+    "@testing-library/jest-dom": "^5.11.3",
+    "@testing-library/react": "^10.4.8",
+    "@testing-library/user-event": "^7.1.2",
+    "axios-mock-adapter": "^1.18.2",
+    "cross-env": "^10.0.0",
+    "css-mediaquery": "^0.1.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.3",
+    "gh-pages": "^6.3.0",
+    "history": "latest",
+    "react-test-renderer": "^16.13.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-mock-store": "^1.5.4",
+    "rimraf": "^6.0.1"
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "src/serviceWorker.js",
+      "src/index.js"
+    ]
+  }
+}
+
+
+========== src/component/Navbar.js ==========
+
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
+import "../style/Navbar.css";
+
+function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Toggle mobile menu
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // Close mobile menu when clicking a link
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const navbar = document.querySelector(".navbar");
+      if (navbar && !navbar.contains(event.target) && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMobileMenuOpen]);
+
+  return (
+    <nav className="navbar">
+      <div className="navbar-container">
+        {/* Logo */}
+        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+          <img src={logo} alt="Molsys Logo" />
+        </Link>
+
+        {/* Hamburger Icon */}
+        <button
+          className={`hamburger ${isMobileMenuOpen ? "active" : ""}`}
+          onClick={toggleMobileMenu}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        {/* Navigation Menu */}
+        <ul className={`navbar-menu ${isMobileMenuOpen ? "active" : ""}`}>
+          <li className="navbar-item">
+            <Link to="/aboutUs" className="navbar-link" onClick={closeMobileMenu}>
+              About Us
+            </Link>
+          </li>
+          <li className="navbar-item">
+            <Link to="/market" className="navbar-link" onClick={closeMobileMenu}>
+              Services
+            </Link>
+          </li>
+          <li className="navbar-item">
+            <Link to="/contactUs" className="navbar-link" onClick={closeMobileMenu}>
+              Contact Us
+            </Link>
+          </li>
+          <li className="navbar-item">
+            <Link to="#" className="navbar-link" onClick={closeMobileMenu}>
+              MolsysT
+            </Link>
+          </li>
+          <li className="navbar-item">
+            <Link to="/pms" className="navbar-link" onClick={closeMobileMenu}>
+              PMS
+            </Link>
+          </li>
+          <li className="navbar-item">
+            <Link to="/g-cell" className="navbar-link" onClick={closeMobileMenu}>
+              G-Cell
+            </Link>
+          </li>
+          <li className="navbar-item">
+            <Link to="/Omicsworkshop" className="navbar-link" onClick={closeMobileMenu}>
+              Workshops
+            </Link>
+          </li>
+          <li className="navbar-item">
+            <a
+              href="https://dnalyst.in"
+              className="navbar-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMobileMenu}
+            >
+              Danalyst
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
+}
+
+export default Navbar;
+

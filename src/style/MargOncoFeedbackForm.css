@@ -1,0 +1,487 @@
+/* Marg-Onco event feedback form — scoped styles to avoid affecting existing pages. */
+.marg-feedback-page {
+  min-height: 100vh;
+  padding: 52px 18px 72px;
+  background: #f5f7fb;
+  color: #202b3c;
+  font-family: inherit;
+}
+
+.marg-feedback-shell {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.marg-feedback-header {
+  padding: 42px 46px;
+  border-radius: 18px 18px 0 0;
+  color: #fff;
+  background: linear-gradient(120deg, #252d49 0%, #3a4667 62%, #8f2637 100%);
+}
+
+.marg-feedback-eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #f3cbd1;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.marg-feedback-header h1 {
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: clamp(27px, 4vw, 38px);
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.marg-feedback-header p {
+  max-width: 680px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.marg-feedback-form {
+  padding: 12px 46px 42px;
+  border: 1px solid #e6eaf0;
+  border-top: 0;
+  border-radius: 0 0 18px 18px;
+  background: #fff;
+  box-shadow: 0 18px 55px rgba(28, 39, 61, 0.08);
+}
+
+.marg-form-section {
+  padding: 34px 0;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.marg-section-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.marg-section-number {
+  display: inline-flex;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: #92283a;
+  background: #fbebee;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.marg-section-heading h2 {
+  margin: 0 0 5px;
+  color: #202b3c;
+  font-size: 21px;
+  font-weight: 750;
+}
+
+.marg-section-heading p {
+  margin: 0;
+  color: #7a8494;
+  font-size: 13px;
+}
+
+.marg-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.marg-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.marg-field label,
+.marg-choice-group legend {
+  color: #344054;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.marg-field label span,
+.marg-required {
+  color: #bd3448;
+}
+
+.marg-field input,
+.marg-field textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  border: 1px solid #dce2ea;
+  border-radius: 9px;
+  outline: none;
+  background: #fff;
+  color: #202b3c;
+  font: inherit;
+  font-size: 14px;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.marg-field textarea {
+  min-height: 92px;
+  resize: vertical;
+}
+
+.marg-field input:focus,
+.marg-field textarea:focus {
+  border-color: #a12e42;
+  box-shadow: 0 0 0 3px rgba(161, 46, 66, 0.1);
+}
+
+.marg-field input::placeholder,
+.marg-field textarea::placeholder {
+  color: #a0a8b5;
+}
+
+.marg-choice-group {
+  min-width: 0;
+  margin: 5px 0 22px;
+  padding: 0;
+  border: 0;
+}
+
+.marg-choice-group legend {
+  margin-bottom: 13px;
+  padding: 0;
+}
+
+.marg-choice-group legend em {
+  color: #8992a0;
+  font-weight: 400;
+}
+
+.marg-checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.marg-choice-card,
+.marg-rating-option,
+.marg-pill-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.marg-choice-card {
+  min-height: 48px;
+  padding: 10px 13px;
+  border: 1px solid #e3e7ed;
+  border-radius: 9px;
+  color: #4a5565;
+  font-size: 13px;
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+
+.marg-choice-card:has(input:checked) {
+  border-color: #b64a5b;
+  background: #fff8f9;
+  color: #812638;
+}
+
+.marg-choice-card input,
+.marg-rating-option input,
+.marg-pill-option input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.marg-custom-check {
+  display: inline-block;
+  flex: 0 0 17px;
+  width: 17px;
+  height: 17px;
+  border: 1.5px solid #b9c1cd;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.marg-choice-card input:checked + .marg-custom-check {
+  border-color: #92283a;
+  background: #92283a;
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.marg-rating-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.marg-rating-option {
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 5px;
+  border: 1px solid #e3e7ed;
+  border-radius: 8px;
+  color: #596476;
+  font-size: 12px;
+  text-align: center;
+}
+
+.marg-rating-option.selected {
+  border-color: #a12e42;
+  background: #fff6f7;
+  color: #84283a;
+  font-weight: 700;
+}
+
+.marg-radio-dot {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  border: 1.5px solid #aeb7c4;
+  border-radius: 50%;
+}
+
+.marg-rating-option.selected .marg-radio-dot {
+  border: 4px solid #92283a;
+}
+
+.marg-inline-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.marg-pill-option {
+  min-width: 90px;
+  justify-content: center;
+  padding: 11px 18px;
+  border: 1px solid #e1e6ed;
+  border-radius: 30px;
+  color: #596476;
+  font-size: 13px;
+}
+
+.marg-pill-option.selected {
+  border-color: #a12e42;
+  background: #fff6f7;
+  color: #84283a;
+  font-weight: 700;
+}
+
+.marg-submit-area {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.marg-submit-button {
+  display: inline-flex;
+  width: 100%;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 0;
+  border-radius: 9px;
+  background: #982b3e;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 750;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.marg-submit-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #7f2032;
+}
+
+.marg-submit-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.marg-submit-area p {
+  margin: 18px 0 6px;
+  color: #485467;
+  font-size: 13px;
+}
+
+.marg-submit-area small {
+  color: #929baa;
+  font-size: 11px;
+}
+
+.marg-form-alert {
+  margin-top: 22px;
+  padding: 13px 15px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.marg-form-alert.success {
+  border: 1px solid #b8e0c6;
+  background: #f0faf3;
+  color: #21643a;
+}
+
+.marg-form-alert.error {
+  border: 1px solid #f0c3c8;
+  background: #fff4f5;
+  color: #92283a;
+}
+
+.marg-honeypot {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}
+
+@media (max-width: 768px) {
+  .marg-feedback-page {
+    padding: 32px 16px 48px;
+  }
+
+  .marg-feedback-header {
+    padding: 34px 32px;
+  }
+
+  .marg-feedback-form {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .marg-feedback-page {
+    padding: 16px 10px 32px;
+  }
+
+  .marg-feedback-header {
+    padding: 26px 20px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .marg-feedback-eyebrow {
+    margin-bottom: 12px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+  }
+
+  .marg-feedback-header h1 {
+    font-size: 28px;
+  }
+
+  .marg-feedback-header p {
+    font-size: 14px;
+  }
+
+  .marg-feedback-form {
+    padding: 4px 20px 24px;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .marg-form-section {
+    padding: 26px 0;
+  }
+
+  .marg-section-heading {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .marg-section-number {
+    flex-basis: 36px;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  .marg-section-heading h2 {
+    font-size: 19px;
+  }
+
+  .marg-section-heading p {
+    line-height: 1.5;
+  }
+
+  .marg-form-grid,
+  .marg-checkbox-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .marg-field {
+    margin-bottom: 18px;
+  }
+
+  .marg-field input,
+  .marg-field textarea {
+    font-size: 16px;
+  }
+
+  .marg-inline-options {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .marg-pill-option {
+    min-width: 0;
+    padding: 11px 6px;
+  }
+
+  .marg-rating-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .marg-rating-option:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .marg-submit-area {
+    padding-top: 24px;
+  }
+}
+
+@media (max-width: 360px) {
+  .marg-feedback-page {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .marg-feedback-header {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .marg-feedback-form {
+    padding-right: 
