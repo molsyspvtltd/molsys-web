@@ -60,38 +60,6 @@ function MargOncoFeedbackForm() {
     event.preventDefault();
     setSubmitState({ type: "", message: "" });
 
-    if (!form.fullName.trim() || !form.email.trim() || !form.phone.trim()) {
-      setSubmitState({
-        type: "error",
-        message: "Please complete your name, email address, and phone number.",
-      });
-      return;
-    }
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
-      setSubmitState({
-        type: "error",
-        message: "Please enter a valid email address.",
-      });
-      return;
-    }
-
-    if (!form.rating) {
-      setSubmitState({
-        type: "error",
-        message: "Please select an overall impression rating.",
-      });
-      return;
-    }
-
-    if (!form.investmentInterest) {
-      setSubmitState({
-        type: "error",
-        message: "Please select Yes, Maybe, or No for investment interest.",
-      });
-      return;
-    }
-
     setIsSubmitting(true);
     try {
       await submitMargOncoFeedback(form);
@@ -150,7 +118,6 @@ function MargOncoFeedbackForm() {
                   onChange={updateField}
                   placeholder="Enter your full name"
                   autoComplete="name"
-                  required
                 />
               </div>
 
@@ -166,7 +133,6 @@ function MargOncoFeedbackForm() {
                   onChange={updateField}
                   placeholder="name@company.com"
                   autoComplete="email"
-                  required
                 />
               </div>
 
@@ -182,7 +148,6 @@ function MargOncoFeedbackForm() {
                   onChange={updateField}
                   placeholder="+91 98765 43210"
                   autoComplete="tel"
-                  required
                 />
               </div>
 
@@ -232,7 +197,7 @@ function MargOncoFeedbackForm() {
 
             <fieldset className="marg-choice-group">
               <legend>
-                Overall Impression <span className="marg-required">*</span>
+                Overall Impression
               </legend>
               <div className="marg-rating-grid">
                 {RATING_OPTIONS.map((option) => (
@@ -297,7 +262,7 @@ function MargOncoFeedbackForm() {
             <fieldset className="marg-choice-group">
               <legend>
                 Are you interested in evaluating Marg-Onco as an investment
-                opportunity? <span className="marg-required">*</span>
+                opportunity?
               </legend>
               <div className="marg-inline-options">
                 {["Yes", "Maybe", "No"].map((option) => (
