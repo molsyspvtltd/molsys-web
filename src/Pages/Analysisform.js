@@ -1,8 +1,6 @@
 // import React, { useState } from 'react';
 // import './Analysisform.css';
 
-
-
 // const DataAnalysisForm = () => {
 //   const [formData, setFormData] = useState({
 //     name: '',
@@ -24,8 +22,8 @@
 //   const [errors, setErrors] = useState({});
 
 //   const organismOptions = [
-//     'Human', 'Mouse', 'Rat', 'Zebrafish', 'Drosophila', 
-//     'C. elegans', 'Arabidopsis', 'E. coli', 'Yeast', 
+//     'Human', 'Mouse', 'Rat', 'Zebrafish', 'Drosophila',
+//     'C. elegans', 'Arabidopsis', 'E. coli', 'Yeast',
 //     'Chicken', 'Cow', 'Pig', 'Sheep', 'Dog', 'Cat',
 //     'Monkey', 'Xenopus', 'Salmon', 'Rice', 'Wheat', 'Maize', 'Other'
 //   ];
@@ -50,10 +48,10 @@
 //     else if (!/^\S+@\S+\.\S+$/.test(formData.email)) newErrors.email = 'Email is invalid';
 //     if (!formData.phone.trim()) newErrors.phone = 'Phone is required';
 //     if (!formData.address.trim()) newErrors.address = 'Address is required';
-//     if (formData.applicationType === 'other' && !formData.otherApplication.trim()) 
+//     if (formData.applicationType === 'other' && !formData.otherApplication.trim())
 //       newErrors.otherApplication = 'Please specify application';
 //     if (!formData.organism) newErrors.organism = 'Organism is required';
-//     if (formData.organism === 'Other' && (!formData.otherOrganism1.trim() || !formData.otherOrganism2.trim())) 
+//     if (formData.organism === 'Other' && (!formData.otherOrganism1.trim() || !formData.otherOrganism2.trim()))
 //       newErrors.otherOrganism = 'Please specify organism details';
 //     if (!formData.sampleNumber) newErrors.sampleNumber = 'Sample number is required';
 //     if (!formData.agreedToTerms) newErrors.agreedToTerms = 'You must agree to terms';
@@ -307,7 +305,6 @@
 
 // export default DataAnalysisForm;
 
-
 // import React, { useState } from 'react';
 // import './Analysisform.css';
 // import emailjs from 'emailjs-com';
@@ -334,12 +331,9 @@
 //   const [fileError, setFileError] = useState('');
 //   const [loading, setLoading] = useState(false);
 
-
-
-
 //   const organismOptions = [
-//     'Human', 'Mouse', 'Rat', 'Zebrafish', 'Drosophila', 
-//     'C. elegans', 'Arabidopsis', 'E. coli', 'Yeast', 
+//     'Human', 'Mouse', 'Rat', 'Zebrafish', 'Drosophila',
+//     'C. elegans', 'Arabidopsis', 'E. coli', 'Yeast',
 //     'Chicken', 'Cow', 'Pig', 'Sheep', 'Dog', 'Cat',
 //     'Monkey', 'Xenopus', 'Salmon', 'Rice', 'Wheat', 'Maize', 'Other'
 //   ];
@@ -352,8 +346,6 @@
 //     }));
 //   };
 
-
-
 //   const validateForm = () => {
 //     const newErrors = {};
 //     if (!formData.name.trim()) newErrors.name = 'Name is required';
@@ -362,10 +354,10 @@
 //     else if (!/^\S+@\S+\.\S+$/.test(formData.email)) newErrors.email = 'Email is invalid';
 //     if (!formData.phone.trim()) newErrors.phone = 'Phone is required';
 //     if (!formData.address.trim()) newErrors.address = 'Address is required';
-//     if (formData.applicationType === 'other' && !formData.otherApplication.trim()) 
+//     if (formData.applicationType === 'other' && !formData.otherApplication.trim())
 //       newErrors.otherApplication = 'Please specify application';
 //     if (!formData.organism) newErrors.organism = 'Organism is required';
-//     if (formData.organism === 'Other' && (!formData.otherOrganism1.trim() || !formData.otherOrganism2.trim())) 
+//     if (formData.organism === 'Other' && (!formData.otherOrganism1.trim() || !formData.otherOrganism2.trim()))
 //       newErrors.otherOrganism = 'Please specify organism details';
 //     if (!formData.sampleNumber) newErrors.sampleNumber = 'Sample number is required';
 //     if (!formData.agreedToTerms) newErrors.agreedToTerms = 'You must agree to terms';
@@ -373,7 +365,6 @@
 //     setErrors(newErrors);
 //     return Object.keys(newErrors).length === 0 && !fileError;
 //   };
-
 
 // const handleSubmit = (e) => {
 //   e.preventDefault();
@@ -386,8 +377,8 @@
 //       phone: formData.phone,
 //       address: formData.address,
 //       applicationType: formData.applicationType === 'other' ? formData.otherApplication : formData.applicationType,
-//       organism: formData.organism === 'Other' 
-//         ? `${formData.otherOrganism1} - ${formData.otherOrganism2}` 
+//       organism: formData.organism === 'Other'
+//         ? `${formData.otherOrganism1} - ${formData.otherOrganism2}`
 //         : formData.organism,
 //       sampleNumber: formData.sampleNumber,
 //       millionReads: formData.millionReads || 'Not Provided',
@@ -440,8 +431,8 @@
 //       phone: formData.phone,
 //       address: formData.address,
 //       applicationType: formData.applicationType === 'other' ? formData.otherApplication : formData.applicationType,
-//       organism: formData.organism === 'Other' 
-//         ? `${formData.otherOrganism1} - ${formData.otherOrganism2}` 
+//       organism: formData.organism === 'Other'
+//         ? `${formData.otherOrganism1} - ${formData.otherOrganism2}`
 //         : formData.organism,
 //       sampleNumber: formData.sampleNumber,
 //       millionReads: formData.millionReads || 'Not Provided',
@@ -497,8 +488,6 @@
 //       });
 //   }
 // };
-
-
 
 //   return (
 //     <div className="form-container">
@@ -691,8 +680,6 @@
 //           </div>
 //         </div>
 
-        
-
 //         <div className={`form-group terms-group ${errors.agreedToTerms ? 'error' : ''}`}>
 //           <label className="checkbox-option">
 //             <input
@@ -723,15 +710,10 @@
 
 // export default DataAnalysisForm;
 
-
-
-
-
 // import React, { useState } from 'react';
 // import './Analysisform.css';
 // import emailjs from 'emailjs-com';
 // import  image './assets/image.jpg';
-
 
 // const DataAnalysisForm = () => {
 //   const [formData, setFormData] = useState({
@@ -1003,7 +985,6 @@
 
 // export default DataAnalysisForm;
 
-
 // import React, { useState, useEffect } from 'react';
 // import './Analysisform.css';
 // import emailjs from 'emailjs-com';
@@ -1036,12 +1017,12 @@
 //   useEffect(() => {
 //     const popupInterval = setInterval(() => {
 //       setShowImagePopup(true);
-      
+
 //       // Auto-hide after 10 seconds
 //       const timer = setTimeout(() => {
 //         setShowImagePopup(false);
 //       }, 10000);
-      
+
 //       return () => clearTimeout(timer);
 //     }, 10000);
 
@@ -1310,7 +1291,6 @@
 
 // export default DataAnalysisForm;
 
-
 // import React, { useState, useEffect } from 'react';
 // import './Analysisform.css';
 // import emailjs from 'emailjs-com';
@@ -1354,12 +1334,12 @@
 //       const randomPosition = positions[Math.floor(Math.random() * positions.length)];
 //       setPopupPosition(randomPosition);
 //       setShowImagePopup(true);
-      
+
 //       // Auto-hide after 6 seconds
 //       const timer = setTimeout(() => {
 //         setShowImagePopup(false);
 //       }, 6000);
-      
+
 //       return () => clearTimeout(timer);
 //     }, 6000);
 
@@ -1954,7 +1934,6 @@
 
 // export default DataAnalysisForm;
 
-
 // import React, { useState, useEffect } from 'react';
 // import './Analysisform.css';
 // import emailjs from 'emailjs-com';
@@ -2270,32 +2249,31 @@
 
 // export default DataAnalysisForm;
 
-
-import React, { useState, useEffect } from 'react';
-import './Analysisform.css';
-import emailjs from 'emailjs-com';
-import image from '../assets/image.jpg';
+import React, { useState, useEffect } from "react";
+import "./Analysisform.css";
+import emailjs from "emailjs-com";
+import image from "../assets/image.jpg";
 
 const DataAnalysisForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    organization: '',
-    email: '',
-    phone: '',
-    address: '',
-    applicationType: 'rna-sequencing',
-    otherApplication: '',
-    organism: '',
-    otherOrganism1: '',
-    otherOrganism2: '',
-    sampleNumber: '',
-    millionReads: '',
+    name: "",
+    organization: "",
+    email: "",
+    phone: "",
+    address: "",
+    applicationType: "rna-sequencing",
+    otherApplication: "",
+    organism: "",
+    otherOrganism1: "",
+    otherOrganism2: "",
+    sampleNumber: "",
+    millionReads: "",
     agreedToTerms: false,
   });
 
   const [file, setFile] = useState(null);
   const [errors, setErrors] = useState({});
-  const [fileError, setFileError] = useState('');
+  const [fileError, setFileError] = useState("");
   const [loading, setLoading] = useState(false);
   const [showImage, setShowImage] = useState(true);
   const [showTermsPopup, setShowTermsPopup] = useState(false);
@@ -2311,36 +2289,63 @@ const DataAnalysisForm = () => {
   }, [showImage]);
 
   const organismOptions = [
-    'Human', 'Mouse', 'Rat', 'Zebrafish', 'Drosophila',
-    'C. elegans', 'Arabidopsis', 'E. coli', 'Yeast',
-    'Chicken', 'Cow', 'Pig', 'Sheep', 'Dog', 'Cat',
-    'Monkey', 'Xenopus', 'Salmon', 'Rice', 'Wheat', 'Maize', 'Other'
+    "Human",
+    "Mouse",
+    "Rat",
+    "Zebrafish",
+    "Drosophila",
+    "C. elegans",
+    "Arabidopsis",
+    "E. coli",
+    "Yeast",
+    "Chicken",
+    "Cow",
+    "Pig",
+    "Sheep",
+    "Dog",
+    "Cat",
+    "Monkey",
+    "Xenopus",
+    "Salmon",
+    "Rice",
+    "Wheat",
+    "Maize",
+    "Other",
   ];
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
-    if (!formData.organization.trim()) newErrors.organization = 'Organization is required';
-    if (!formData.email.trim()) newErrors.email = 'Email is required';
-    else if (!/^\S+@\S+\.\S+$/.test(formData.email)) newErrors.email = 'Email is invalid';
-    if (!formData.phone.trim()) newErrors.phone = 'Phone is required';
-    if (!formData.address.trim()) newErrors.address = 'Address is required';
-    if (formData.applicationType === 'other' && !formData.otherApplication.trim())
-      newErrors.otherApplication = 'Please specify application';
-    if (!formData.organism) newErrors.organism = 'Organism is required';
-    if (formData.organism === 'Other' &&
-      (!formData.otherOrganism1.trim() || !formData.otherOrganism2.trim()))
-      newErrors.otherOrganism = 'Please specify organism details';
-    if (!formData.sampleNumber) newErrors.sampleNumber = 'Sample number is required';
-    if (!formData.agreedToTerms) newErrors.agreedToTerms = 'You must agree to terms';
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.organization.trim())
+      newErrors.organization = "Organization is required";
+    if (!formData.email.trim()) newErrors.email = "Email is required";
+    else if (!/^\S+@\S+\.\S+$/.test(formData.email))
+      newErrors.email = "Email is invalid";
+    if (!formData.phone.trim()) newErrors.phone = "Phone is required";
+    if (!formData.address.trim()) newErrors.address = "Address is required";
+    if (
+      formData.applicationType === "other" &&
+      !formData.otherApplication.trim()
+    )
+      newErrors.otherApplication = "Please specify application";
+    if (!formData.organism) newErrors.organism = "Organism is required";
+    if (
+      formData.organism === "Other" &&
+      (!formData.otherOrganism1.trim() || !formData.otherOrganism2.trim())
+    )
+      newErrors.otherOrganism = "Please specify organism details";
+    if (!formData.sampleNumber)
+      newErrors.sampleNumber = "Sample number is required";
+    if (!formData.agreedToTerms)
+      newErrors.agreedToTerms = "You must agree to terms";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0 && !fileError;
@@ -2357,57 +2362,68 @@ const DataAnalysisForm = () => {
         organization: formData.organization,
         phone: formData.phone,
         address: formData.address,
-        applicationType: formData.applicationType === 'other' ? formData.otherApplication : formData.applicationType,
-        organism: formData.organism === 'Other'
-          ? `${formData.otherOrganism1} - ${formData.otherOrganism2}`
-          : formData.organism,
+        applicationType:
+          formData.applicationType === "other"
+            ? formData.otherApplication
+            : formData.applicationType,
+        organism:
+          formData.organism === "Other"
+            ? `${formData.otherOrganism1} - ${formData.otherOrganism2}`
+            : formData.organism,
         sampleNumber: formData.sampleNumber,
-        millionReads: formData.millionReads || 'Not Provided',
+        millionReads: formData.millionReads || "Not Provided",
       };
 
-      const SERVICE_ID = 'service_m04jave';
-      const ADMIN_TEMPLATE_ID = 'template_z801jx2';
-      const USER_TEMPLATE_ID = 'template_4gv6nxn';
-      const PUBLIC_KEY = 'vNK8H8pIP5nC4I1cq';
+      const SERVICE_ID = "service_m04jave";
+      const ADMIN_TEMPLATE_ID = "template_z801jx2";
+      const USER_TEMPLATE_ID = "template_4gv6nxn";
+      const PUBLIC_KEY = "vNK8H8pIP5nC4I1cq";
 
       emailjs
         .send(SERVICE_ID, ADMIN_TEMPLATE_ID, templateParamsToAdmin, PUBLIC_KEY)
         .then((response) => {
-          console.log('Admin Email Sent!', response.status, response.text);
+          console.log("Admin Email Sent!", response.status, response.text);
 
           const templateParamsToUser = {
             user_name: formData.name,
             user_email: formData.email,
           };
 
-          return emailjs.send(SERVICE_ID, USER_TEMPLATE_ID, templateParamsToUser, PUBLIC_KEY);
+          return emailjs.send(
+            SERVICE_ID,
+            USER_TEMPLATE_ID,
+            templateParamsToUser,
+            PUBLIC_KEY,
+          );
         })
         .then((res) => {
-          console.log('User Thank You Email Sent!', res.status, res.text);
-          alert('Form submitted successfully! A confirmation email has been sent.');
+          console.log("User Thank You Email Sent!", res.status, res.text);
+          alert(
+            "Form submitted successfully! A confirmation email has been sent.",
+          );
 
           setFormData({
-            name: '',
-            organization: '',
-            email: '',
-            phone: '',
-            address: '',
-            applicationType: 'rna-sequencing',
-            otherApplication: '',
-            organism: '',
-            otherOrganism1: '',
-            otherOrganism2: '',
-            sampleNumber: '',
-            millionReads: '',
+            name: "",
+            organization: "",
+            email: "",
+            phone: "",
+            address: "",
+            applicationType: "rna-sequencing",
+            otherApplication: "",
+            organism: "",
+            otherOrganism1: "",
+            otherOrganism2: "",
+            sampleNumber: "",
+            millionReads: "",
             agreedToTerms: false,
           });
           setErrors({});
           setFile(null);
-          setFileError('');
+          setFileError("");
         })
         .catch((err) => {
-          console.error('Submission error:', err);
-          alert('Submission failed. Please try again.');
+          console.error("Submission error:", err);
+          alert("Submission failed. Please try again.");
         })
         .finally(() => {
           setLoading(false);
@@ -2445,10 +2461,10 @@ const DataAnalysisForm = () => {
     "19) In case the client wishes to discontinue the project after the samples have been processed for sample QC without achieving a written mutual consent between Molsys and client; Molsys will have complete authority to charge for the full compensation of the project.",
     "20) In case client wishes to terminate the project after fulfilling the conditions mentioned in point 18, Molsys will only charge for till whatever extent the project has been completed.",
     "21) In case of termination of project, the client can request back the left-out quantity of samples after full financial settlement. The shipment charges for the same will have to be completely borne by the client.",
-    "22) Molsys administers best possible practices and intends to provide best possible service within promised timeline to all our customers. Still in case of any discrepancy between Molsys and the client, the same will have to be resolved by judicial system based in Bangalore (Bengaluru), India only.",
+    "22) Molsys administers best possible practices and intends to provide best possible service within promised timeline to all our customers. Still in case of any discrepancy between Molsys and the client, the same will have to be resolved by judicial system based in Mangalore, India only.",
     "23) Payment within 20 days of submitting invoice.",
     "24) 100% advance payment.",
-    "25) The payment shall be through cheque / Draft in favor of 'Molsys Private Limited' or to the account through NEFT/RTGS/IMPS:\nBank Name: ICICI, Sahakarnagar branch\nA/c Name: Molsys Private Limited\nA/c No.: 060405002959 (Current A/c)\nIFSC: ICIC0000604\nGSTIN: 29AALCM9252C1Z7\nSWIFT CODE: ICICINBBCTS"
+    "25) The payment shall be through cheque / Draft in favor of 'Molsys Private Limited' or to the account through NEFT/RTGS/IMPS:\nBank Name: ICICI, Sahakarnagar branch\nA/c Name: Molsys Private Limited\nA/c No.: 060405002959 (Current A/c)\nIFSC: ICIC0000604\nGSTIN: 29AALCM9252C1Z7\nSWIFT CODE: ICICINBBCTS",
   ];
 
   return (
@@ -2457,7 +2473,9 @@ const DataAnalysisForm = () => {
       {showTermsPopup && (
         <div className="terms-popup-overlay">
           <div className="terms-popup-content">
-            <button className="close-popup" onClick={toggleTermsPopup}>×</button>
+            <button className="close-popup" onClick={toggleTermsPopup}>
+              ×
+            </button>
             <h3>Terms and Conditions</h3>
             <div className="terms-content">
               {termsAndConditions.map((term, index) => (
@@ -2470,41 +2488,88 @@ const DataAnalysisForm = () => {
 
       <div className="form-header">
         <h1>Data Analysis Offer</h1>
-        <p>Please fill out the form below to request our data analysis services</p>
+        <p>
+          Please fill out the form below to request our data analysis services
+        </p>
       </div>
 
       <form onSubmit={handleSubmit} className="analysis-form">
         <div className="form-section">
           <h2 className="section-title">Personal Information</h2>
           <div className="form-grid">
-            <div className={`form-group ${errors.name ? 'error' : ''}`}>
+            <div className={`form-group ${errors.name ? "error" : ""}`}>
               <label htmlFor="name">Full Name*</label>
-              <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Enter your full name" />
-              {errors.name && <span className="error-message">{errors.name}</span>}
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Enter your full name"
+              />
+              {errors.name && (
+                <span className="error-message">{errors.name}</span>
+              )}
             </div>
 
-            <div className={`form-group ${errors.organization ? 'error' : ''}`}>
+            <div className={`form-group ${errors.organization ? "error" : ""}`}>
               <label htmlFor="organization">Organization*</label>
-              <input type="text" id="organization" name="organization" value={formData.organization} onChange={handleChange} placeholder="Enter your organization" />
-              {errors.organization && <span className="error-message">{errors.organization}</span>}
+              <input
+                type="text"
+                id="organization"
+                name="organization"
+                value={formData.organization}
+                onChange={handleChange}
+                placeholder="Enter your organization"
+              />
+              {errors.organization && (
+                <span className="error-message">{errors.organization}</span>
+              )}
             </div>
 
-            <div className={`form-group ${errors.email ? 'error' : ''}`}>
+            <div className={`form-group ${errors.email ? "error" : ""}`}>
               <label htmlFor="email">Email ID*</label>
-              <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="Enter your email" />
-              {errors.email && <span className="error-message">{errors.email}</span>}
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Enter your email"
+              />
+              {errors.email && (
+                <span className="error-message">{errors.email}</span>
+              )}
             </div>
 
-            <div className={`form-group ${errors.phone ? 'error' : ''}`}>
+            <div className={`form-group ${errors.phone ? "error" : ""}`}>
               <label htmlFor="phone">Contact Phone Number*</label>
-              <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="Enter your phone number" />
-              {errors.phone && <span className="error-message">{errors.phone}</span>}
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Enter your phone number"
+              />
+              {errors.phone && (
+                <span className="error-message">{errors.phone}</span>
+              )}
             </div>
 
-            <div className={`form-group ${errors.address ? 'error' : ''}`}>
+            <div className={`form-group ${errors.address ? "error" : ""}`}>
               <label htmlFor="address">Address*</label>
-              <textarea id="address" name="address" value={formData.address} onChange={handleChange} placeholder="Enter your address" rows="3" />
-              {errors.address && <span className="error-message">{errors.address}</span>}
+              <textarea
+                id="address"
+                name="address"
+                value={formData.address}
+                onChange={handleChange}
+                placeholder="Enter your address"
+                rows="3"
+              />
+              {errors.address && (
+                <span className="error-message">{errors.address}</span>
+              )}
             </div>
           </div>
         </div>
@@ -2512,73 +2577,158 @@ const DataAnalysisForm = () => {
         <div className="form-section">
           <h2 className="section-title">Analysis Details</h2>
           <div className="form-grid">
-            <div className={`form-group ${errors.applicationType ? 'error' : ''}`}>
+            <div
+              className={`form-group ${errors.applicationType ? "error" : ""}`}
+            >
               <label>Application Type*</label>
               <div className="radio-group">
                 <label className="radio-option">
-                  <input type="radio" name="applicationType" value="rna-sequencing" checked={formData.applicationType === 'rna-sequencing'} onChange={handleChange} />
+                  <input
+                    type="radio"
+                    name="applicationType"
+                    value="rna-sequencing"
+                    checked={formData.applicationType === "rna-sequencing"}
+                    onChange={handleChange}
+                  />
                   <span className="radio-custom"></span>
                   RNA Sequencing Analysis
                 </label>
                 <label className="radio-option">
-                  <input type="radio" name="applicationType" value="other" checked={formData.applicationType === 'other'} onChange={handleChange} />
+                  <input
+                    type="radio"
+                    name="applicationType"
+                    value="other"
+                    checked={formData.applicationType === "other"}
+                    onChange={handleChange}
+                  />
                   <span className="radio-custom"></span>
                   Other
                 </label>
               </div>
-              {formData.applicationType === 'other' && (
+              {formData.applicationType === "other" && (
                 <div className="form-group">
-                  <input type="text" name="otherApplication" value={formData.otherApplication} onChange={handleChange} placeholder="Please specify NGS application" className="full-width" />
-                  {errors.otherApplication && <span className="error-message">{errors.otherApplication}</span>}
+                  <input
+                    type="text"
+                    name="otherApplication"
+                    value={formData.otherApplication}
+                    onChange={handleChange}
+                    placeholder="Please specify NGS application"
+                    className="full-width"
+                  />
+                  {errors.otherApplication && (
+                    <span className="error-message">
+                      {errors.otherApplication}
+                    </span>
+                  )}
                 </div>
               )}
             </div>
 
-            <div className={`form-group ${errors.organism ? 'error' : ''}`}>
+            <div className={`form-group ${errors.organism ? "error" : ""}`}>
               <label htmlFor="organism">Organism*</label>
-              <select id="organism" name="organism" value={formData.organism} onChange={handleChange}>
+              <select
+                id="organism"
+                name="organism"
+                value={formData.organism}
+                onChange={handleChange}
+              >
                 <option value="">Select an organism</option>
-                {organismOptions.map((org, idx) => <option key={idx} value={org}>{org}</option>)}
+                {organismOptions.map((org, idx) => (
+                  <option key={idx} value={org}>
+                    {org}
+                  </option>
+                ))}
               </select>
-              {errors.organism && <span className="error-message">{errors.organism}</span>}
-              {formData.organism === 'Other' && (
+              {errors.organism && (
+                <span className="error-message">{errors.organism}</span>
+              )}
+              {formData.organism === "Other" && (
                 <div className="other-organism-fields">
                   <div className="form-group">
-                    <input type="text" name="otherOrganism1" value={formData.otherOrganism1} onChange={handleChange} placeholder="Organism Scientific name" />
+                    <input
+                      type="text"
+                      name="otherOrganism1"
+                      value={formData.otherOrganism1}
+                      onChange={handleChange}
+                      placeholder="Organism Scientific name"
+                    />
                   </div>
                   <div className="form-group">
-                    <input type="text" name="otherOrganism2" value={formData.otherOrganism2} onChange={handleChange} placeholder="NCBI Accession Number" />
+                    <input
+                      type="text"
+                      name="otherOrganism2"
+                      value={formData.otherOrganism2}
+                      onChange={handleChange}
+                      placeholder="NCBI Accession Number"
+                    />
                   </div>
-                  {errors.otherOrganism && <span className="error-message">{errors.otherOrganism}</span>}
+                  {errors.otherOrganism && (
+                    <span className="error-message">
+                      {errors.otherOrganism}
+                    </span>
+                  )}
                 </div>
               )}
             </div>
 
-            <div className={`form-group ${errors.sampleNumber ? 'error' : ''}`}>
+            <div className={`form-group ${errors.sampleNumber ? "error" : ""}`}>
               <label htmlFor="sampleNumber">Sample Number*</label>
-              <input type="number" id="sampleNumber" name="sampleNumber" value={formData.sampleNumber} onChange={handleChange} min="1" placeholder="Enter number of samples" />
-              {errors.sampleNumber && <span className="error-message">{errors.sampleNumber}</span>}
+              <input
+                type="number"
+                id="sampleNumber"
+                name="sampleNumber"
+                value={formData.sampleNumber}
+                onChange={handleChange}
+                min="1"
+                placeholder="Enter number of samples"
+              />
+              {errors.sampleNumber && (
+                <span className="error-message">{errors.sampleNumber}</span>
+              )}
             </div>
 
             <div className="form-group">
-              <label htmlFor="millionReads">Million Reads per Sample (optional)</label>
-              <input type="number" id="millionReads" name="millionReads" value={formData.millionReads} onChange={handleChange} min="0" step="0.1" placeholder="Enter million reads" />
+              <label htmlFor="millionReads">
+                Million Reads per Sample (optional)
+              </label>
+              <input
+                type="number"
+                id="millionReads"
+                name="millionReads"
+                value={formData.millionReads}
+                onChange={handleChange}
+                min="0"
+                step="0.1"
+                placeholder="Enter million reads"
+              />
             </div>
           </div>
         </div>
 
-        <div className={`form-group terms-group ${errors.agreedToTerms ? 'error' : ''}`}>
+        <div
+          className={`form-group terms-group ${errors.agreedToTerms ? "error" : ""}`}
+        >
           <label className="checkbox-option">
-            <input type="checkbox" name="agreedToTerms" checked={formData.agreedToTerms} onChange={handleChange} />
-            <span className="checkbox-custom"></span>
-            I agree to the <span className="terms-link" onClick={toggleTermsPopup}>Terms and Conditions</span>*
+            <input
+              type="checkbox"
+              name="agreedToTerms"
+              checked={formData.agreedToTerms}
+              onChange={handleChange}
+            />
+            <span className="checkbox-custom"></span>I agree to the{" "}
+            <span className="terms-link" onClick={toggleTermsPopup}>
+              Terms and Conditions
+            </span>
+            *
           </label>
-          {errors.agreedToTerms && <span className="error-message">{errors.agreedToTerms}</span>}
+          {errors.agreedToTerms && (
+            <span className="error-message">{errors.agreedToTerms}</span>
+          )}
         </div>
 
         <div className="form-actions">
           <button type="submit" className="submit-button" disabled={loading}>
-            {loading ? 'Submitting...' : 'Submit Request'}
+            {loading ? "Submitting..." : "Submit Request"}
           </button>
         </div>
       </form>
@@ -2588,7 +2738,9 @@ const DataAnalysisForm = () => {
         <div className="promotional-image-section">
           <div className="image-container">
             <img src={image} alt="Promotional" className="promotional-image" />
-            <button className="cancel-image-button" onClick={handleHideImage}>×</button>
+            <button className="cancel-image-button" onClick={handleHideImage}>
+              ×
+            </button>
           </div>
         </div>
       )}
